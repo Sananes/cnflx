@@ -3,10 +3,11 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
-import blockContent from "./blockContent";
-import testimonial from "./testimonial";
-import integration from "./integration";
-import partner from "./partner";
+import siteSettings from "./documents/siteSettings";
+import blockContent from "./documents/blockContent";
+import testimonial from "./documents/testimonial";
+import integration from "./documents/integration";
+import partner from "./documents/partner";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -15,6 +16,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    siteSettings,
     blockContent,
     partner,
     testimonial,

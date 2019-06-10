@@ -18,6 +18,7 @@ $section-height: 50px;
 
 %layout-container-center {
   @extend %layout-container;
+  text-align: center;
 }
 
 %layout-container-divider {

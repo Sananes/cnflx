@@ -1,17 +1,30 @@
 @import '../../assets/scss/helpers';
 
 .page {
-  lost-center: $layout-width;
   @include margin-bottom(2);
 
+  &__inner,
+  &__inner--center {
+    @extend %layout-container;
+  }
+
   &__inner {
-    padding: 25px 20px;
+    &--center {
+      @extend %layout-container-center;
+    }
   }
 
   &__title {
-    @include h1;
-    font-weight: 600;
-    @include margin-top(0);
+    @include h2
+  }
+
+  &__subtitle {
+    @include body-l;
+    @include margin-bottom(2);
+
+    .page__inner--center & {
+      lost-center: 640px;
+    }
   }
 
   &__body {

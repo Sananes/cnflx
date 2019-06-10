@@ -10,13 +10,14 @@ $color-secondary: #F7A046;
 
 $color-white: #FFF;
 $color-gray: lighten($color-base, 40%);
-$color-border: lighten($color-base, 75%);
+$color-border: lighten($color-base, 70%);
 $color-border-light: lighten($color-base, 80%);
 $color-gray-background: lighten($color-base, 76%);
 
 // $color-background: #fffefc;
 $color-background: $color-white;
 // $color-background: $color-white;
+$color-background-highlight: $color-gray-background;
 
 $color-header-background: $color-background;
 $base-border-radius: 3px;

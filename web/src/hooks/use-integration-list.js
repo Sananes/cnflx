@@ -12,6 +12,13 @@ const useIntegrationList = () => {
                 current
               }
               name
+              image {
+                asset {
+                  fluid {
+                    ...GatsbySanityImageFluid
+                  }
+                }
+              }
             }
           }
         }

@@ -3,10 +3,12 @@ import styles from "./Page.module.scss";
 
 type Props = {
   title?: string,
-  children: React.Node
+  subtitle?: string,
+  children: React.Node,
+  center: Boolean
 };
 
-const Page = ({ title, children }: Props) => {
+const Page = ({ title, subtitle, center, children }: Props) => {
   const pageRef = useRef();
 
   // useEffect(() => {
@@ -15,8 +17,13 @@ const Page = ({ title, children }: Props) => {
 
   return (
     <div ref={pageRef} className={styles["page"]}>
-      <div className={styles["page__inner"]}>
+      <div
+        className={
+          !center ? styles[`page__inner`] : styles[`page__inner--center`]
+        }
+      >
         {title && <h1 className={styles["page__title"]}>{title}</h1>}
+        {subtitle && <p className={styles["page__subtitle"]}>{subtitle}</p>}
         <div className={styles["page__body"]}>{children}</div>
       </div>
     </div>
