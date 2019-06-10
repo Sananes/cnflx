@@ -1,0 +1,65 @@
+@import '../../../assets/scss/helpers';
+
+.menu {
+  display: none;
+
+  @include breakpoint-md {
+    display: block;
+    justify-self: flex-end;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include breakpoint-md {
+      display: inline-flex;
+    }
+
+    &-item {
+      display: block;
+
+      &-link {
+        @include menu;
+        color: $text-subdued;
+        font-weight: $font-weight-medium;
+        border: 0;
+        padding: 8px 16px;
+
+        &:hover,
+        &:focus {
+          color: $text-dark;
+        }
+
+        &--active {
+          color: $text-dark;
+        }
+
+      }
+
+      &--signin a {
+        color: $text-dimmed;
+      }
+
+      &--signup a {
+        @extend %button-secondary;
+      }
+    }
+
+    &--account {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      @include breakpoint-md {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+      }
+    }
+
+  }
+
+}

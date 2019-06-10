@@ -1,0 +1,345 @@
+@import '../assets/scss/helpers';
+
+$section-spacing: 50px;
+
+.wrapper {
+  background-image: url('../assets/svg/pattern-bg-top.svg');
+  background-size: 200% 1503px;
+  background-position: center top;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  &__inner {
+    @extend %layout-container-center;
+  }
+
+  &__title, &__subtitle {
+    lost-center: 760px;
+    text-align: center;
+  }
+
+  &__title {
+    @include h1;
+    @include margin-top(3.5);
+    @include margin-bottom(1);
+  }
+
+  &__subtitle {
+    @include body-l;
+    @include margin-bottom(2);
+  }
+
+  &__signup {
+    @include margin-bottom(2);
+    display: flex;
+    justify-content: center;
+    lost-center: 600px;
+
+    &_wrapper {
+      position: relative;
+      width: 50%;
+    }
+
+    &_wrapper + &_button {
+      margin-left: 16px;
+    }
+
+    &_button {
+      @extend %button;
+      margin-top: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &_prefix {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 12px 16px;
+    }
+  }
+
+
+  &__image-wrapper {
+  }
+
+  &__pattern {
+    position: absolute;
+    opacity: 0.1;
+    background: url('../assets/svg/hero-pattern.svg') repeat;
+    background-size: 0.8%;
+    width: 100vw;
+    height: 700px;
+    left: 50%;
+    right: 50%;
+    margin-left: -40vw;
+    margin-right: -50vw;
+  }
+
+  &__image {
+    position: relative;
+  }
+}
+
+.companies {
+
+  &__inner {
+    @extend %layout-container-center;
+    text-align: center;
+  }
+
+  &__title {
+    @include overline;
+    color: $text-subdued;
+  }
+
+  &__list {
+    @extend %layout-container-center;
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      min-width: 180px;
+      margin-left: -8px;
+      margin-right: -8px;
+
+      &-link {
+        position: relative;
+        color: $text-dark;
+      }
+
+    }
+  }
+}
+
+.companies + .features {
+  margin-top: $section-spacing;
+}
+
+.features {
+
+  &__inner {
+    @extend %layout-container-center, %layout-container-divider;
+    text-align: center;
+
+    @include breakpoint-md {
+      background: url('../assets/svg/conflux-logo.svg') no-repeat center 70%;
+    }
+  }
+
+  &__title {
+    @include h3;
+    @include margin-top(1.5);
+  }
+
+  &__subtitle {
+    @include body-l;
+    @include margin-bottom(3);
+  }
+
+  &__plane-right,
+  &__plane-left {
+    display: none;
+
+    @include breakpoint-md {
+      display: block;
+      position: absolute;
+      top: 12%;
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  &__plane-right {
+    right: 12%;
+    background: url('../assets/svg/arrow-plane-down.svg') no-repeat center center;
+  }
+
+  &__plane-left {
+    left: 12%;
+    background: url('../assets/svg/arrow-plane-up.svg') no-repeat center center;
+  }
+
+  &__list {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      text-align: center;
+      lost-center: 320px;
+    }
+
+    &-title {
+      @include h4;
+      @include margin-top(1.5);
+
+      @include breakpoint-md {
+        @include margin-top(1);
+      }
+    }
+
+    &-image {
+      margin: 0 auto;
+    }
+
+    &-split {
+      margin-top: 32px;
+
+      @include breakpoint-md {
+        display: flex;
+        flex-direction: row;
+        background: url('../assets/svg/arrow-plane-middle.svg') no-repeat 50% 95%;
+      }
+
+      li:first-child {
+
+        @include breakpoint-md {
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+
+      li:last-child {
+
+        @include breakpoint-md {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  &__inner {
+    @extend %layout-container-center, %layout-container-divider;
+    text-align: center;
+  }
+
+  &__title {
+    @include h3;
+    @include margin-bottom(3);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    @include breakpoint-md {
+      display: flex;
+      margin-left: -32px;
+      margin-right: -32px;
+    }
+
+    blockquote {
+      @include body;
+      font-style: normal;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      @include margin-bottom(1);
+
+      @include breakpoint-md {
+        text-align: left;
+      }
+    }
+
+    &-item {
+      text-align: center;
+      @include margin-bottom(2);
+
+      @include breakpoint-md {
+        padding-right: 32px;
+        padding-left: 32px;
+        border-right: 1px solid $color-border;
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &-company {
+        display: inline-flex;
+        align-items: center;
+        flex-direction: row;
+        text-align: left;
+      }
+
+      &-company-details {
+        padding-left: 16px;
+      }
+
+      &-company-name {
+        @include body-s;
+        margin-top: 0;
+        @include margin-bottom(0);
+        line-height: 1;
+      }
+
+      small {
+      }
+
+      &-company-image {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+.signup {
+  &__inner {
+    @extend %layout-container-center, %layout-container-divider;
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include body-l;
+  }
+
+  &__newsletter {
+    lost-center: 600px;
+  }
+
+  &__newsletter-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__newsletter-input-wrapper {
+    position: relative;
+    width: 50%;
+  }
+
+  &__newsletter-input-wrapper + &__newsletter-button {
+    margin-left: 16px;
+  }
+
+  &__newsletter-button {
+    @extend %button;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__notice {
+  }
+
+  &__newsletter-prefix {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 16px;
+  }
+}

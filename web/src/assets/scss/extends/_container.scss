@@ -1,0 +1,28 @@
+$section-height: 50px;
+
+%layout-container {
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include breakpoint-sm {
+    lost-center: 600px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include breakpoint-md {
+    lost-center: $layout-width;
+  }
+}
+
+%layout-container-center {
+  @extend %layout-container;
+}
+
+%layout-container-divider {
+  @include margin-top(2);
+  @include padding-top(2);
+  @include padding-bottom(1.5);
+  border-top: 1px solid $color-border;
+}

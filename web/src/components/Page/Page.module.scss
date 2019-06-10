@@ -1,0 +1,47 @@
+@import '../../assets/scss/helpers';
+
+.page {
+  lost-center: $layout-width;
+  @include margin-bottom(2);
+
+  &__inner {
+    padding: 25px 20px;
+  }
+
+  &__title {
+    @include h1;
+    font-weight: 600;
+    @include margin-top(0);
+  }
+
+  &__body {
+    font-size: $typographic-base-font-size;
+    @include line-height(1);
+    @include margin(0, 0, 1);
+  }
+
+}
+
+@include breakpoint-sm {
+  .page {
+    lost-center: $layout-width;
+
+    &__inner {
+      padding: 30px 20px;
+    }
+
+  }
+
+}
+
+@include breakpoint-md {
+  .page {
+    lost-center: $layout-width;
+
+    &__inner {
+      padding: 40px 35px;
+    }
+
+  }
+
+}

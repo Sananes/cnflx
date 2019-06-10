@@ -1,0 +1,124 @@
+$base-size: $typographic-base-font-size;
+
+@mixin display {
+  font-size: $base-size * 2.13;
+  @include line-height(1.5);
+  @include margin-top(2);
+  @include margin-bottom(1);
+  letter-spacing: -0.005em;
+  font-weight: 700;
+
+  @include breakpoint-sm {
+    font-size: $base-size * 4.933;
+    // @include line-height(3);
+    line-height: 1.1;
+    @include margin-top(4);
+    @include margin-bottom(1);
+  }
+}
+
+@mixin h1 {
+  font-size: $base-size * 2.5;
+  @include line-height(1.75);
+  @include margin-top(2);
+  @include margin-bottom(1);
+  letter-spacing: -0.005em;
+  font-weight: $font-weight-bold;
+
+  @include breakpoint-md() {
+    font-size: $base-size * 4.933;
+    // @include line-height(3);
+    line-height: 1.1;
+    @include margin-top(4);
+    @include margin-bottom(1);
+  }
+}
+
+@mixin h2 {
+  font-size: $base-size * 2.4;
+  line-height: 1.3;
+  @include margin-top(2);
+  @include margin-bottom(0.5);
+
+  @include breakpoint-md {
+    font-size: $base-size * 3.333;
+    @include line-height(2.5);
+  }
+}
+
+@mixin h3 {
+  font-size: $base-size * 1.5;
+  @include line-height(1.3);
+  @include margin-top(2);
+  @include margin-bottom(0.5);
+
+  @include breakpoint-md {
+    font-size: $base-size * 2.4;
+    @include line-height(1);
+    @include margin-top(2);
+    @include margin-bottom(1);
+  }
+}
+
+@mixin h4 {
+  font-size: $base-size * 1.2;
+  @include line-height(1);
+  @include margin-top(1.5);
+  @include margin-bottom(.5);
+}
+
+
+@mixin h5 {
+  font-size: $base-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(.2);
+}
+
+@mixin h6 {
+  font-size: $base-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(.5);
+}
+
+@mixin body-l {
+  font-size: $base-size;
+  @include line-height(1);
+  @include margin-bottom(1);
+
+  @include breakpoint-md() {
+    font-size: $base-size * 1.266;
+  }
+}
+
+@mixin body {
+  font-size: $base-size;
+  @include line-height(1);
+  @include margin-bottom(1);
+
+  @include breakpoint-md() {
+    font-size: $base-size;
+  }
+}
+
+@mixin body-s {
+  font-size: $base-size * .9333;
+  @include line-height(1);
+  @include margin-bottom(1);
+}
+
+@mixin menu {
+  @include body;
+}
+
+@mixin button {
+  @include body;
+}
+
+@mixin overline {
+  font-size: $base-size * 0.73;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

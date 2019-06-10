@@ -1,0 +1,25 @@
+@import '../../assets/scss/helpers';
+
+$header-height: 80px;
+
+.header {
+  box-sizing: border-box;
+  background: $color-header-background;
+
+  &__inner {
+    @extend %layout-container;
+    lost-center: 1000px;
+    display: flex;
+    height: $header-height;
+    align-items: center;
+  }
+
+  &__logo {
+    flex: 1;
+    margin-top: -3px;
+
+    svg {
+      width: 140px;
+    }
+  }
+}

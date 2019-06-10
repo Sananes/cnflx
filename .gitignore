@@ -1,0 +1,11 @@
+web/node_modules/
+web/flow-typed/
+web/.cache/
+web/public/
+web/npm-debug.log
+web/.eslintcache
+web/.gatsby-context.js
+web/.idea
+web/gatsby-starter-lumen.iml
+studio/node_modules/
+.DS_Store
