@@ -2,6 +2,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 import type { Node as ReactNode } from "react";
+import Header from "../Header";
+import Footer from "../Footer";
 import styles from "./Layout.module.scss";
 
 type Props = {
@@ -20,7 +22,9 @@ const Layout = ({ children, title, description }: Props) => (
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
     </Helmet>
+    <Header />
     {children}
+    <Footer />
   </div>
 );
 

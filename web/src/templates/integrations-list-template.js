@@ -15,7 +15,6 @@ const IntegrationsListTemplate = () => {
 
   return (
     <Layout className={styles["integrations"]}>
-      <Header />
       <Page
         title="Integrate with your workflow"
         subtitle="We've definitely got you covered when it comes to using alternative

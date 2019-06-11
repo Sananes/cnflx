@@ -44,7 +44,6 @@ const IndexTemplate = ({ data }) => {
   return (
     <Layout>
       <div className={styles["wrapper"]}>
-        <Header />
         <section className={styles["hero"]}>
           <div className={styles["hero__inner"]}>
             <h1 className={styles["hero__title"]}>
@@ -305,7 +304,6 @@ const IndexTemplate = ({ data }) => {
             <p className={styles["signup__notice"]}>Credit card is required.</p>
           </div>
         </section>
-        <Footer />
       </div>
     </Layout>
   );

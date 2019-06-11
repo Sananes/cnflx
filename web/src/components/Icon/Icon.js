@@ -4,7 +4,16 @@ import PropTypes from "prop-types";
 import styles from "./Icon.module.scss";
 import { icons } from "../../constants";
 
-const Icon = ({ stroke, fill, width, name, left, top, strokeWidth }) => (
+const Icon = ({
+  stroke,
+  fill,
+  width,
+  className,
+  name,
+  left,
+  top,
+  strokeWidth
+}) => (
   <svg
     viewBox={icons[name].viewBox}
     stroke={stroke}
@@ -12,7 +21,7 @@ const Icon = ({ stroke, fill, width, name, left, top, strokeWidth }) => (
     width={`${width}px`}
     left={left}
     top={top}
-    className={styles["svg"]}
+    className={className ? className : styles["svg"]}
     strokeWidth={strokeWidth}
   >
     <path d={icons[name].path} />
