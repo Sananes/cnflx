@@ -20,7 +20,7 @@
 
   &__subtitle {
     @include body-l;
-    @include margin-bottom(2);
+    @include margin-bottom(3);
 
     .page__inner--center & {
       lost-center: 640px;

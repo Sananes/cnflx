@@ -63,6 +63,8 @@ $text-subdued: lighten($color-base, 20%); //#5D6B7D
 $text-dimmed: lighten($color-base, 50%); // #6A7A8E
 $text-muted: lighten($color-base, 60%); // #C3C9D1
 
+$text-link-hover: darken($color-primary, 5%);
+
 // Font weight
 $font-weight-normal: 400;
 $font-weight-medium: 500;

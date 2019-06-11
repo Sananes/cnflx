@@ -3,7 +3,7 @@
 .footer {
 
   &__inner {
-    @extend %layout-container-center, %layout-container-divider;
+    @extend %layout-container, %layout-container-divider;
   }
 
   &__copyright {
