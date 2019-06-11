@@ -67,7 +67,7 @@ const Footer = () => (
 
       <div className={styles["footer__details"]}>
         <Link to="/" className={styles["footer__logo"]}>
-          <Svg icon={getSvg("logo")} />
+          <Svg name="logo" />
         </Link>
         <p className={styles["footer__address"]}>
           Ambachtsmark 164, Almere, Netherlands

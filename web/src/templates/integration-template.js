@@ -2,7 +2,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Feed from "../components/Feed";
+import Icon from "../components/Icon";
 import Page from "../components/Page";
 import { useSiteMetadata } from "../hooks";
 
@@ -21,6 +21,7 @@ const IntegrationTemplate = ({ data }: Props) => {
     <Layout title={siteTitle} description={siteSubtitle}>
       <Page>
         <h1>{data.sanityIntegration.name}</h1>
+        <Icon name="plus" />
       </Page>
     </Layout>
   );

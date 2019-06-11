@@ -2,7 +2,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import { Link } from "gatsby";
-import { getSvg } from "../../utils";
 import Svg from "../Svg";
 import { useSiteMetadata } from "../../hooks";
 import Menu from "./Menu";
@@ -19,7 +18,7 @@ const Header = ({ isIndex }: Props) => {
       <div className={styles["header__inner"]}>
         <div className={styles["header__logo"]}>
           <Link to="/" className={styles["header__logolink"]}>
-            <Svg icon={getSvg("logo")} />
+            <Svg name="logo" />
           </Link>
         </div>
         <Menu menu={menu} />
