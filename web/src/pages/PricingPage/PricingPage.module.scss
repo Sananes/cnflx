@@ -1,0 +1,82 @@
+@import '../../assets/scss/helpers';
+
+.pricing {
+  &__list {
+    lost-utility: clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    lost-column: 1/4 0 0;
+    box-sizing: border-box;
+    border: 1px solid $color-border;
+    border-left: 0px;
+    padding: 20px;
+
+    &:first-child {
+      border-top-left-radius: $global-radius;
+      border-bottom-left-radius: $global-radius;
+      border-left: 1px solid $color-border;
+    }
+
+    &:last-child {
+      border-top-right-radius: $global-radius;
+      border-bottom-right-radius: $global-radius;
+      border-left: 0;
+    }
+
+    &-image + &-title {
+      @include margin-top(1);
+    }
+
+    &-price {
+      margin: 0 auto;
+      display: inline-flex;
+    }
+
+    &-price-currency,
+    &-price-title,
+    &-price-date {
+      display: inline;
+    }
+
+    &-price-currency {
+      margin-top: 6px;
+    }
+
+    &-price-date {
+      align-self: flex-end;
+      margin-bottom: 8px;
+    }
+
+    &-price-title {
+      @include h2;
+      padding: 0 4px;
+      @include margin-top(0);
+      @include margin-bottom(0);
+    }
+
+    &-title {
+      @include h4;
+      @include margin-top(0);
+    }
+
+    &-subtitle {
+      @include body;
+    }
+
+    &-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-button {
+      display: block;
+      @extend %button-secondary;
+      @include margin-top(1);
+    }
+  }
+}

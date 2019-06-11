@@ -2,12 +2,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import styles from "./Integrations.module.scss";
-import Layout from "../components/Layout";
-import Icon from "../components/Icon";
-import Svg from "../components/Svg";
-import Page from "../components/Page";
-import { useSiteMetadata } from "../hooks";
+import styles from "./IntegrationPage.module.scss";
+import Layout from "../../components/Layout";
+import Icon from "../../components/Icon";
+import Svg from "../../components/Svg";
+import Page from "../../components/Page";
+import { useSiteMetadata } from "../../hooks";
 
 export const query = graphql`
   query($slug: String) {

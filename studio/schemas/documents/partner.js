@@ -1,10 +1,8 @@
-import icon from "react-icons/lib/md/business-center";
-
 export default {
   name: "partner",
   title: "Partner",
   type: "document",
-  icon,
+
   fields: [
     {
       name: "name",

@@ -3,11 +3,11 @@ import React from "react";
 import { Link } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import Image from "gatsby-image";
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import Page from "../components/Page";
+import Layout from "../../components/Layout";
+import Header from "../../components/Header";
+import Page from "../../components/Page";
 import styles from "./Integrations.module.scss";
-import { useIntegrationList, useSiteMetadata } from "../hooks";
+import { useIntegrationList, useSiteMetadata } from "../../hooks";
 
 const IntegrationsListTemplate = () => {
   const { title, subtitle } = useSiteMetadata();
@@ -24,7 +24,10 @@ const IntegrationsListTemplate = () => {
       >
         <ul className={styles["integrations__list"]}>
           {integrationList.map(integration => (
-            <li className={styles["integrations__list-item"]}>
+            <li
+              key={integration.node._key}
+              className={styles["integrations__list-item"]}
+            >
               <Link
                 to={`/integration/${kebabCase(integration.node.slug.current)}/`}
                 className={

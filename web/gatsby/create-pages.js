@@ -18,19 +18,12 @@ const createPages = async ({ graphql, actions }) => {
   // Integrations
   createPage({
     path: "/integrations",
-    component: path.resolve("./src/templates/integrations-list-template.js")
+    component: path.resolve("./src/pages/Integrations/Integrations.js")
   });
 
-  // Tags list
   createPage({
-    path: "/tags",
-    component: path.resolve("./src/templates/tags-list-template.js")
-  });
-
-  // Categories list
-  createPage({
-    path: "/categories",
-    component: path.resolve("./src/templates/categories-list-template.js")
+    path: "/pricing",
+    component: path.resolve("./src/pages/PricingPage/PricingPage.js")
   });
 
   // Posts and pages from markdown
@@ -89,7 +82,7 @@ const createPages = async ({ graphql, actions }) => {
   integrations.forEach(integration => {
     actions.createPage({
       path: "integration/" + integration.slug.current,
-      component: path.resolve("./src/templates/integration-template.js"),
+      component: path.resolve("./src/pages/IntegrationPage/IntegrationPage.js"),
       context: {
         slug: integration.slug.current
       }

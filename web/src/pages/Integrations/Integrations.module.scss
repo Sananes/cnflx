@@ -1,4 +1,4 @@
-@import '../assets/scss/helpers';
+@import '../../assets/scss/helpers';
 
 .integrations {
 
@@ -62,54 +62,5 @@
         padding: 0 20px;
       }
     }
-  }
-}
-
-// Single page
-.integration {
-
-  &__wrapper {
-    text-align: center;
-  }
-  &__connect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  &__title {
-    @include h2;
-    @include margin-top(1);
-  }
-
-  &__title,
-  &__description {
-    text-align: center;
-  }
-
-  &__description {
-    lost-center: 640px;
-  }
-
-  &__plus {
-    width: 32px;
-    height: 32px;
-    flex: none;
-  }
-
-  &__company-logo,
-  &__logo {
-    max-width: 120px;
-    flex: 1;
-  }
-
-  &__company-logo {
-    flex: 1;
-  }
-
-  &__logo {
-    flex: 1;
-    color: $color-primary;
   }
 }

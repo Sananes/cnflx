@@ -7,9 +7,11 @@ import MDPage from "react-icons/lib/md/insert-drive-file";
 const hiddenDocTypes = listItem =>
   ![
     "partner",
+    "pricing",
     "integration",
     "siteIntegration",
     "testimonial",
+    "object",
     "siteSettings"
   ].includes(listItem.getId());
 
@@ -71,6 +73,15 @@ export default () =>
         .icon(MDHdmi)
         .schemaType("integration")
         .child(S.documentTypeList("integration").title("Integrations")),
+      S.listItem()
+        .title("Pricing")
+        .icon(MDHdmi)
+        .child(
+          S.editor()
+            .id("pricing")
+            .schemaType("pricing")
+            .documentId("pricing")
+        ),
       S.listItem()
         .title("Partners")
         .icon(MdPerson)
