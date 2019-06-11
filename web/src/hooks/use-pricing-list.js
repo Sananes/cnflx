@@ -6,19 +6,13 @@ const usePricingList = () => {
     graphql`
       query PricingListQuery {
         sanityPricing {
-          packages {
-            description
-            _key
-            endusers
-            name
-            price
-          }
+          _rawPackage(resolveReferences: { maxDepth: 4 })
         }
       }
     `
   );
 
-  return sanityPricing.packages;
+  return sanityPricing._rawPackage;
 };
 
 export default usePricingList;

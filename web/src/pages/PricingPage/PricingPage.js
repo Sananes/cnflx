@@ -1,10 +1,8 @@
 // @flow
 import React from "react";
 import { Link } from "gatsby";
-import kebabCase from "lodash/kebabCase";
 import Image from "gatsby-image";
 import Layout from "../../components/Layout";
-import Header from "../../components/Header";
 import Page from "../../components/Page";
 import styles from "./PricingPage.module.scss";
 import { usePricingList, useSiteMetadata } from "../../hooks";
