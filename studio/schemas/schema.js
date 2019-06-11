@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import siteSettings from "./documents/siteSettings";
 import blockContent from "./documents/blockContent";
 import testimonial from "./documents/testimonial";
+import integrationPage from "./documents/integrationPage";
 import integration from "./documents/integration";
 import partner from "./documents/partner";
 // Then we give our schema to the builder and provide the result to Sanity
@@ -20,6 +21,7 @@ export default createSchema({
     blockContent,
     partner,
     testimonial,
-    integration
+    integration,
+    integrationPage
   ])
 });

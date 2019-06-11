@@ -2,11 +2,16 @@ import S from "@sanity/desk-tool/structure-builder";
 import MdSettings from "react-icons/lib/md/settings";
 import MdPerson from "react-icons/lib/md/person";
 import MDHdmi from "react-icons/lib/md/settings-input-hdmi";
+import MDPage from "react-icons/lib/md/insert-drive-file";
 
 const hiddenDocTypes = listItem =>
-  !["partner", "integration", "testimonial", "siteSettings"].includes(
-    listItem.getId()
-  );
+  ![
+    "partner",
+    "integration",
+    "siteIntegration",
+    "testimonial",
+    "siteSettings"
+  ].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -22,27 +27,50 @@ export default () =>
             .documentId("siteSettings")
         ),
       S.listItem()
-        .title("Integrations")
-        .icon(MDHdmi)
+        .title("Pages")
+        .icon(MDPage)
         .child(
           S.list()
-            .title("Integrations")
+            .title("Pages")
             .items([
               S.listItem()
-                .title("Settings")
-                .icon(MdSettings)
+                .title("Integrations")
+                .icon(MDPage)
                 .child(
                   S.editor()
-                    .id("siteSettings")
-                    .schemaType("siteSettings")
-                    .documentId("siteSettings")
-                ),
-              S.listItem()
-                .title("Integrations")
-                .schemaType("integration")
-                .child(S.documentTypeList("integration").title("Integrations"))
+                    .id("siteIntegration")
+                    .schemaType("siteIntegration")
+                    .documentId("siteIntegration")
+                )
             ])
         ),
+      // S.listItem()
+      //   .title("Integrations")
+      //   .icon(MDHdmi)
+      //   .child(
+      //     S.list()
+      //       .title("Integrations")
+      //       .items([
+      //         S.listItem()
+      //           .title("Settings")
+      //           .icon(MdSettings)
+      //           .child(
+      //             S.editor()
+      //               .id("siteSettings")
+      //               .schemaType("siteSettings")
+      //               .documentId("siteSettings")
+      //           ),
+      //         S.listItem()
+      //           .title("Integrations")
+      //           .schemaType("integration")
+      //           .child(S.documentTypeList("integration").title("Integrations"))
+      //       ])
+      //   ),
+      S.listItem()
+        .title("Integrations")
+        .icon(MDHdmi)
+        .schemaType("integration")
+        .child(S.documentTypeList("integration").title("Integrations")),
       S.listItem()
         .title("Partners")
         .icon(MdPerson)
