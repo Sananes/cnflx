@@ -1,8 +1,19 @@
 @import '../../assets/scss/helpers';
 
 .pricing {
+
+  &__wrapper {
+    position: relative;
+  }
+
+  // &__pattern {
+  //   @extend %pattern;
+  //   top: 10%;
+  // }
+
   &__list {
     display: flex;
+    position: relative;
     justify-content: stretch;
     flex-wrap: wrap;
     lost-utility: clearfix;
@@ -11,13 +22,15 @@
     margin: 0;
 
     @include breakpoint-lg {
-      margin: 0 -40px;
+      margin: 0;
     }
   }
 
   &__item {
     display: flex;
+    position: relative;
     flex-direction: column;
+    align-items: center;
     justify-content: stretch;
     width: 100%;
     box-sizing: border-box;
@@ -26,6 +39,7 @@
     border-left: 0px;
     padding: 20px;
     margin-bottom: 20px;
+
 
     @include breakpoint-sm {
       lost-column: 1/2 2 20px;
@@ -46,7 +60,7 @@
     &-price {
       display: inline-flex;
       margin: 0 auto;
-      margin-top: -10px;
+      margin-top: -4px;
     }
 
     &-price-currency,
@@ -72,13 +86,21 @@
     }
 
     &-title {
-      @include h4;
+      @include h5;
       @include margin-top(0);
+      lost-center: 640px;
     }
 
     &-subtitle {
-      @include body;
       flex: 1;
+      @include body;
+      @include margin-top(0);
+      @include margin-bottom(1.5);
+
+      @include breakpoint-md {
+        @include margin-bottom(1);
+      }
+
     }
 
     &-features {
@@ -87,16 +109,29 @@
       margin: 0;
       text-align: left;
 
+
+      @include breakpoint-md {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
       &-item {
         display: flex;
+        width: auto;
         align-items: center;
+        justify-content: center;
+
+        @include breakpoint-sm {
+          justify-content: flex-start;
+        }
       }
     }
 
     &-checkmark {
       padding: 1px;
-      height: 16px;
-      width: 16px;
+      height: 14px;
+      width: 14px;
       margin: 0px;
       margin-right: 8px;
       background-color: transparentize($color-primary, 0.8);
@@ -116,6 +151,59 @@
       @extend %button-secondary;
       @include margin-top(1);
       @include margin-bottom(0);
+    }
+  }
+}
+
+.custom-pricing {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: left;
+  @include padding(3, 2);
+  @include margin-bottom(3);
+  background: $color-background-highlight;
+
+  &__title {
+    @include h5;
+    @include margin-bottom(0.2);
+    @include margin-top(0);
+  }
+
+  &__subtitle {
+    margin-bottom: 0;
+  }
+
+  &__heading {
+    flex: 1;
+  }
+
+  &__button {
+    display: inline-block;
+    align-self: center;
+    @extend %button-secondary;
+    justify-self: flex-end;
+    @include margin-bottom(0);
+  }
+}
+
+.faq {
+  &__list {
+    @include clear-list-style;
+    text-align: left;
+  }
+
+  &__item {
+    @include clear-list-style;
+    @include breakpoint-sm {
+    }
+
+    @include breakpoint-md {
+      lost-column: 1/2 2 64px;
+    }
+
+    &-title {
+      @include h5;
     }
   }
 }

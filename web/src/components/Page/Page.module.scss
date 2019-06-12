@@ -15,7 +15,7 @@
   }
 
   &__title {
-    @include h2
+    @include h2;
   }
 
   &__subtitle {
@@ -37,24 +37,15 @@
 
 @include breakpoint-sm {
   .page {
-    lost-center: $layout-width;
-
     &__inner {
-      padding: 30px 20px;
     }
-
   }
-
 }
 
 @include breakpoint-md {
   .page {
-    lost-center: $layout-width;
-
     &__inner {
       padding: 40px 35px;
     }
-
   }
-
 }

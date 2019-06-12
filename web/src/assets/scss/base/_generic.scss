@@ -9,7 +9,7 @@ body {
   margin: 0;
   background-color: $color-background;
   font-family: $typographic-font-family;
-  color: $text-subdued;
+  color: $text-mid;
   font-weight: $font-weight-normal;
   line-height: $typographic-base-line-height;
   font-size: $typographic-base-font-size;
@@ -111,7 +111,6 @@ button {
 p {
   @include body;
   @include margin-top(0.5);
-  color: $text-subdued;
 }
 
 blockquote {

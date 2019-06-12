@@ -61,19 +61,28 @@ $base-size: $typographic-base-font-size;
 }
 
 @mixin h4 {
-  font-size: $base-size * 1.2;
-  @include line-height(1);
+  font-size: $base-size * 1.733;
+  @include line-height(1.5);
   @include margin-top(1.5);
   @include margin-bottom(.5);
+
+  & + p {
+    @include margin-top(.25);
+  }
 }
 
 
 @mixin h5 {
-  font-size: $base-size;
+  font-size: $base-size * 1.2;
   @include line-height(1);
-  @include margin-top(2.5);
-  @include margin-bottom(.2);
+  @include margin-top(1.5);
+  @include margin-bottom(.3);
+
+  & + p {
+    @include margin-top(.25);
+  }
 }
+
 
 @mixin h6 {
   font-size: $base-size;

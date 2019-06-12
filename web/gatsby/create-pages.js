@@ -9,7 +9,7 @@ const createPages = async ({ graphql, actions }) => {
   // Homepage
   createPage({
     path: "/",
-    component: path.resolve("./src/pages/index.js")
+    component: path.resolve("./src/pages/Homepage/Homepage.js")
   });
 
   // 404

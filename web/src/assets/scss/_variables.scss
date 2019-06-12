@@ -3,19 +3,22 @@
  */
 
 // Colors
-$color-base: #24374e;
+// $color-base: #040402;
+$color-base: #1B2225;
+
+$color-base-text: #1B2225;
 // $color-primary: #00AAF1;
 $color-primary: #009AF1;
 $color-secondary: #F7A046;
 
 $color-white: #FFF;
-$color-gray: lighten($color-base, 40%);
-$color-border: lighten($color-base, 70%);
-$color-border-light: lighten($color-base, 80%);
-$color-gray-background: lighten($color-base, 75%);
+$color-gray: transparentize($color-base, 0.4);
+$color-border: transparentize($color-base, 0.90);
+$color-border-light: transparentize($color-base, 0.95);
+$color-gray-background: transparentize($color-base, 0.97);
 
 // $color-background: #fffefc;
-$color-background: $color-white;
+$color-background: #fffefc;
 // $color-background: $color-white;
 $color-background-highlight: $color-gray-background;
 
@@ -40,7 +43,7 @@ $typographic-leading: round(15 * ($typographic-root-font-size / 100) * $typograp
 
 
 // Inputs
-$color-input-border: lighten($color-base, 65%);
+$color-input-border: transparentize($color-base, 0.85);
 $color-input-background: transparent;
 $input-height: 35px;
 
@@ -58,10 +61,11 @@ $layout-breakpoint-md: 960px;
 $layout-breakpoint-lg: 1100px;
 
 // Text Colors
-$text-dark: $color-base;
-$text-subdued: lighten($color-base, 20%); //#5D6B7D
-$text-dimmed: lighten($color-base, 50%); // #6A7A8E
-$text-muted: lighten($color-base, 60%); // #C3C9D1
+$text-dark: $color-base-text;
+$text-subdued: transparentize($color-base-text, 0.25); //#5D6B7D
+$text-mid: transparentize($color-base-text, 0.4); //#5D6B7D
+$text-dimmed: transparentize($color-base-text, 0.5); // #6A7A8E
+$text-muted: transparentize($color-base-text, 0.6); // #C3C9D1
 
 $text-link-hover: darken($color-primary, 5%);
 

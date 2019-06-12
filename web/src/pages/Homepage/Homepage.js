@@ -2,17 +2,17 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Svg from "../components/Svg";
-import { useSiteMetadata } from "../hooks";
-import heroSVG from "../assets/svg/hero.svg";
-import collectSVG from "../assets/svg/collect-feedback.svg";
-import communicateSVG from "../assets/svg/communicate.svg";
-import organiseSVG from "../assets/svg/organise-feedback.svg";
-import confluxSVG from "../assets/svg/conflux-logo.svg";
-import styles from "./Homepage/Homepage.module.scss";
+import Layout from "../../components/Layout";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Svg from "../../components/Svg";
+import { useSiteMetadata } from "../../hooks";
+import heroSVG from "../../assets/svg/hero.svg";
+import collectSVG from "../../assets/svg/collect-feedback.svg";
+import communicateSVG from "../../assets/svg/communicate.svg";
+import organiseSVG from "../../assets/svg/organise-feedback.svg";
+import confluxSVG from "../../assets/svg/conflux-logo.svg";
+import styles from "./Homepage.module.scss";
 
 export const query = graphql`
   {

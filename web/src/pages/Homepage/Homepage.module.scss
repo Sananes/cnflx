@@ -64,6 +64,7 @@ $section-spacing: 50px;
 
 
   &__image-wrapper {
+
   }
 
   &__pattern {
@@ -177,7 +178,7 @@ $section-spacing: 50px;
     }
 
     &-title {
-      @include h4;
+      @include h5;
       @include margin-top(1.5);
 
       @include breakpoint-md {
