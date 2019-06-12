@@ -24,19 +24,26 @@ $tablet-padding: 24px;
 }
 
 %layout-container-divider {
+  position: relative;
   @include margin-top(2);
   @include padding-top(2);
   @include padding-bottom(1.5);
 
   &:before {
     border-top: 1px solid $color-border;
-    content: 0;
+    content: "";
     position: absolute;
-    width: 100%;
+    width: calc(100% - #{$mobile-padding * 2});
     height: 100%;
     top: 0;
-    width: calc($layout-width);
-    padding-left: $mobile-padding;
-    padding-right: $mobile-padding;
+    left: $mobile-padding;
+    right: $mobile-padding;
+    bottom: 0;
+
+    @include breakpoint-md {
+      width: calc(100% - #{$tablet-padding * 2});
+      left: $tablet-padding;
+      right: $tablet-padding;
+    }
   }
 }
