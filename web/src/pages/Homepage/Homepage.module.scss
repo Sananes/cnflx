@@ -23,13 +23,13 @@ $section-spacing: 50px;
 
   &__title {
     @include h1;
-    @include margin-top(3.5);
+    @include margin-top(2.5);
     @include margin-bottom(1);
   }
 
   &__subtitle {
     @include body-l;
-    @include margin-bottom(2);
+    @include margin-bottom(1.5);
   }
 
   &__signup {

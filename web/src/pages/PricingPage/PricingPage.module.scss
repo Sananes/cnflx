@@ -1,5 +1,8 @@
 @import '../../assets/scss/helpers';
 
+
+// TODO: Follow netlify pricing plan
+
 .pricing {
 
   &__wrapper {
@@ -88,7 +91,6 @@
     &-title {
       @include h5;
       @include margin-top(0);
-      lost-center: 640px;
     }
 
     &-subtitle {
