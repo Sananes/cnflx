@@ -2,38 +2,51 @@
 
 .pricing {
   &__list {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
     lost-utility: clearfix;
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+
+    @include breakpoint-lg {
+      margin: 0 -40px;
+    }
   }
 
   &__item {
-    lost-column: 1/4 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 100%;
     box-sizing: border-box;
-    border: 1px solid $color-border;
+    // border: 1px solid $color-border;
+    background-color: $color-background-highlight;
     border-left: 0px;
     padding: 20px;
+    margin-bottom: 20px;
 
-    &:first-child {
-      border-top-left-radius: $global-radius;
-      border-bottom-left-radius: $global-radius;
-      border-left: 1px solid $color-border;
+    @include breakpoint-sm {
+      lost-column: 1/2 2 20px;
+    }
+    @include breakpoint-md {
+      lost-column: 1/4 4 20px;
     }
 
-    &:last-child {
-      border-top-right-radius: $global-radius;
-      border-bottom-right-radius: $global-radius;
-      border-left: 0;
+    &-image {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &-image + &-title {
-      @include margin-top(1);
+      @include margin-top(0.5);
     }
 
     &-price {
-      margin: 0 auto;
       display: inline-flex;
+      margin: 0 auto;
+      margin-top: -10px;
     }
 
     &-price-currency,
@@ -65,18 +78,44 @@
 
     &-subtitle {
       @include body;
+      flex: 1;
     }
 
     &-features {
       list-style: none;
       padding: 0;
       margin: 0;
+      text-align: left;
+
+      &-item {
+        display: flex;
+        align-items: center;
+      }
     }
+
+    &-checkmark {
+      padding: 1px;
+      height: 16px;
+      width: 16px;
+      margin: 0px;
+      margin-right: 8px;
+      background-color: transparentize($color-primary, 0.8);
+      border-radius: 300px;
+      color: $color-primary;
+    }
+
+    // &-button-wrapper {
+    //   flex: 1;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: flex-end;
+    // }
 
     &-button {
       display: block;
       @extend %button-secondary;
       @include margin-top(1);
+      @include margin-bottom(0);
     }
   }
 }

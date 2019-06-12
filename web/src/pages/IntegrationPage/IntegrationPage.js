@@ -16,9 +16,7 @@ export const query = graphql`
       description
       image {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+          url
         }
       }
     }
@@ -33,10 +31,10 @@ const IntegrationTemplate = ({ data }: Props) => {
       <Page>
         <div className={styles["integration__wrapper"]}>
           <div className={styles["integration__connect"]}>
-            <Img
+            <img
               className={styles["integration__company-logo"]}
-              fluid={data.sanityIntegration.image.asset.fluid}
-            />{" "}
+              src={data.sanityIntegration.image.asset.url}
+            />
             <Icon
               name="plus"
               fill="none"

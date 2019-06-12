@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Image from "gatsby-image";
+import Icon from "../../components/Icon";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
 import styles from "./PricingPage.module.scss";
@@ -17,7 +18,17 @@ import smallBusinessHoverSVG from "../../assets/svg/pricing/small-business-hover
 import companySVG from "../../assets/svg/pricing/company.svg";
 import companyHoverSVG from "../../assets/svg/pricing/company-hover.svg";
 
-const PricingTemplate = () => {
+export const query = graphql`
+  query PricingImages {
+    pricingAssets: imageSharp(id: { regex: "/pricing/" }) {
+      sizes(maxWidth: 600) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    }
+  }
+`;
+
+const PricingTemplate = ({ data }) => {
   const { title, subtitle } = useSiteMetadata();
   const pricingList = usePricingList();
 
@@ -35,7 +46,7 @@ const PricingTemplate = () => {
                 {price.name === "Hobby" ? (
                   <img
                     className={styles["pricing__item-image"]}
-                    src={hobbySVG}
+                    src={hobbyHoverSVG}
                   />
                 ) : (
                   ""
@@ -43,7 +54,7 @@ const PricingTemplate = () => {
                 {price.name === "Small Business" ? (
                   <img
                     className={styles["pricing__item-image"]}
-                    src={smallBusinessSVG}
+                    src={smallBusinessHoverSVG}
                   />
                 ) : (
                   ""
@@ -51,7 +62,7 @@ const PricingTemplate = () => {
                 {price.name === "Company" ? (
                   <img
                     className={styles["pricing__item-image"]}
-                    src={companySVG}
+                    src={companyHoverSVG}
                   />
                 ) : (
                   ""
@@ -59,7 +70,7 @@ const PricingTemplate = () => {
                 {price.name === "Enterprise" ? (
                   <img
                     className={styles["pricing__item-image"]}
-                    src={enterpriseSVG}
+                    src={enterpriseHoverSVG}
                   />
                 ) : (
                   ""
@@ -85,23 +96,39 @@ const PricingTemplate = () => {
                 </p>
                 <ul className={styles["pricing__item-features"]}>
                   <li className={styles["pricing__item-features-item"]}>
+                    <Icon
+                      name="checkmark"
+                      className={styles["pricing__item-checkmark"]}
+                    />{" "}
                     Up to {price.endusers} End Users
                   </li>
                   <li className={styles["pricing__item-features-item"]}>
+                    <Icon
+                      name="checkmark"
+                      className={styles["pricing__item-checkmark"]}
+                    />{" "}
                     Feedback Translation
                   </li>
                   <li className={styles["pricing__item-features-item"]}>
+                    <Icon
+                      name="checkmark"
+                      className={styles["pricing__item-checkmark"]}
+                    />{" "}
                     Emotion Analysis
                   </li>
                   <li className={styles["pricing__item-features-item"]}>
+                    <Icon
+                      name="checkmark"
+                      className={styles["pricing__item-checkmark"]}
+                    />{" "}
                     Custom Domain
                   </li>
-                  <li className={styles["pricing__item-features-item"]}>
-                    <Link className={styles["pricing__item-button"]} to="/">
-                      Get Started
-                    </Link>
-                  </li>
                 </ul>
+                <div className={styles["pricing__item-button-wrapper"]}>
+                  <Link className={styles["pricing__item-button"]} to="/">
+                    Get Started
+                  </Link>
+                </div>
               </li>
             ))}
         </ul>

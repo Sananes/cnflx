@@ -14,9 +14,7 @@ const useIntegrationList = () => {
               name
               image {
                 asset {
-                  fluid {
-                    ...GatsbySanityImageFluid
-                  }
+                  url
                 }
               }
             }

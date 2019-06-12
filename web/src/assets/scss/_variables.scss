@@ -12,7 +12,7 @@ $color-white: #FFF;
 $color-gray: lighten($color-base, 40%);
 $color-border: lighten($color-base, 70%);
 $color-border-light: lighten($color-base, 80%);
-$color-gray-background: lighten($color-base, 76%);
+$color-gray-background: lighten($color-base, 75%);
 
 // $color-background: #fffefc;
 $color-background: $color-white;
@@ -53,7 +53,7 @@ $layout-post-single-width: 945px;
 $layout-post-width: $layout-post-single-width - 305px;
 
 $layout-width: 960px;
-$layout-breakpoint-sm: 685px;
+$layout-breakpoint-sm: 640px;
 $layout-breakpoint-md: 960px;
 $layout-breakpoint-lg: 1100px;
 

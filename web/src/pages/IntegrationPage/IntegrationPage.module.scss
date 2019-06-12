@@ -36,12 +36,12 @@
 
   &__company-logo,
   &__logo {
+    min-width: 120px;
     max-width: 120px;
-    flex: 1;
   }
 
   &__company-logo {
-    flex: 1;
+    max-width: 120px;
   }
 
   &__logo {

@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import Image from "gatsby-image";
 import Layout from "../../components/Layout";
-import Header from "../../components/Header";
 import Page from "../../components/Page";
 import styles from "./Integrations.module.scss";
 import { useIntegrationList, useSiteMetadata } from "../../hooks";
@@ -36,9 +35,9 @@ const IntegrationsListTemplate = () => {
                   integration.node.slug.current
                 }
               >
-                <Image
+                <img
                   className={styles["integrations__list-item-image"]}
-                  fluid={integration.node.image.asset.fluid}
+                  src={integration.node.image.asset.url}
                 />
                 <h3 className={styles["integrations__list-item-title"]}>
                   {integration.node.name}
