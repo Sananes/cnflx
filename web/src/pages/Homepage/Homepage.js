@@ -16,19 +16,22 @@ import styles from "./Homepage.module.scss";
 
 export const query = graphql`
   {
-    allSanityPartner {
-      edges {
-        node {
-          slug {
-            current
+    sanityHomepage {
+      partnersList {
+        name
+        image {
+          asset {
+            url
           }
-          name
-          image {
-            asset {
-              fluid {
-                ...GatsbySanityImageFluid
-              }
-            }
+        }
+      }
+      testimonialList {
+        name
+        role
+        description
+        image {
+          asset {
+            url
           }
         }
       }
@@ -38,6 +41,8 @@ export const query = graphql`
 
 const IndexTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  // const { partnerList } = data.sanityHomepage._rawPartnersList;
+  // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
 
   return (
     <Layout>
@@ -74,21 +79,20 @@ const IndexTemplate = ({ data }) => {
               Trusted by forward-thinking software teams around the world
             </h3>
             <ul className={styles["companies__list"]}>
-              {data.allSanityPartner.edges.map(({ node: partner }) => (
+              {data.sanityHomepage.partnersList.map(partner => (
                 <li
-                  id={partner.slug.current}
+                  key={partner._key}
                   className={styles["companies__list-item"]}
                 >
-                  <Link className={styles["companies__list-item-link"]} to="#">
-                    <Img
-                      fluid={
-                        partner.image.asset.fluid
-                          ? partner.image.asset.fluid
-                          : ""
-                      }
-                      alt={partner.title}
+                  <a
+                    className={styles["companies__list-item-link"]}
+                    href={partner.url}
+                  >
+                    <img
+                      src={partner.image.asset.url}
+                      className={styles["companies__list-item-logo"]}
                     />
-                  </Link>
+                  </a>
                 </li>
               ))}
               {/* <li className={styles["companies__list-item"]}>
@@ -187,92 +191,33 @@ const IndexTemplate = ({ data }) => {
             </h3>
 
             <ul className={styles["testimonials__list"]}>
-              <li className={styles["testimonials__list-item"]}>
-                <blockquote>
-                  "Before Conflux we managed feature requests with a giant
-                  spreadsheet which provided zero visibility across our team and
-                  users. Now we manage dozens of requests per week via Conflux
-                  and save hours of messing around with manual work. Our users
-                  get visibility and our product team can see whats important,
-                  impacting our roadmap."
-                </blockquote>
-                <div className={styles["testimonials__list-item-company"]}>
-                  <img
-                    className={styles["testimonials__list-item-company-image"]}
-                    src="https://getconflux.com/assets/img/murat-c622ac14b8.png"
-                  />
-                  <div
-                    className={
-                      styles["testimonials__list-item-company-details"]
-                    }
-                  >
-                    <h6
-                      className={styles["testimonials__list-item-company-name"]}
+              {data.sanityHomepage.testimonialList.map(testimonial => (
+                <li className={styles["testimonials__list-item"]}>
+                  <blockquote>{testimonial.description}</blockquote>
+                  <div className={styles["testimonials__list-item-company"]}>
+                    <img
+                      className={
+                        styles["testimonials__list-item-company-image"]
+                      }
+                      src={testimonial.image.asset.url}
+                    />
+                    <div
+                      className={
+                        styles["testimonials__list-item-company-details"]
+                      }
                     >
-                      Person name
-                    </h6>
-                    <small>Wall Street Journal</small>
+                      <h6
+                        className={
+                          styles["testimonials__list-item-company-name"]
+                        }
+                      >
+                        {testimonial.name}
+                      </h6>
+                      <small>{testimonial.role}</small>
+                    </div>
                   </div>
-                </div>
-              </li>
-
-              <li className={styles["testimonials__list-item"]}>
-                <blockquote>
-                  “Customer feedback was more of an unstructured list, not well
-                  maintained and only loosely coupled to the actual conversation
-                  that lead to the feedback. Now we have a structured process in
-                  place that allows us to quantify requests, and we store it
-                  together with the actual conversation that provides all the
-                  context we need to eliminate any doubts.”
-                </blockquote>
-                <div className={styles["testimonials__list-item-company"]}>
-                  <img
-                    className={styles["testimonials__list-item-company-image"]}
-                    src="https://getconflux.com/assets/img/tim-9504fef476.jpeg"
-                  />
-                  <div
-                    className={
-                      styles["testimonials__list-item-company-details"]
-                    }
-                  >
-                    <h6
-                      className={styles["testimonials__list-item-company-name"]}
-                    >
-                      Person name
-                    </h6>
-                    <small>Wall Street Journal</small>
-                  </div>
-                </div>
-              </li>
-
-              <li className={styles["testimonials__list-item"]}>
-                <blockquote>
-                  "Before Conflux we managed feature requests with a giant
-                  spreadsheet which provided zero visibility across our team and
-                  users. Now we manage dozens of requests per week via Conflux
-                  and save hours of messing around with manual work. Our users
-                  get visibility and our product team can see whats important,
-                  impacting our roadmap."
-                </blockquote>
-                <div className={styles["testimonials__list-item-company"]}>
-                  <img
-                    src="https://getconflux.com/assets/img/murat-c622ac14b8.png"
-                    className={styles["testimonials__list-item-company-image"]}
-                  />
-                  <div
-                    className={
-                      styles["testimonials__list-item-company-details"]
-                    }
-                  >
-                    <h6
-                      className={styles["testimonials__list-item-company-name"]}
-                    >
-                      Person name
-                    </h6>
-                    <small>Wall Street Journal</small>
-                  </div>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
         </section>

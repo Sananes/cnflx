@@ -20,5 +20,11 @@ export default {
       title: "Description",
       description: "Describe your blog for search engines and social media."
     }
+    // {
+    //   title: "Integrations",
+    //   name: "integrationList",
+    //   type: "array",
+    //   of: [{ type: "integration" }]
+    // }
   ]
 };

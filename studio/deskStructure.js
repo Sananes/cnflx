@@ -11,6 +11,9 @@ const hiddenDocTypes = listItem =>
     "integration",
     "siteIntegration",
     "testimonial",
+    "testimonials",
+    "packages",
+    "homepage",
     "object",
     "siteSettings"
   ].includes(listItem.getId());
@@ -36,6 +39,15 @@ export default () =>
             .title("Pages")
             .items([
               S.listItem()
+                .title("Homepage")
+                .icon(MDPage)
+                .child(
+                  S.editor()
+                    .id("homepage")
+                    .schemaType("homepage")
+                    .documentId("homepage")
+                ),
+              S.listItem()
                 .title("Integrations")
                 .icon(MDPage)
                 .child(
@@ -43,6 +55,19 @@ export default () =>
                     .id("siteIntegration")
                     .schemaType("siteIntegration")
                     .documentId("siteIntegration")
+                ),
+              S.listItem()
+                .title("Integration List")
+                .icon(MDPage)
+                .child(S.documentTypeList("integration").title("Integrations")),
+              S.listItem()
+                .title("Pricing")
+                .icon(MDHdmi)
+                .child(
+                  S.editor()
+                    .id("pricing")
+                    .schemaType("pricing")
+                    .documentId("pricing")
                 )
             ])
         ),
@@ -73,25 +98,6 @@ export default () =>
         .icon(MDHdmi)
         .schemaType("integration")
         .child(S.documentTypeList("integration").title("Integrations")),
-      S.listItem()
-        .title("Pricing")
-        .icon(MDHdmi)
-        .child(
-          S.editor()
-            .id("pricing")
-            .schemaType("pricing")
-            .documentId("pricing")
-        ),
-      S.listItem()
-        .title("Partners")
-        .icon(MdPerson)
-        .schemaType("partner")
-        .child(S.documentTypeList("partner").title("Partners")),
-      S.listItem()
-        .title("Testimonials")
-        .schemaType("testimonial")
-        .child(S.documentTypeList("testimonial").title("Testimonials")),
-
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

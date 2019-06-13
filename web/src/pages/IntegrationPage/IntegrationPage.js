@@ -19,6 +19,9 @@ export const query = graphql`
           url
         }
       }
+      slug {
+        current
+      }
     }
   }
 `;

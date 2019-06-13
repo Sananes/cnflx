@@ -36,7 +36,9 @@ const Menu = ({ menu }: Props) => (
         </Link>
       </li>
       <li className={styles["menu__list-item--signup"]} key="signup">
-        <Link className={styles["menu__list-item-link"]}>Get Started</Link>
+        <Link to="/" className={styles["menu__list-item-link"]}>
+          Get Started
+        </Link>
       </li>
     </ul>
   </React.Fragment>

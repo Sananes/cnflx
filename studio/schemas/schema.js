@@ -7,6 +7,7 @@ import packages from "./package";
 import siteSettings from "./documents/siteSettings";
 import blockContent from "./documents/blockContent";
 import pricing from "./documents/pricing";
+import homepage from "./documents/homepage";
 import testimonial from "./documents/testimonial";
 import integrationPage from "./documents/integrationPage";
 import integration from "./documents/integration";
@@ -22,6 +23,7 @@ export default createSchema({
     /* Your types here! */
     siteSettings,
     blockContent,
+    homepage,
     partner,
     testimonial,
     packages,

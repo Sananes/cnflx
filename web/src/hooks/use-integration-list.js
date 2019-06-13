@@ -8,14 +8,15 @@ const useIntegrationList = () => {
         allSanityIntegration {
           edges {
             node {
-              slug {
-                current
-              }
               name
+              description
               image {
                 asset {
                   url
                 }
+              }
+              slug {
+                current
               }
             }
           }

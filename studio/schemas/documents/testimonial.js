@@ -3,8 +3,7 @@ import icon from "react-icons/lib/md/mode-comment";
 export default {
   name: "testimonial",
   title: "Testimonial",
-  type: "document",
-  icon,
+  type: "object",
   fields: [
     {
       name: "name",
@@ -12,18 +11,14 @@ export default {
       type: "string"
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: "name",
-        maxLength: 100
-      }
+      name: "role",
+      title: "Role",
+      type: "string"
     },
     {
       name: "description",
       title: "Description",
-      type: "blockContent"
+      type: "text"
     },
     {
       name: "image",

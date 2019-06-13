@@ -35,7 +35,6 @@ const createPages = async ({ graphql, actions }) => {
       allSanityIntegration {
         edges {
           node {
-            name
             slug {
               current
             }
