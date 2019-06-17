@@ -2,6 +2,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import type { Node as ReactNode } from "react";
+import PageTransition from "gatsby-plugin-page-transitions";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
@@ -12,7 +13,7 @@ type Props = {
   description?: string
 };
 
-const Layout = ({ children, title, description }: Props) => (
+const Layout = ({ children, title, description, location }: Props) => (
   <div className={styles.layout}>
     <Helmet>
       <html lang="en" />
@@ -27,7 +28,7 @@ const Layout = ({ children, title, description }: Props) => (
       />
     </Helmet>
     <Header />
-    {children}
+    <PageTransition>{children}</PageTransition>
     <Footer />
   </div>
 );

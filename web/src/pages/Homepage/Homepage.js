@@ -211,7 +211,7 @@ const IndexTemplate = ({ data }) => {
 
         <section className={styles["signup"]}>
           <div className={styles["signup__inner"]}>
-            <h3 className={styles["signup__title"]}>Try it now</h3>
+            <h3 className={styles["signup__title"]}>Start managing feedback</h3>
             <p className={styles["signup__subtitle"]}>
               Try it now with a 14 day free trial.
             </p>

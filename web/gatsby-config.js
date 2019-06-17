@@ -184,6 +184,7 @@ module.exports = {
         icon: "static/photo.jpg"
       }
     },
+    "gatsby-plugin-page-transitions",
     "gatsby-plugin-offline",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",
