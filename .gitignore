@@ -9,3 +9,7 @@ web/.idea
 web/gatsby-starter-lumen.iml
 studio/node_modules/
 .DS_Store
+
+node_modules/\.bin/
+
+node_modules/

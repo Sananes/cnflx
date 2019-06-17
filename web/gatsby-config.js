@@ -33,8 +33,8 @@ module.exports = {
       options: {
         projectId: "yv2hpkrm",
         dataset: "production",
-        watchMode: true,
-        overlayDrafts: true,
+        // watchMode: true,
+        // overlayDrafts: true,
         // a token with read permissions is required
         // if you have a private dataset
         token:
@@ -124,13 +124,6 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-netlify",
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/index.js`
-      }
-    },
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -184,7 +177,7 @@ module.exports = {
         icon: "static/photo.jpg"
       }
     },
-    "gatsby-plugin-page-transitions",
+    // "gatsby-plugin-page-transitions",
     "gatsby-plugin-offline",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-helmet",

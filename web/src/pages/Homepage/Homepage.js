@@ -4,13 +4,11 @@ import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
 import Signup from "../../components/Signup";
-import Svg from "../../components/Svg";
 import { useSiteMetadata } from "../../hooks";
 import heroSVG from "../../assets/svg/hero.svg";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
-import confluxSVG from "../../assets/svg/conflux-logo.svg";
 import styles from "./Homepage.module.scss";
 
 export const query = graphql`
@@ -18,6 +16,8 @@ export const query = graphql`
     sanityHomepage {
       partnersList {
         name
+        _key
+        url
         image {
           asset {
             url
@@ -27,6 +27,7 @@ export const query = graphql`
       testimonialList {
         name
         role
+        _key
         description
         image {
           asset {
@@ -82,31 +83,6 @@ const IndexTemplate = ({ data }) => {
                   </a>
                 </li>
               ))}
-              {/* <li className={styles["companies__list-item"]}>
-                <Link className={styles["companies__list-item-link"]} to="#">
-                  <Icon icon={getIcon("marvel")} />
-                </Link>
-              </li>
-              <li className={styles["companies__list-item"]}>
-                <Link className={styles["companies__list-item-link"]} to="#">
-                  <Icon icon={getIcon("stripe")} />
-                </Link>
-              </li>
-              <li className={styles["companies__list-item"]}>
-                <Link to="#" className={styles["companies__list-item-link"]}>
-                  <Icon icon={getIcon("silverfin")} />
-                </Link>
-              </li>
-              <li className={styles["companies__list-item"]}>
-                <Link className={styles["companies__list-item-link"]} to="#">
-                  <Icon icon={getIcon("hopper")} />
-                </Link>
-              </li>
-              <li className={styles["companies__list-item"]}>
-                <Link className={styles["companies__list-item-link"]} to="#">
-                  <Icon icon={getIcon("lightspeed")} />
-                </Link>
-            </li> */}
             </ul>
           </div>
         </section>
@@ -179,7 +155,10 @@ const IndexTemplate = ({ data }) => {
 
             <ul className={styles["testimonials__list"]}>
               {data.sanityHomepage.testimonialList.map(testimonial => (
-                <li className={styles["testimonials__list-item"]}>
+                <li
+                  key={testimonial._key}
+                  className={styles["testimonials__list-item"]}
+                >
                   <blockquote>{testimonial.description}</blockquote>
                   <div className={styles["testimonials__list-item-company"]}>
                     <img
@@ -213,7 +192,7 @@ const IndexTemplate = ({ data }) => {
           <div className={styles["signup__inner"]}>
             <h3 className={styles["signup__title"]}>Start managing feedback</h3>
             <p className={styles["signup__subtitle"]}>
-              Try it now with a 14 day free trial.
+              Free 14 day trial · No credit card&nbsp;required
             </p>
             <Signup
               notice="No credit card required."
