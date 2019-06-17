@@ -9,18 +9,18 @@
   }
 
   &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    @include clear-list-style;
 
     @include breakpoint-md {
       display: inline-flex;
     }
 
     &-item {
+      @include clear-list-style;
       display: block;
 
       &-link {
+        @include clear-list-style;
         @include menu;
         color: $text-mid;
         font-weight: $font-weight-medium;
@@ -42,22 +42,26 @@
         color: $text-dimmed;
       }
 
-      &--signup a {
+      &--signup button {
         @extend %button-secondary;
-        padding: 8px 12px 10px 12px;
+        margin: 0;
+        padding: 5px 12px 6px 12px;
       }
     }
 
     &--account {
       display: none;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      @include clear-list-style;
+
+      li {
+        @include clear-list-style;
+      }
 
       @include breakpoint-md {
         display: flex;
         flex: 1;
         justify-content: flex-end;
+        align-items: center;
       }
     }
 

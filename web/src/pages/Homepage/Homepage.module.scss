@@ -32,36 +32,6 @@ $section-spacing: 50px;
     @include margin-bottom(1.5);
   }
 
-  &__signup {
-    @include margin-bottom(2);
-    display: flex;
-    justify-content: center;
-    lost-center: 600px;
-
-    &_wrapper {
-      position: relative;
-      width: 50%;
-    }
-
-    &_wrapper + &_button {
-      margin-left: 16px;
-    }
-
-    &_button {
-      @extend %button;
-      margin-top: 0;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    &_prefix {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 12px 16px;
-    }
-  }
-
 
   &__image-wrapper {
 
@@ -303,6 +273,14 @@ $section-spacing: 50px;
   &__inner {
     @extend %layout-container-center, %layout-container-divider;
     text-align: center;
+  }
+
+  &__wrapper {
+    @include margin-bottom(0);
+
+    button {
+      margin-bottom: 0;
+    }
   }
 
   &__subtitle {

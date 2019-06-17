@@ -3,8 +3,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Signup from "../../components/Signup";
 import Svg from "../../components/Svg";
 import { useSiteMetadata } from "../../hooks";
 import heroSVG from "../../assets/svg/hero.svg";
@@ -53,19 +52,7 @@ const IndexTemplate = ({ data }) => {
               All-in-one feedback management
             </h1>
             <p className={styles["hero__subtitle"]}>{siteSubtitle}</p>
-            <div className={styles["hero__signup"]}>
-              <div className={styles["hero__signup_wrapper"]}>
-                <input
-                  className={styles["hero__signup_input"]}
-                  placeholder="Enter work email"
-                />
-                {/* <span className={styles["hero__signup_prefix"]}>.cnflx.io</span> */}
-              </div>
-              <button className={styles["hero__signup_button"]}>
-                Get Started
-              </button>
-              {/* TODO: sign up free trial notice */}
-            </div>
+            <Signup />
             <div className={styles["hero__image-wrapper"]}>
               <div className={styles["hero__pattern"]} />
               <img className={styles["hero__image"]} src={heroSVG} />
@@ -228,23 +215,10 @@ const IndexTemplate = ({ data }) => {
             <p className={styles["signup__subtitle"]}>
               Try it now with a 14 day free trial.
             </p>
-            <div className={styles["signup__newsletter"]}>
-              <div className={styles["signup__newsletter-wrapper"]}>
-                <div className={styles["signup__newsletter-input-wrapper"]}>
-                  <input
-                    className={styles["signup__newsletter-input"]}
-                    placeholder="Company name"
-                  />
-                  <span className={styles["signup__newsletter-prefix"]}>
-                    cnflx.io
-                  </span>
-                </div>
-                <button className={styles["signup__newsletter-button"]}>
-                  Get Started
-                </button>
-              </div>
-            </div>
-            <p className={styles["signup__notice"]}>Credit card is required.</p>
+            <Signup
+              notice="No credit card required."
+              className={styles["signup__wrapper"]}
+            />
           </div>
         </section>
       </div>

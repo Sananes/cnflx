@@ -29,6 +29,10 @@
     }
   }
 
+  &__signup {
+    @include margin-top(-2);
+  }
+
   &__item {
     display: flex;
     position: relative;

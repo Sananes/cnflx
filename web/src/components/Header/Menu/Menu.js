@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { Link } from "gatsby";
-// import Button from "../../Button";
+import Button from "../../Button";
 import styles from "./Menu.module.scss";
 
 type Props = {
@@ -36,9 +36,7 @@ const Menu = ({ menu }: Props) => (
         </Link>
       </li>
       <li className={styles["menu__list-item--signup"]} key="signup">
-        <Link to="/" className={styles["menu__list-item-link"]}>
-          Get Started
-        </Link>
+        <Button className={styles["menu__list-item-link"]} text="Try it Free" />
       </li>
     </ul>
   </React.Fragment>

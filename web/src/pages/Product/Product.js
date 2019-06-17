@@ -17,6 +17,8 @@ import publicDashboardSVG from "../../assets/svg/product/public-dashboard.svg";
 
 import emotionAnalysisSVG from "../../assets/svg/product/emotion-analysis.svg";
 
+import automaticTranslationSVG from "../../assets/svg/product/automatic-translation.svg";
+
 const ProductPage = () => {
   const { title, subtitle } = useSiteMetadata();
 
@@ -141,6 +143,24 @@ const ProductPage = () => {
                 Engine, giving you a first insight of the feedback. Easily
                 address customers that are having a negative experience so they
                 can see you're worth paying for.
+              </p>
+            </div>
+          </div>
+          <div className={`${styles["product__feature-item"]}`}>
+            <div className={styles["product__feature-item-image-wrapper"]}>
+              <img
+                className={styles["product__feature-item-image"]}
+                src={automaticTranslationSVG}
+                alt="Public Dashboard"
+              />
+            </div>
+            <div className={styles["product__feature-item-content"]}>
+              <h2 className={styles["product__feature-item-title"]}>
+                Automatic Translation
+              </h2>
+              <p className={styles["product__feature-item-body"]}>
+                It doesn't matter what language your customers speak. Our
+                automatic translation engine, will make sure you'll understand.
               </p>
             </div>
           </div>

@@ -89,12 +89,12 @@
 
       &-content {
         @include center(false, true);
-        right: 0;
+        right: 5%;
         lost-column: 4/12 4 24px;
         lost-offset: 1/12;
 
         .product__feature-item--right & {
-          right: auto;
+          left: 0;
         }
       }
 
