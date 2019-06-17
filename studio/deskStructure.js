@@ -57,9 +57,14 @@ export default () =>
                     .documentId("siteIntegration")
                 ),
               S.listItem()
-                .title("Integration List")
+                .title("Custom test")
                 .icon(MDPage)
-                .child(S.documentTypeList("integration").title("Integrations")),
+                .child(
+                  S.editor()
+                    .id("test")
+                    .schemaType("test")
+                    .documentId("test")
+                ),
               S.listItem()
                 .title("Pricing")
                 .icon(MDHdmi)
@@ -69,6 +74,19 @@ export default () =>
                     .schemaType("pricing")
                     .documentId("pricing")
                 )
+            ])
+        ),
+      S.listItem()
+        .title("Collections")
+        .icon(MDPage)
+        .child(
+          S.list()
+            .title("Collections")
+            .items([
+              S.listItem()
+                .title("Integrations")
+                .icon(MDPage)
+                .child(S.documentTypeList("integration").title("Integrations"))
             ])
         ),
       // S.listItem()
@@ -93,11 +111,6 @@ export default () =>
       //           .child(S.documentTypeList("integration").title("Integrations"))
       //       ])
       //   ),
-      S.listItem()
-        .title("Integrations")
-        .icon(MDHdmi)
-        .schemaType("integration")
-        .child(S.documentTypeList("integration").title("Integrations")),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

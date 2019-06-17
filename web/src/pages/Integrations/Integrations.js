@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 import Image from "gatsby-image";
 import Layout from "../../components/Layout";
@@ -8,16 +8,28 @@ import Page from "../../components/Page";
 import styles from "./Integrations.module.scss";
 import { useIntegrationList, useSiteMetadata } from "../../hooks";
 
-const IntegrationsListTemplate = () => {
+export const query = graphql`
+  query {
+    sanitySiteIntegration {
+      title
+      subtitle
+    }
+  }
+`;
+
+const IntegrationsListTemplate = ({ data }: Props) => {
   const { title, subtitle } = useSiteMetadata();
   const integrationList = useIntegrationList();
-
+  const integrationPage = data.sanitySiteIntegration;
   return (
-    <Layout className={styles["integrations"]}>
+    <Layout
+      title={title}
+      subtitle={subtitle}
+      className={styles["integrations"]}
+    >
       <Page
-        title="Integrate with your workflow"
-        subtitle="We've definitely got you covered when it comes to using alternative
-        tools for your current workflow."
+        title={integrationPage.title}
+        subtitle={integrationPage.subtitle}
         className={styles["integrations__inner"]}
         center={true}
       >

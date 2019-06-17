@@ -24,6 +24,13 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/pages/Integrations/Integrations.js")
   });
 
+  // Product
+  createPage({
+    path: "/product",
+    component: path.resolve("./src/pages/Product/Product.js")
+  });
+
+  // Pricing
   createPage({
     path: "/pricing",
     component: path.resolve("./src/pages/PricingPage/PricingPage.js")

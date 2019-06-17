@@ -5,6 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import packages from "./package";
 import siteSettings from "./documents/siteSettings";
+import test from "./documents/test";
 import blockContent from "./documents/blockContent";
 import pricing from "./documents/pricing";
 import homepage from "./documents/homepage";
@@ -25,6 +26,7 @@ export default createSchema({
     blockContent,
     homepage,
     partner,
+    test,
     testimonial,
     packages,
     pricing,

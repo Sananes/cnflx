@@ -21,6 +21,10 @@ const useIntegrationList = () => {
             }
           }
         }
+        sanitySiteIntegration {
+          title
+          subtitle
+        }
       }
     `
   );

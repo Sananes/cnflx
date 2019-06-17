@@ -16,6 +16,10 @@
 
   &__title {
     @include h2;
+
+    &--narrow {
+      lost-center: 640px;
+    }
   }
 
   &__subtitle {

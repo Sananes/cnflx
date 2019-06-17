@@ -57,9 +57,9 @@ const IndexTemplate = ({ data }) => {
               <div className={styles["hero__signup_wrapper"]}>
                 <input
                   className={styles["hero__signup_input"]}
-                  placeholder="Company name"
+                  placeholder="Enter work email"
                 />
-                <span className={styles["hero__signup_prefix"]}>.cnflx.io</span>
+                {/* <span className={styles["hero__signup_prefix"]}>.cnflx.io</span> */}
               </div>
               <button className={styles["hero__signup_button"]}>
                 Get Started

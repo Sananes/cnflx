@@ -1,0 +1,106 @@
+@import '../../assets/scss/helpers';
+
+.product {
+
+  &__navigation-list {
+    lost-utility: clearfix;
+    @include clear-list-style;
+    @include margin-top(2);
+    @include margin-bottom(5);
+
+    &-item {
+      @include clear-list-style;
+      lost-column: 1/3 3 32px;
+      text-align: center;
+    }
+  }
+
+  &__navigation {
+
+    &-title {
+      @include h5;
+      @include margin-top(1);
+    }
+
+    &-subtitle {
+      @include body;
+      @include margin-top(0);
+      color: $text-dimmed;
+    }
+
+    &-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 100px;
+    }
+
+    &-image {
+      min-height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &-link {
+      display: block;
+      padding: 32px 32px 16px 32px;
+
+      &:hover {
+        background-color: $color-background-highlight;
+      }
+    }
+  }
+
+  &__feature {
+    &-headline {
+
+      &-title {
+        @include h3;
+      }
+
+      &-subtitle {
+        @include body-l;
+        lost-center: 640px;
+      }
+    }
+
+    &-item {
+      @include margin-bottom(4);
+      lost-utility: clearfix;
+      position: relative;
+      text-align: left;
+
+      &--right {
+        position: relative;
+      }
+
+      &-image-wrapper {
+        lost-column: 7/12 7 24px;
+
+        .product__feature-item--right & {
+          lost-offset: 5/12;
+        }
+      }
+
+      &-image {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &-content {
+        @include center(false, true);
+        right: 0;
+        lost-column: 4/12 4 24px;
+        lost-offset: 1/12;
+
+        .product__feature-item--right & {
+          right: auto;
+        }
+      }
+
+      &-title {
+        @include h4;
+      }
+    }
+  }
+}

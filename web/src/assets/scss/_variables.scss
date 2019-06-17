@@ -4,18 +4,18 @@
 
 // Colors
 // $color-base: #040402;
-$color-base: #282B34;
+$color-base: #0d151e;
 
-$color-base-text: #282B34;
+$color-base-text: #24374E;
 // $color-primary: #00AAF1;
-$color-primary: #009AF1;
+$color-primary: #00AAF1;
 $color-secondary: #F7A046;
 
 $color-white: #FFF;
 $color-gray: transparentize($color-base, 0.4);
 $color-border: transparentize($color-base, 0.90);
 $color-border-light: transparentize($color-base, 0.95);
-$color-gray-background: lighten($color-base, 79%);
+$color-gray-background: #F8F9FA;
 
 // $color-background: #fffefc;
 $color-background: #fffefc;
@@ -26,8 +26,10 @@ $color-header-background: $color-background;
 $base-border-radius: 3px;
 
 // Typographic
+
 // Todo: Remember to use Barlow
-$typographic-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+// Todo: Tofino Pro Personal
+$typographic-font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $typographic-heading-font-family: -apple-system-headline, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
 $typographic-root-font-size: 100;
@@ -42,11 +44,18 @@ $typographic-link-s-font-color: $color-secondary;
 
 $typographic-leading: round(15 * ($typographic-root-font-size / 100) * $typographic-base-line-height);
 
+// Text Colors
+$text-dark: $color-base-text;
+$text-subdued: #35475D; //#5D6B7D
+$text-mid: #46576B; //#5D6B7D
+$text-dimmed: #586779; // #6A7A8E
+$text-muted: #8D98A5; // #C3C9D1
 
 // Inputs
 $color-input-border: transparentize($color-base, 0.85);
 $color-input-background: transparent;
 $input-height: 35px;
+$color-input-placeholder: $text-muted;
 
 // Buttons
 $button-height: 35px;
@@ -61,18 +70,11 @@ $layout-breakpoint-sm: 640px;
 $layout-breakpoint-md: 960px;
 $layout-breakpoint-lg: 1100px;
 
-// Text Colors
 // $text-dark: $color-base-text;
-// $text-subdued: transparentize($color-base-text, 0.25); //#5D6B7D
-// $text-mid: transparentize($color-base-text, 0.4); //#5D6B7D
-// $text-dimmed: transparentize($color-base-text, 0.5); // #6A7A8E
-// $text-muted: transparentize($color-base-text, 0.6); // #C3C9D1
-
-$text-dark: $color-base-text;
-$text-subdued: lighten($color-base-text, 20%); //#5D6B7D
-$text-mid: lighten($color-base-text, 30%); //#5D6B7D
-$text-dimmed: lighten($color-base-text, 50%); // #6A7A8E
-$text-muted: lighten($color-base-text, 60%); // #C3C9D1
+// $text-subdued: lighten($color-base-text, 20%); //#5D6B7D
+// $text-mid: lighten($color-base-text, 30%); //#5D6B7D
+// $text-dimmed: lighten($color-base-text, 50%); // #6A7A8E
+// $text-muted: lighten($color-base-text, 60%); // #C3C9D1
 
 
 $text-link-hover: darken($color-primary, 5%);
@@ -80,4 +82,4 @@ $text-link-hover: darken($color-primary, 5%);
 // Font weight
 $font-weight-normal: 400;
 $font-weight-medium: 500;
-$font-weight-bold: 700;
+$font-weight-bold: 600;
