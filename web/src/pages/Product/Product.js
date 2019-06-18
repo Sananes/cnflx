@@ -1,8 +1,6 @@
 // @flow
 import React from "react";
 import { Link } from "gatsby";
-import Image from "gatsby-image";
-import Icon from "../../components/Icon";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
 import styles from "./Product.module.scss";
@@ -23,7 +21,11 @@ const ProductPage = () => {
   const { title, subtitle } = useSiteMetadata();
 
   return (
-    <Layout className={styles["product"]}>
+    <Layout
+      title={`Product - ${title}`}
+      description={subtitle}
+      className={styles["product"]}
+    >
       <Page
         title="Streamline your feedback, from anywhere, anytime."
         narrow={true}

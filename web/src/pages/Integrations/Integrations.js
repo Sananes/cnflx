@@ -23,8 +23,8 @@ const IntegrationsListTemplate = ({ data }: Props) => {
   const integrationPage = data.sanitySiteIntegration;
   return (
     <Layout
-      title={title}
-      subtitle={subtitle}
+      title={`Integrations - ${title}`}
+      description={subtitle}
       className={styles["integrations"]}
     >
       <Page

@@ -2,7 +2,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 import type { Node as ReactNode } from "react";
-// import PageTransition from "gatsby-plugin-page-transitions";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
@@ -10,11 +9,12 @@ import styles from "./Layout.module.scss";
 type Props = {
   children: ReactNode,
   title: string,
+  className?: string,
   description?: string
 };
 
-const Layout = ({ children, title, description, location }: Props) => (
-  <div className={styles.layout}>
+const Layout = ({ children, title, description, className }: Props) => (
+  <div className={className ? className : styles.layout}>
     <Helmet>
       <html lang="en" />
       <title>{title}</title>

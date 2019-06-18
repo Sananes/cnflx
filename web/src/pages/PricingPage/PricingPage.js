@@ -34,7 +34,7 @@ const PricingTemplate = ({ data }) => {
   const pricingList = usePricingList();
 
   return (
-    <Layout className={styles["pricing"]}>
+    <Layout title={`Pricing - ${title}`} description={subtitle}>
       <Page
         title="Pricing that suits your needs"
         subtitle="Start free or as low as $10/mo"

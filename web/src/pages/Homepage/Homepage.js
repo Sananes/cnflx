@@ -45,7 +45,7 @@ const IndexTemplate = ({ data }) => {
   // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
 
   return (
-    <Layout>
+    <Layout title={siteTitle} description={siteSubtitle}>
       <div className={styles["wrapper"]}>
         <section className={styles["hero"]}>
           <div className={styles["hero__inner"]}>
