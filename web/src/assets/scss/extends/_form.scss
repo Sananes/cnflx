@@ -1,11 +1,11 @@
-$input-height: $typographic-base-line-height + 17px + 4px;
+$input-height: $typographic-base-line-height+17px+4px;
 
 input {
   display: block;
-  width: calc(100% - 34px);
-  height: $input-height; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  width: 100%;
   padding: 10px 16px;
   font-size: $typographic-base-font-size;
+  font-family: $typographic-font-family;
   line-height: $typographic-base-line-height;
   color: $text-dark;
   background-color: $color-input-background;

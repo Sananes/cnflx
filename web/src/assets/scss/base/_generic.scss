@@ -1,6 +1,10 @@
 /**
  * Generic
  */
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: $typographic-root-font-size;
 }
@@ -141,6 +145,7 @@ figcaption {
 }
 
 @include breakpoint-sm {
+
   figure.float-left,
   figure.float-right {
     max-width: 310px;

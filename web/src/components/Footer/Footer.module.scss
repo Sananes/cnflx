@@ -3,7 +3,8 @@
 .footer {
 
   &__inner {
-    @extend %layout-container, %layout-container-divider;
+    @extend %layout-container,
+    %layout-container-divider;
   }
 
   &__copyright {
@@ -31,7 +32,15 @@
 
   &__list {
     @include clear-list-style;
-    lost-column: 1/4;
+    margin-bottom: 24px;
+
+    @include breakpoint-sm {
+      lost-column: 1/2;
+    }
+
+    @include breakpoint-md {
+      lost-column: 1/4;
+    }
 
     &-item {
       @include clear-list-style;
@@ -56,8 +65,10 @@
   }
 
   &__details {
-    lost-column: 1/4;
+    lost-column: 1/2;
+
+    @include breakpoint-md {
+      lost-column: 1/4;
+    }
   }
-
-
 }

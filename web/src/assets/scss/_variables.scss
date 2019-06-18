@@ -29,8 +29,26 @@ $base-border-radius: 3px;
 
 // Todo: Remember to use Barlow
 // Todo: Tofino Pro Personal
-$typographic-font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$typographic-heading-font-family: -apple-system-headline, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$typographic-font-family: 'Barlow',
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif;
+$typographic-heading-font-family: -apple-system-headline,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif;
 
 $typographic-root-font-size: 100;
 $typographic-base-font-size: 15px;
@@ -82,4 +100,4 @@ $text-link-hover: darken($color-primary, 5%);
 // Font weight
 $font-weight-normal: 400;
 $font-weight-medium: 500;
-$font-weight-bold: 600;
+$font-weight-bold: 700;

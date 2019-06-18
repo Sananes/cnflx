@@ -5,7 +5,7 @@ $section-spacing: 50px;
 .wrapper {
   background-image: url('../../assets/svg/pattern-bg-top.svg');
   background-size: 200% 1503px;
-  background-position: center top;
+  background-position: center -100px;
   background-origin: content-box;
   background-repeat: no-repeat;
   overflow-x: hidden;
@@ -16,7 +16,8 @@ $section-spacing: 50px;
     @extend %layout-container-center;
   }
 
-  &__title, &__subtitle {
+  &__title,
+  &__subtitle {
     lost-center: 760px;
     text-align: center;
   }
@@ -33,9 +34,7 @@ $section-spacing: 50px;
   }
 
 
-  &__image-wrapper {
-
-  }
+  &__image-wrapper {}
 
   &__pattern {
     position: absolute;
@@ -88,14 +87,15 @@ $section-spacing: 50px;
   }
 }
 
-.companies + .features {
+.companies+.features {
   margin-top: $section-spacing;
 }
 
 .features {
 
   &__inner {
-    @extend %layout-container-center, %layout-container-divider;
+    @extend %layout-container-center,
+    %layout-container-divider;
     text-align: center;
 
     @include breakpoint-md {
@@ -189,7 +189,8 @@ $section-spacing: 50px;
 
 .testimonials {
   &__inner {
-    @extend %layout-container-center, %layout-container-divider;
+    @extend %layout-container-center,
+    %layout-container-divider;
     text-align: center;
   }
 
@@ -257,8 +258,7 @@ $section-spacing: 50px;
         line-height: 1;
       }
 
-      small {
-      }
+      small {}
 
       &-company-image {
         width: 48px;
@@ -271,7 +271,8 @@ $section-spacing: 50px;
 
 .signup {
   &__inner {
-    @extend %layout-container-center, %layout-container-divider;
+    @extend %layout-container-center,
+    %layout-container-divider;
     text-align: center;
   }
 
@@ -301,7 +302,7 @@ $section-spacing: 50px;
     width: 50%;
   }
 
-  &__newsletter-input-wrapper + &__newsletter-button {
+  &__newsletter-input-wrapper+&__newsletter-button {
     margin-left: 16px;
   }
 
@@ -313,8 +314,7 @@ $section-spacing: 50px;
     padding-right: 20px;
   }
 
-  &__notice {
-  }
+  &__notice {}
 
   &__newsletter-prefix {
     position: absolute;

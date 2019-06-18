@@ -43,7 +43,7 @@
 
     &-link {
       display: block;
-      padding: 32px 32px 16px 32px;
+      padding: 32px 24px 16px 24px;
 
       &:hover {
         background-color: $color-background-highlight;
@@ -99,7 +99,7 @@
       }
 
       &-title {
-        @include h4;
+        @include h5;
       }
     }
   }

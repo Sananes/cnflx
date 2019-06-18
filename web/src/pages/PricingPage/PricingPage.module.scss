@@ -194,6 +194,10 @@
 }
 
 .faq {
+
+  & > p {
+      @include body-l;
+  }
   &__list {
     @include clear-list-style;
     text-align: left;

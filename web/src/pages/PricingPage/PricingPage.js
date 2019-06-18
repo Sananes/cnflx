@@ -19,16 +19,6 @@ import smallBusinessHoverSVG from "../../assets/svg/pricing/small-business-hover
 import companySVG from "../../assets/svg/pricing/company.svg";
 import companyHoverSVG from "../../assets/svg/pricing/company-hover.svg";
 
-export const query = graphql`
-  query PricingImages {
-    pricingAssets: imageSharp(id: { regex: "/pricing/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes_tracedSVG
-      }
-    }
-  }
-`;
-
 const PricingTemplate = ({ data }) => {
   const { title, subtitle } = useSiteMetadata();
   const pricingList = usePricingList();
@@ -46,7 +36,7 @@ const PricingTemplate = ({ data }) => {
           <ul className={styles["pricing__list"]}>
             {pricingList &&
               pricingList.map(price => (
-                <li id={price._key} className={styles["pricing__item"]}>
+                <li key={price._key} className={styles["pricing__item"]}>
                   {price.name === "Hobby" ? (
                     <img
                       className={styles["pricing__item-image"]}
@@ -155,10 +145,6 @@ const PricingTemplate = ({ data }) => {
 
         <section className={styles["faq"]}>
           <h3 className={styles["faq__title"]}>Frequently Asked Questions</h3>
-          <p className={styles["faq__subtitle"]}>
-            We provide volume discounts for enterprise teams. Contact us to
-            learn more.
-          </p>
           <ul className={styles["faq__list"]}>
             <li className={styles["faq__item"]}>
               <h4 className={styles["faq__item-title"]}>
