@@ -3,6 +3,17 @@ $button-default: 9px 16px 10px 16px;
 $button-default-border: 8.5px 14px 10.5px 14px;
 $button-large: 12px 12px;
 
+%button-reset {
+  all: unset;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    all: unset;
+    cursor: pointer;
+  }
+}
+
 %button-base {
   @include button;
   @include line-height(1);
@@ -16,18 +27,21 @@ $button-large: 12px 12px;
   cursor: pointer;
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $color-white;
   }
 }
 
-%button, button {
+%button,
+button {
   @extend %button-base;
   background: $color-primary;
   border: 1px solid $color-primary;
   color: $color-white;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: darken($color-primary, 5%);
     border: 1px solid transparent;
   }
@@ -45,7 +59,8 @@ $button-large: 12px 12px;
   background: transparent;
   border: 1px solid $color-primary;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: darken($color-primary, 5%);
     background: none;
     border-color: darken($color-primary, 5%);

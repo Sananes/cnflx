@@ -64,8 +64,8 @@ $typographic-leading: round(15 * ($typographic-root-font-size / 100) * $typograp
 
 // Text Colors
 $text-dark: $color-base-text;
-$text-subdued: #35475D; //#5D6B7D
-$text-mid: #46576B; //#5D6B7D
+$text-subdued: #687382; //#5D6B7D
+$text-mid: #687382; //#5D6B7D
 $text-dimmed: #586779; // #6A7A8E
 $text-muted: #8D98A5; // #C3C9D1
 
@@ -101,3 +101,7 @@ $text-link-hover: darken($color-primary, 5%);
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
+
+// Header heights
+$header-height: 80px;
+$header-mobile-height: 48px;

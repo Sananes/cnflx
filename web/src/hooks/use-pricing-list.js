@@ -6,7 +6,7 @@ const usePricingList = () => {
     graphql`
       query PricingListQuery {
         sanityPricing {
-          _rawPackage(resolveReferences: { maxDepth: 4 })
+          _rawPackage(resolveReferences: { maxDepth: 6 })
         }
       }
     `

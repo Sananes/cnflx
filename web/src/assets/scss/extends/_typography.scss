@@ -57,7 +57,7 @@ $base-size: $typographic-base-font-size;
   letter-spacing: 0px;
 
   @include breakpoint-md {
-    font-size: $base-size * 2.4;
+    font-size: $base-size * 2.133;
     @include line-height(1);
     @include margin-top(2);
     @include margin-bottom(1);
@@ -71,7 +71,7 @@ $base-size: $typographic-base-font-size;
   @include margin-bottom(.5);
   letter-spacing: 0px;
 
-  & + p {
+  &+p {
     @include margin-top(.25);
   }
 }
@@ -84,7 +84,7 @@ $base-size: $typographic-base-font-size;
   @include margin-bottom(.3);
   letter-spacing: 0px;
 
-  & + p {
+  &+p {
     @include margin-top(.25);
   }
 }

@@ -5,6 +5,7 @@ import type { Node as ReactNode } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
+import Headroom from "react-headroom";
 
 type Props = {
   children: ReactNode,
@@ -27,7 +28,9 @@ const Layout = ({ children, title, description, className }: Props) => (
         rel="stylesheet"
       />
     </Helmet>
-    <Header />
+    <Headroom disableInlineStyles={true} disable={false}>
+      <Header />
+    </Headroom>
     {children}
     <Footer />
   </div>

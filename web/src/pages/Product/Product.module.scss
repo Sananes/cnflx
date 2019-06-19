@@ -51,8 +51,13 @@
     }
   }
 
+  &__feature+&__feature {
+    @include margin-top(6);
+  }
+
   &__feature {
     &-headline {
+      @include margin-bottom(3);
 
       &-title {
         @include h3;
@@ -65,7 +70,7 @@
     }
 
     &-item {
-      @include margin-bottom(4);
+      @include margin-bottom(5);
       lost-utility: clearfix;
       position: relative;
       text-align: left;

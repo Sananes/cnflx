@@ -3,9 +3,11 @@
 .integrations {
 
   &__inner {
-    @extend %layout-container, %layout-container-center;
+    @extend %layout-container,
+    %layout-container-center;
 
-    h2, p {
+    h2,
+    p {
       text-align: center;
     }
 
@@ -17,6 +19,7 @@
   }
 
   &__list {
+    lost-utility: clearfix;
     list-style: none;
     margin: 0;
     padding: 0;

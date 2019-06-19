@@ -14,7 +14,7 @@ const Header = ({ isIndex }: Props) => {
   const { menu } = useSiteMetadata();
 
   return (
-    <div className={styles["header"]}>
+    <div className={`${styles["header"]}`}>
       <div className={styles["header__inner"]}>
         <div className={styles["header__logo"]}>
           <Link to="/" className={styles["header__logolink"]}>

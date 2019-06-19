@@ -1,24 +1,39 @@
 @import '../../assets/scss/helpers';
 
-$header-height: 80px;
-
 .header {
   box-sizing: border-box;
   background: $color-header-background;
+  backface-visibility: hidden;
+  z-index: 999;
 
   &__inner {
     @extend %layout-container;
     lost-center: 1000px;
     display: flex;
-    height: $header-height;
+    height: $header-mobile-height;
     align-items: center;
+
+    @include breakpoint-md {
+      height: $header-height;
+    }
   }
 
   &__logo {
     flex: 1;
+    margin-top: 3px;
+
+    a {
+      display: inline-block;
+    }
 
     svg {
-      width: 140px;
+      width: auto;
+      height: 20px;
+
+      @include breakpoint-md {
+        width: 140px;
+
+      }
     }
   }
 }

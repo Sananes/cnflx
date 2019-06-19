@@ -33,6 +33,7 @@
   &__list {
     @include clear-list-style;
     margin-bottom: 24px;
+    lost-column: 1/2;
 
     @include breakpoint-sm {
       lost-column: 1/2;
@@ -65,7 +66,7 @@
   }
 
   &__details {
-    lost-column: 1/2;
+    lost-column: 1;
 
     @include breakpoint-md {
       lost-column: 1/4;
