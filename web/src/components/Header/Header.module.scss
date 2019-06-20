@@ -31,7 +31,8 @@
       height: 20px;
 
       @include breakpoint-md {
-        width: 140px;
+        width: auto;
+        height: 22px;
 
       }
     }

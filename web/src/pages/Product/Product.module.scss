@@ -80,10 +80,17 @@
       }
 
       &-image-wrapper {
-        lost-column: 7/12 7 24px;
+
+        @include breakpoint-md {
+          lost-column: 7/12 7 24px;
+        }
 
         .product__feature-item--right & {
-          lost-offset: 5/12;
+
+          @include breakpoint-md {
+            lost-offset: 5/12;
+
+          }
         }
       }
 
@@ -93,13 +100,20 @@
       }
 
       &-content {
-        @include center(false, true);
-        right: 5%;
-        lost-column: 4/12 4 24px;
-        lost-offset: 1/12;
+
+
+        @include breakpoint-md {
+          @include center(false, true);
+          right: 5%;
+          lost-column: 4/12 4 24px;
+          lost-offset: 1/12;
+        }
 
         .product__feature-item--right & {
-          left: 0;
+
+          @include breakpoint-md {
+            left: 0;
+          }
         }
       }
 
