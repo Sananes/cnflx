@@ -1,0 +1,60 @@
+@import '../../assets/scss/helpers';
+
+$color_checkbox_success:#4cd964;
+$color_checkbox_default:#8E8E93;
+// $transition: .2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$transition: .2s ease-in-out;
+$width: 60px;
+$height: $width/2;
+
+.toggle {
+
+  .toggle-control {
+    transition: $transition;
+    width: $width;
+    height: $height;
+    display: block;
+    cursor: pointer;
+    border: none;
+    border-radius: $height;
+    background-color: darken($color-background-highlight, 5%);
+    position: relative;
+
+    &:hover {
+      background-color: darken($color-background-highlight, 10%);
+    }
+
+    &:after {
+      transition: $transition;
+      content: "";
+      width: $height/1.5;
+      height: $height/1.5;
+      display: block;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked+.toggle-control {
+      border-color: $color-green;
+      background-color: $color-green;
+
+      &:hover {
+        background-color: darken($color-green, 5%);
+      }
+
+      &:after {
+        left: 35px;
+      }
+    }
+  }
+
+  .toggle_input {}
+
+}

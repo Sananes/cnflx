@@ -171,6 +171,7 @@ figcaption {
   right: 0;
   z-index: 1;
   background: $color-white;
+  border-bottom: 1px solid transparent;
 }
 
 .headroom--unfixed {

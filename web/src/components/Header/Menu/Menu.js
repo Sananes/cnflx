@@ -22,7 +22,7 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { menu, menuIsActive } = this.props;
+    const { menu } = this.props;
     const menuActive = this.state.showMenu
       ? styles["menu__list-mobile--is-active"]
       : "";

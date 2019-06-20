@@ -1,11 +1,11 @@
 // @flow
 import React from "react";
 import { Link } from "gatsby";
-import Image from "gatsby-image";
 import Icon from "../../components/Icon";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Page from "../../components/Page";
+import Switch from "../../components/Switch";
 import styles from "./PricingPage.module.scss";
 import { usePricingList, useSiteMetadata } from "../../hooks";
 
@@ -27,9 +27,28 @@ const PricingTemplate = ({ data }) => {
     <Layout title={`Pricing - ${title}`} description={subtitle}>
       <Page
         title="Pricing that suits your needs"
-        subtitle="Start free or as low as $10/mo"
+        subtitle="
+        Conflux is perfect for individuals and teams of all sizes. Start for free."
         center={true}
       >
+        <div className={styles["pricing__toggle"]}>
+          <span
+            className={`${styles["pricing__toggle-label"]} ${
+              styles["pricing__toggle-label--month"]
+            }`}
+          >
+            Monthly
+          </span>
+          <Switch />
+          <span
+            className={`${styles["pricing__toggle-label"]} ${
+              styles["pricing__toggle-label--year"]
+            }`}
+          >
+            Anually
+          </span>
+        </div>
+
         {/* <Signup className={styles["pricing__signup"]} /> */}
         <div className={styles["pricing__wrapper"]}>
           <div className={styles["pricing__pattern"]} />
