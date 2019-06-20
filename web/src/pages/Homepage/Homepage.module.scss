@@ -72,8 +72,13 @@ $section-spacing: 50px;
     lost-utility: clearfix;
 
     &-item {
-      lost-column: 1/4;
-      min-width: 180px;
+      lost-column: 1/2;
+
+      @include breakpoint-md {
+        min-width: 180px;
+        lost-column: 1/4;
+
+      }
 
       img {
         margin: 0 auto;

@@ -37,17 +37,17 @@
 
     &-mobile {
       @include clear-list-style;
-      position: fixed;
+      position: absolute;
       opacity: 0;
       background: $color-white;
       top: $header-mobile-height;
       bottom: 0;
       right: 0;
       left: 0;
+      visibility: hidden;
       width: 100%;
       height: calc(100vh - #{$header-mobile-height});
       padding: 0px 16px;
-      z-index: 900;
       transition: visiblity 100ms ease-in-out, opacity 100ms ease-in-out;
 
       .headroom--unpinned & {
@@ -65,9 +65,11 @@
       }
 
       &--is-active {
+        position: fixed;
         display: block;
         visibility: visible;
         opacity: 1;
+        z-index: 900;
 
         @include breakpoint-md {
           display: none;

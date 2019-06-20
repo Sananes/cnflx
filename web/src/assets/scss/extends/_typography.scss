@@ -98,17 +98,18 @@ $base-size: $typographic-base-font-size;
 }
 
 @mixin body-l {
-  font-size: $base-size;
-  @include line-height(1.3);
+  font-size: $base-size * 1.1;
+  @include line-height(1.1);
   @include margin-bottom(1);
 
   @include breakpoint-md() {
     font-size: $base-size * 1.266;
+    @include line-height(1.3);
   }
 }
 
 @mixin body {
-  font-size: $base-size;
+  font-size: $base-size * 1.066666667;
   @include line-height(1);
   @include margin-bottom(1);
 
