@@ -188,7 +188,7 @@ figcaption {
 
 .headroom--unpinned {
   position: fixed;
-  transform: translateY(0);
+  transform: translateY(-100%);
 }
 
 .headroom--pinned {

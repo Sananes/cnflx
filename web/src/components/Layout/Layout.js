@@ -1,7 +1,6 @@
 // @flow
 import React from "react";
 import Helmet from "react-helmet";
-import type { Node as ReactNode } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
