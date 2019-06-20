@@ -22,8 +22,12 @@
   &__navigation {
 
     &-title {
-      @include h5;
+      @include h6;
       @include margin-top(1);
+
+      @include breakpoint-md {
+        @include h5;
+      }
     }
 
     &-subtitle {
@@ -46,8 +50,8 @@
       margin-left: auto;
       margin-right: auto;
 
-      @include breakpoint-md {
-        max-height: 100px;
+      @include breakpoint-sm {
+        max-width: 100px;
       }
     }
 
@@ -124,6 +128,7 @@
 
         @include breakpoint-md {
           @include center(false, true);
+          text-align: left;
           right: 5%;
           lost-column: 4/12 4 24px;
           lost-offset: 1/12;
