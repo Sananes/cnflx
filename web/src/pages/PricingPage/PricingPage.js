@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Image from "gatsby-image";
 import Icon from "../../components/Icon";
 import Layout from "../../components/Layout";
-import Signup from "../../components/Signup";
+import Button from "../../components/Button";
 import Page from "../../components/Page";
 import styles from "./PricingPage.module.scss";
 import { usePricingList, useSiteMetadata } from "../../hooks";
@@ -30,7 +30,7 @@ const PricingTemplate = ({ data }) => {
         subtitle="Start free or as low as $10/mo"
         center={true}
       >
-        <Signup className={styles["pricing__signup"]} />
+        {/* <Signup className={styles["pricing__signup"]} /> */}
         <div className={styles["pricing__wrapper"]}>
           <div className={styles["pricing__pattern"]} />
           <ul className={styles["pricing__list"]}>
@@ -118,11 +118,13 @@ const PricingTemplate = ({ data }) => {
                       Custom Domain
                     </li>
                   </ul>
-                  {/*                  <div className={styles["pricing__item-button-wrapper"]}>
-                    <Link className={styles["pricing__item-button"]} to="/">
-                      Get Started
-                    </Link>
-                  </div> */}
+                  <div className={styles["pricing__item-button-wrapper"]}>
+                    <Button
+                      text="Try it Free"
+                      className={styles["pricing__item-button"]}
+                      to="/"
+                    />
+                  </div>
                 </li>
               ))}
           </ul>

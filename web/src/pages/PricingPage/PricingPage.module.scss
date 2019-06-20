@@ -41,9 +41,9 @@
     justify-content: stretch;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 8px;
     // border: 1px solid $color-border;
     background-color: $color-background-highlight;
-    border-left: 0px;
     padding: 20px;
     margin-bottom: 20px;
 
@@ -51,6 +51,7 @@
     @include breakpoint-sm {
       lost-column: 1/2 2 20px;
     }
+
     @include breakpoint-md {
       lost-column: 1/4 4 20px;
     }
@@ -60,7 +61,7 @@
       margin-right: auto;
     }
 
-    &-image + &-title {
+    &-image+&-title {
       @include margin-top(0.5);
     }
 
@@ -99,7 +100,7 @@
 
     &-subtitle {
       flex: 1;
-      @include body;
+      @include body-s;
       @include margin-top(0);
       @include margin-bottom(1.5);
 
@@ -123,6 +124,8 @@
       }
 
       &-item {
+        @include body-s;
+        @include margin-bottom(0.5);
         display: flex;
         width: auto;
         align-items: center;
@@ -154,7 +157,7 @@
 
     &-button {
       display: block;
-      @extend %button-secondary;
+      @extend %button;
       @include margin-top(1);
       @include margin-bottom(0);
     }
@@ -195,9 +198,10 @@
 
 .faq {
 
-  & > p {
-      @include body-l;
+  &>p {
+    @include body-l;
   }
+
   &__list {
     @include clear-list-style;
     text-align: left;
@@ -205,8 +209,8 @@
 
   &__item {
     @include clear-list-style;
-    @include breakpoint-sm {
-    }
+
+    @include breakpoint-sm {}
 
     @include breakpoint-md {
       lost-column: 1/2 2 64px;

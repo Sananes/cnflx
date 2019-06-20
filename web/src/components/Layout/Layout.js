@@ -27,7 +27,7 @@ const Layout = ({ children, title, description, className }: Props) => (
         rel="stylesheet"
       />
     </Helmet>
-    <Headroom disableInlineStyles={true} disable={false}>
+    <Headroom disableInlineStyles={true}>
       <Header />
     </Headroom>
     {children}

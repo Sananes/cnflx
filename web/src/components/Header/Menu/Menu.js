@@ -39,7 +39,11 @@ class Menu extends React.Component {
           >
             <Icon name={burgerActive ? "close" : "menu"} />
           </button>
-          <ul className={`${styles["menu__list-mobile"]} ${menuActive}`}>
+          <ul
+            className={`mobile-menu ${
+              styles["menu__list-mobile"]
+            } ${menuActive}`}
+          >
             <div className={styles["menu__list-mobile-wrapper"]}>
               {menu.map(item => (
                 <li

@@ -179,6 +179,10 @@ figcaption {
 
 .headroom--scrolled {
   transition: transform 200ms ease-in-out;
+
+  .mobile-menu {
+    transition: transform 100ms ease-in-out, height 200ms ease-in-out;
+  }
 }
 
 .headroom--pinned,
@@ -189,9 +193,26 @@ figcaption {
 .headroom--unpinned {
   position: fixed;
   transform: translateY(-100%);
+
+  .header {
+    transition: transform 200ms ease-in-out;
+  }
+
+  .mobile-menu {
+    transform: translateY($header-mobile-height);
+    height: 100vh;
+  }
+
+  .header-inner {}
 }
 
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
+
+  .header-inner {
+    @include breakpoint-md {
+      height: 50px;
+    }
+  }
 }
