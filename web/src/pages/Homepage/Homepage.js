@@ -36,6 +36,13 @@ export const query = graphql`
         }
       }
     }
+    heroImage: file(relativePath: { eq: "hero.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
   }
 `;
 
@@ -56,7 +63,10 @@ const IndexTemplate = ({ data }) => {
             <Signup />
             <div className={styles["hero__image-wrapper"]}>
               <div className={styles["hero__pattern"]} />
-              <img className={styles["hero__image"]} src={heroSVG} />
+              <Img
+                className={styles["hero__image"]}
+                fluid={data.heroImage.childImageSharp.fluid}
+              />
             </div>
           </div>
         </section>
