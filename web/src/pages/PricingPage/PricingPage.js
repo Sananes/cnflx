@@ -38,8 +38,6 @@ class PricingTemplate extends React.Component {
     });
   };
 
-  componentDidUpdate() {}
-
   componentDidMount() {
     this.setState({ showPrice: false });
   }
@@ -58,6 +56,9 @@ class PricingTemplate extends React.Component {
           center={true}
         >
           <div className={styles["pricing__toggle"]}>
+            <div className={styles["pricing__toggle-discount"]}>
+              Save up to 10% annualy
+            </div>
             <span
               className={`${styles["pricing__toggle-label"]} ${
                 styles["pricing__toggle-label--month"]
@@ -129,7 +130,7 @@ class PricingTemplate extends React.Component {
                           : price.price}
                       </h4>
                       <span className={styles["pricing__item-price-date"]}>
-                        {annualPrice ? `/yr` : "/mo"}
+                        /mo
                       </span>
                     </div>
                     <p className={styles["pricing__item-subtitle"]}>

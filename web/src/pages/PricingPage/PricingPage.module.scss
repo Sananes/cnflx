@@ -1,10 +1,8 @@
-@import '../../assets/scss/helpers';
-
+@import "../../assets/scss/helpers";
 
 // TODO: Follow netlify pricing plan
 
 .pricing {
-
   &__wrapper {
     position: relative;
   }
@@ -34,23 +32,17 @@
   }
 
   &__item {
+    lost-column: 1/2 2 16px;
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: stretch;
-    width: 100%;
     box-sizing: border-box;
     border-radius: 8px;
-    // border: 1px solid $color-border;
     background-color: $color-background-highlight;
     padding: 20px;
     margin-bottom: 20px;
-
-
-    @include breakpoint-sm {
-      lost-column: 1/2 2 20px;
-    }
 
     @include breakpoint-md {
       lost-column: 1/4 4 20px;
@@ -61,7 +53,7 @@
       margin-right: auto;
     }
 
-    &-image+&-title {
+    &-image + &-title {
       @include margin-top(0.5);
     }
 
@@ -107,7 +99,6 @@
       @include breakpoint-md {
         @include margin-bottom(1);
       }
-
     }
 
     &-features {
@@ -115,7 +106,6 @@
       padding: 0;
       margin: 0;
       text-align: left;
-
 
       @include breakpoint-md {
         display: flex;
@@ -157,11 +147,29 @@
   }
 
   &__toggle {
-    @include margin-top(-1);
+    position: relative;
+    @include margin-top(6);
     @include margin-bottom(2);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint-md {
+      @include margin-top(0);
+    }
+
+    &-discount {
+      @include overline;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -40px;
+      line-height: 1;
+      border-radius: 300px;
+      background-color: $color-green;
+      color: $color-white;
+      padding: 6px 12px;
+    }
 
     &-label {
       padding: 0 12px;
@@ -207,8 +215,7 @@
 }
 
 .faq {
-
-  &>p {
+  & > p {
     @include body-l;
   }
 
@@ -219,8 +226,6 @@
 
   &__item {
     @include clear-list-style;
-
-    @include breakpoint-sm {}
 
     @include breakpoint-md {
       lost-column: 1/2 2 64px;
