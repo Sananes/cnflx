@@ -21,15 +21,32 @@ $section-spacing: 50px;
     text-align: center;
   }
 
+  &__signup {
+    @include margin-bottom(4);
+
+    @include breakpoint-md {
+      @include margin-bottom(0);
+    }
+  }
+
   &__title {
     @include h1;
-    @include margin-top(2.5);
+    @include margin-top(4);
     @include margin-bottom(1);
+
+    @include breakpoint-md {
+      @include margin-top(2.5);
+    }
   }
 
   &__subtitle {
     @include body-l;
     @include margin-bottom(1.5);
+    width: 85%;
+
+    @include breakpoint-sm {
+      width: auto;
+    }
   }
 
 

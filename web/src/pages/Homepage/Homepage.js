@@ -60,7 +60,7 @@ const IndexTemplate = ({ data }) => {
               All-in-one feedback management
             </h1>
             <p className={styles["hero__subtitle"]}>{siteSubtitle}</p>
-            <Signup />
+            <Signup className={styles["hero__signup"]} />
             <div className={styles["hero__image-wrapper"]}>
               <div className={styles["hero__pattern"]} />
               <Img
