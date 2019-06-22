@@ -11,6 +11,8 @@ const hiddenDocTypes = listItem =>
     "integration",
     "siteIntegration",
     "testimonial",
+    "faq",
+    "test",
     "testimonials",
     "packages",
     "homepage",

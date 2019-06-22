@@ -3,16 +3,17 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
-import packages from "./package";
+import packages from "./objects/package";
 import siteSettings from "./documents/siteSettings";
 import test from "./documents/test";
 import blockContent from "./documents/blockContent";
 import pricing from "./documents/pricing";
 import homepage from "./documents/homepage";
-import testimonial from "./documents/testimonial";
+import faq from "./objects/faq";
+import testimonial from "./objects/testimonial";
 import integrationPage from "./documents/integrationPage";
-import integration from "./documents/integration";
-import partner from "./documents/partner";
+import integration from "./objects/integration";
+import partner from "./objects/partner";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,6 +28,7 @@ export default createSchema({
     homepage,
     partner,
     test,
+    faq,
     testimonial,
     packages,
     pricing,

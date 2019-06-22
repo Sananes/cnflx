@@ -1,4 +1,6 @@
 @import "../../assets/scss/helpers";
+$mobile-padding: 12px;
+$desktop-padding: 20px;
 
 // TODO: Follow netlify pricing plan
 
@@ -227,17 +229,25 @@
     }
 
     &-top-wrapper {
-      padding-left: 20px;
+      padding-left: $mobile-padding;
       text-align: left;
       display: flex;
       flex-direction: column;
       flex: 1;
+
+      @include breakpoint-md {
+        padding-left: $desktop-padding;
+      }
     }
 
     &-wrapper {
       border-radius: 8px;
-      padding: 20px;
+      padding: $mobile-padding;
       background: $color-background-highlight;
+
+      @include breakpoint-md {
+        padding: $desktop-padding;
+      }
     }
 
     &-image {
@@ -332,6 +342,10 @@
       @extend %button;
       @include margin-top(1);
       @include margin-bottom(0);
+
+      @include breakpoint-md {
+        @include margin-top(0.5);
+      }
     }
   }
 
@@ -364,6 +378,7 @@
       transform: translateX(-50%);
       top: -40px;
       line-height: 1;
+      min-width: 174px;
       border-radius: 300px;
       background-color: $color-green;
       color: $color-white;

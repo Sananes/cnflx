@@ -16,6 +16,12 @@ export default {
       name: "package",
       type: "array",
       of: [{ type: "packages" }]
+    },
+    {
+      title: "FAQ's",
+      name: "faqs",
+      type: "array",
+      of: [{ type: "faq" }]
     }
   ],
   preview: {

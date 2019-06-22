@@ -23,6 +23,7 @@ export const query = graphql`
   {
     sanityPricing {
       _rawPackage(resolveReferences: { maxDepth: 6 })
+      _rawFaqs(resolveReferences: { maxDepth: 6 })
     }
   }
 `;
@@ -42,6 +43,7 @@ class PricingTemplate extends React.Component {
   render() {
     const { data } = this.props;
     const pricingList = data.sanityPricing._rawPackage;
+    const faqs = data.sanityPricing._rawFaqs;
     const annualPrice = this.state.showPrice;
 
     return (
@@ -150,27 +152,6 @@ class PricingTemplate extends React.Component {
                           />{" "}
                           Up to {price.endusers} End Users
                         </li>
-                        <li className={styles["pricing__item-features-item"]}>
-                          <Icon
-                            name="checkmark"
-                            className={styles["pricing__item-checkmark"]}
-                          />{" "}
-                          Feedback Translation
-                        </li>
-                        <li className={styles["pricing__item-features-item"]}>
-                          <Icon
-                            name="checkmark"
-                            className={styles["pricing__item-checkmark"]}
-                          />{" "}
-                          Emotion Analysis
-                        </li>
-                        <li className={styles["pricing__item-features-item"]}>
-                          <Icon
-                            name="checkmark"
-                            className={styles["pricing__item-checkmark"]}
-                          />{" "}
-                          Custom Domain
-                        </li>
                       </ul>
                       <div className={styles["pricing__item-button-wrapper"]}>
                         <Button
@@ -203,41 +184,17 @@ class PricingTemplate extends React.Component {
           <section className={styles["faq"]}>
             <h3 className={styles["faq__title"]}>Frequently Asked Questions</h3>
             <ul className={styles["faq__list"]}>
-              <li className={styles["faq__item"]}>
-                <h4 className={styles["faq__item-title"]}>
-                  What are Active End Users?
-                </h4>
-                <p className={styles["faq__item-body"]}>
-                  Active End Users are people that provide you with feedback. As
-                  soon as they do, we flag them as active for the coming 3
-                  months. In case this person does not provide you with
-                  additional feedback during these 3 months, the users gets
-                  flagged as inactive. Inactive users will not be counted
-                  towards your billable quota. This results in a bill that
-                  doesn't just increase month over month.
-                </p>
-              </li>
-              <li className={styles["faq__item"]}>
-                <h4 className={styles["faq__item-title"]}>
-                  Can I always cancel my subscription?
-                </h4>
-                <p className={styles["faq__item-body"]}>
-                  We offer a 60-day money back guarantee. If you cancel your
-                  account afterwards we'll cancel your account at the end of
-                  your billing term.
-                </p>
-              </li>
-              <li className={styles["faq__item"]}>
-                <h4 className={styles["faq__item-title"]}>
-                  Do you offer Non-profit or Educational Discount?
-                </h4>
-                <p className={styles["faq__item-body"]}>
-                  Yes! We'd love to support you in doing things that make the
-                  world a better place. We offer a special discount to qualified
-                  nonprofit organizations and educational institutions. Contact
-                  us to learn more.
-                </p>
-              </li>
+              {faqs &&
+                faqs.map(faq => (
+                  <li className={styles["faq__item"]}>
+                    <h4 className={styles["faq__item-title"]}>
+                      {faq.title && faq.title}
+                    </h4>
+                    <p className={styles["faq__item-body"]}>
+                      {faq.description && faq.description}
+                    </p>
+                  </li>
+                ))}
             </ul>
           </section>
         </Page>

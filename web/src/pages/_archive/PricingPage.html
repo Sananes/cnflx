@@ -7,6 +7,7 @@ import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Page from "../../components/Page";
 import Switch from "../../components/Switch";
+import styles from "./PricingPage.module.scss";
 
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -83,95 +84,101 @@ class PricingTemplate extends React.Component {
               {pricingList &&
                 pricingList.map(price => (
                   <li key={price._key} className={styles["pricing__item"]}>
-                    {price.name === "Hobby" ? (
-                      <img
-                        className={styles["pricing__item-image"]}
-                        src={hobbyHoverSVG}
-                      />
-                    ) : (
-                      ""
-                    )}
-                    {price.name === "Small Business" ? (
-                      <img
-                        className={styles["pricing__item-image"]}
-                        src={smallBusinessHoverSVG}
-                      />
-                    ) : (
-                      ""
-                    )}
-                    {price.name === "Company" ? (
-                      <img
-                        className={styles["pricing__item-image"]}
-                        src={companyHoverSVG}
-                      />
-                    ) : (
-                      ""
-                    )}
-                    {price.name === "Enterprise" ? (
-                      <img
-                        className={styles["pricing__item-image"]}
-                        src={enterpriseHoverSVG}
-                      />
-                    ) : (
-                      ""
-                    )}
-                    {price.name && (
-                      <h3 className={styles["pricing__item-title"]}>
-                        {price.name}
-                      </h3>
-                    )}
-                    <div className={styles["pricing__item-price"]}>
-                      <span className={styles["pricing__item-price-currency"]}>
-                        $
-                      </span>
-                      <h4 className={styles["pricing__item-price-title"]}>
-                        {annualPrice
-                          ? Math.round((price.price * 12 * 0.9) / 12)
-                          : price.price}
-                      </h4>
-                      <span className={styles["pricing__item-price-date"]}>
-                        /mo
-                      </span>
+                    <div className={styles["pricing__item-top-wrapper"]}>
+                      {price.name === "Hobby" ? (
+                        <img
+                          className={styles["pricing__item-image"]}
+                          src={hobbyHoverSVG}
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {price.name === "Small Business" ? (
+                        <img
+                          className={styles["pricing__item-image"]}
+                          src={smallBusinessHoverSVG}
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {price.name === "Company" ? (
+                        <img
+                          className={styles["pricing__item-image"]}
+                          src={companyHoverSVG}
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {price.name === "Enterprise" ? (
+                        <img
+                          className={styles["pricing__item-image"]}
+                          src={enterpriseHoverSVG}
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {price.name && (
+                        <h3 className={styles["pricing__item-title"]}>
+                          {price.name}
+                        </h3>
+                      )}
+                      <div className={styles["pricing__item-price"]}>
+                        <span
+                          className={styles["pricing__item-price-currency"]}
+                        >
+                          $
+                        </span>
+                        <h4 className={styles["pricing__item-price-title"]}>
+                          {annualPrice
+                            ? Math.round((price.price * 12 * 0.9) / 12)
+                            : price.price}
+                        </h4>
+                        <span className={styles["pricing__item-price-date"]}>
+                          per <br /> month
+                        </span>
+                      </div>
+                      <p className={styles["pricing__item-subtitle"]}>
+                        {price.description}
+                      </p>
                     </div>
-                    <p className={styles["pricing__item-subtitle"]}>
-                      {price.description}
-                    </p>
-                    <ul className={styles["pricing__item-features"]}>
-                      <li className={styles["pricing__item-features-item"]}>
-                        <Icon
-                          name="checkmark"
-                          className={styles["pricing__item-checkmark"]}
-                        />{" "}
-                        Up to {price.endusers} End Users
-                      </li>
-                      <li className={styles["pricing__item-features-item"]}>
-                        <Icon
-                          name="checkmark"
-                          className={styles["pricing__item-checkmark"]}
-                        />{" "}
-                        Feedback Translation
-                      </li>
-                      <li className={styles["pricing__item-features-item"]}>
-                        <Icon
-                          name="checkmark"
-                          className={styles["pricing__item-checkmark"]}
-                        />{" "}
-                        Emotion Analysis
-                      </li>
-                      <li className={styles["pricing__item-features-item"]}>
-                        <Icon
-                          name="checkmark"
-                          className={styles["pricing__item-checkmark"]}
-                        />{" "}
-                        Custom Domain
-                      </li>
-                    </ul>
-                    <div className={styles["pricing__item-button-wrapper"]}>
-                      <Button
-                        text="Try it Free"
-                        className={styles["pricing__item-button"]}
-                        to="/"
-                      />
+                    <div className={styles["pricing__item-wrapper"]}>
+                      <ul className={styles["pricing__item-features"]}>
+                        <li className={styles["pricing__item-features-item"]}>
+                          <Icon
+                            name="checkmark"
+                            className={styles["pricing__item-checkmark"]}
+                          />{" "}
+                          Up to {price.endusers} End Users
+                        </li>
+                        <li className={styles["pricing__item-features-item"]}>
+                          <Icon
+                            name="checkmark"
+                            className={styles["pricing__item-checkmark"]}
+                          />{" "}
+                          Feedback Translation
+                        </li>
+                        <li className={styles["pricing__item-features-item"]}>
+                          <Icon
+                            name="checkmark"
+                            className={styles["pricing__item-checkmark"]}
+                          />{" "}
+                          Emotion Analysis
+                        </li>
+                        <li className={styles["pricing__item-features-item"]}>
+                          <Icon
+                            name="checkmark"
+                            className={styles["pricing__item-checkmark"]}
+                          />{" "}
+                          Custom Domain
+                        </li>
+                      </ul>
+                      <div className={styles["pricing__item-button-wrapper"]}>
+                        <Button
+                          text="Try it Free"
+                          className={styles["pricing__item-button"]}
+                          to="/"
+                        />
+                      </div>
                     </div>
                   </li>
                 ))}
