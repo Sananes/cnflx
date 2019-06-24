@@ -120,7 +120,7 @@ $base-size: $typographic-base-font-size;
 
 @mixin body-s {
   font-size: $base-size * .9333;
-  @include line-height(1);
+  @include line-height(0.75);
   @include margin-bottom(1);
 }
 

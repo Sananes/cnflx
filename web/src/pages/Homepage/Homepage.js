@@ -10,6 +10,8 @@ import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
 import styles from "./Homepage.module.scss";
+import { isMobile } from "react-device-detect";
+import ReactSwipe from "react-swipe";
 
 export const query = graphql`
   {
@@ -159,41 +161,82 @@ const IndexTemplate = ({ data }) => {
 
         <section className={styles["testimonials"]}>
           <div className={styles["testimonials__inner"]}>
-            <h3 className={styles["testimonials__title"]}>
-              What others are saying about us
-            </h3>
+            <h2 className={styles["testimonials__title"]}>
+              What our customers are saying
+            </h2>
 
-            <ul className={styles["testimonials__list"]}>
-              {data.sanityHomepage.testimonialList.map(testimonial => (
-                <li
-                  key={testimonial._key}
-                  className={styles["testimonials__list-item"]}
-                >
-                  <blockquote>{testimonial.description}</blockquote>
-                  <div className={styles["testimonials__list-item-company"]}>
-                    <img
-                      className={
-                        styles["testimonials__list-item-company-image"]
-                      }
-                      src={testimonial.image.asset.url}
-                    />
-                    <div
-                      className={
-                        styles["testimonials__list-item-company-details"]
-                      }
+            <ul id="slider" className={styles["testimonials__list"]}>
+              {isMobile ? (
+                <ReactSwipe>
+                  {data.sanityHomepage.testimonialList.map(testimonial => (
+                    <li
+                      key={testimonial._key}
+                      className={styles["testimonials__list-item"]}
                     >
-                      <h6
-                        className={
-                          styles["testimonials__list-item-company-name"]
-                        }
+                      <blockquote>{testimonial.description}</blockquote>
+                      <div
+                        className={styles["testimonials__list-item-company"]}
                       >
-                        {testimonial.name}
-                      </h6>
-                      <small>{testimonial.role}</small>
-                    </div>
-                  </div>
-                </li>
-              ))}
+                        <img
+                          className={
+                            styles["testimonials__list-item-company-image"]
+                          }
+                          src={testimonial.image.asset.url}
+                        />
+                        <div
+                          className={
+                            styles["testimonials__list-item-company-details"]
+                          }
+                        >
+                          <h6
+                            className={
+                              styles["testimonials__list-item-company-name"]
+                            }
+                          >
+                            {testimonial.name}
+                          </h6>
+                          <small>{testimonial.role}</small>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ReactSwipe>
+              ) : (
+                <React.Fragment>
+                  {data.sanityHomepage.testimonialList.map(testimonial => (
+                    <li
+                      key={testimonial._key}
+                      className={styles["testimonials__list-item"]}
+                    >
+                      <blockquote>{testimonial.description}</blockquote>
+                      <div
+                        className={styles["testimonials__list-item-company"]}
+                      >
+                        <img
+                          className={
+                            styles["testimonials__list-item-company-image"]
+                          }
+                          src={testimonial.image.asset.url}
+                        />
+                        <div
+                          className={
+                            styles["testimonials__list-item-company-details"]
+                          }
+                        >
+                          <h6
+                            className={
+                              styles["testimonials__list-item-company-name"]
+                            }
+                          >
+                            {testimonial.name}
+                          </h6>
+                          <small>{testimonial.role}</small>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </React.Fragment>
+              )}
             </ul>
           </div>
         </section>
