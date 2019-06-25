@@ -22,8 +22,8 @@ import companyHoverSVG from "../../assets/svg/pricing/company-hover.svg";
 export const query = graphql`
   {
     sanityPricing {
-      _rawPackage(resolveReferences: { maxDepth: 6 })
-      _rawFaqs(resolveReferences: { maxDepth: 6 })
+      _rawPackage(resolveReferences: { maxDepth: 10 })
+      _rawFaqs(resolveReferences: { maxDepth: 10 })
     }
   }
 `;
@@ -186,7 +186,7 @@ class PricingTemplate extends React.Component {
             <ul className={styles["faq__list"]}>
               {faqs &&
                 faqs.map(faq => (
-                  <li className={styles["faq__item"]}>
+                  <li key={faq._key} className={styles["faq__item"]}>
                     <h4 className={styles["faq__item-title"]}>
                       {faq.title && faq.title}
                     </h4>

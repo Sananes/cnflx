@@ -18,6 +18,12 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/templates/not-found-template.js")
   });
 
+  // 404
+  createPage({
+    path: "/flex-pricing",
+    component: path.resolve("./src/pages/FlexPricing/FlexPricing.js")
+  });
+
   // Integrations
   createPage({
     path: "/integrations",

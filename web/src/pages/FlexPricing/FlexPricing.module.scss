@@ -1,0 +1,52 @@
+@import '../../assets/scss/helpers';
+
+.flex-pricing {
+
+
+  &__slider {
+    lost-center: 540px;
+    margin-top: -32px;
+    text-align: left;
+
+    &-image {
+      margin: 0 auto;
+      padding-bottom: 32px;
+    }
+
+    &-price,
+    &-users {
+      @include h2;
+      color: $text-dark;
+      text-align: left;
+      font-weight: $font-weight-bold;
+      display: inline-block;
+
+      span {
+        @include body;
+        display: block;
+        font-weight: $font-weight-normal;
+        letter-spacing: 0;
+        color: $text-dimmed;
+      }
+    }
+
+    &-users {
+      margin-right: 32px;
+    }
+
+    &-button {
+      @include margin-top(2);
+      float: right;
+      text-align: right;
+
+
+      button {
+        @include margin-bottom(0.75);
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+}

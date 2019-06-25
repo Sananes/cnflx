@@ -1,0 +1,17 @@
+@import "../../assets/scss/helpers";
+
+.rc-slider-track {
+  background: lighten($color-primary, 20%);
+}
+
+.rc-slider-handle {
+  border-color: $color-primary;
+  width: 18px;
+  height: 18px;
+}
+
+.rc-slider-track,
+.rc-slider-rail,
+.rc-slider-step {
+  height: 8px;
+}
