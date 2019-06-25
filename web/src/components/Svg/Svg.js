@@ -3,16 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./Svg.module.scss";
 import { svgs } from "../../constants";
 
-const Svg = ({
-  stroke,
-  fill,
-  className,
-  name,
-  left,
-  strokeLineCap,
-  top,
-  strokeWidth
-}) => (
+const Svg = ({ stroke, fill, className, name, left, top, strokeWidth }) => (
   <svg
     viewBox={svgs[name].viewBox}
     fill={fill}
@@ -20,7 +11,6 @@ const Svg = ({
     top={top}
     className={className ? className : styles["svg"]}
     strokeWidth={strokeWidth}
-    strokeLineCap={strokeLineCap}
   >
     <path d={svgs[name].path} />
   </svg>
@@ -34,7 +24,6 @@ Svg.propTypes = {
   fill: PropTypes.string,
   left: PropTypes.string,
   top: PropTypes.string,
-  strokeLineCap: PropTypes.string,
   className: PropTypes.string
 };
 

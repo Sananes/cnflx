@@ -82,7 +82,9 @@
     "react-dom": "^16.8.6",
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1"
+    "react-slick": "^0.24.0",
     "react-swipe": "^6.0.4",
+    "slick-carousel": "^1.8.1",
     "swipe-js-iso": "^2.1.5"
   },
   "devDependencies": {
