@@ -71,45 +71,6 @@ $section-spacing: 50px;
   }
 }
 
-.companies {
-
-  &__inner {
-    @extend %layout-container-center;
-    text-align: center;
-  }
-
-  &__title {
-    @include overline;
-    color: $text-subdued;
-  }
-
-  &__list {
-    @extend %layout-container-center;
-    @include clear-list-style;
-    lost-utility: clearfix;
-
-    &-item {
-      lost-column: 1/2;
-
-      @include breakpoint-md {
-        min-width: 180px;
-        lost-column: 1/4;
-
-      }
-
-      img {
-        margin: 0 auto;
-        width: 90%;
-      }
-
-      &-link {
-        position: relative;
-        color: $text-dark;
-      }
-
-    }
-  }
-}
 
 .companies+.features {
   margin-top: $section-spacing;
@@ -211,89 +172,7 @@ $section-spacing: 50px;
   }
 }
 
-.testimonials {
-  &__inner {
-    @extend %layout-container-center,
-    %layout-container-divider;
-    text-align: center;
-  }
 
-  &__title {
-    @include h3;
-    @include margin-bottom(3);
-  }
-
-  &__list {
-    @include clear-list-style;
-    text-align: left;
-
-    @include breakpoint-md {
-      display: flex;
-      margin-left: -32px;
-      margin-right: -32px;
-    }
-
-    &>div {
-      overflow: hidden;
-      position: relative;
-    }
-
-    blockquote {
-      @include body;
-      font-style: normal;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      @include margin-bottom(1);
-
-      @include breakpoint-md {
-        text-align: left;
-      }
-    }
-
-    &-item {
-      text-align: center;
-      @include margin-bottom(2);
-      width: 100%;
-      outline: 0;
-
-
-      @include breakpoint-md {
-        padding-right: 32px;
-        padding-left: 32px;
-        border-right: 1px solid $color-border;
-        text-align: left;
-        margin-bottom: 0;
-      }
-
-      &-company {
-        display: inline-flex;
-        align-items: center;
-        flex-direction: row;
-        text-align: left;
-      }
-
-      &-company-details {
-        padding-left: 16px;
-      }
-
-      &-company-name {
-        @include body-s;
-        margin-top: 0;
-        @include margin-bottom(0);
-        line-height: 1;
-      }
-
-      small {}
-
-      &-company-image {
-        width: 48px;
-        height: 48px;
-        border-radius: 100%;
-      }
-    }
-  }
-}
 
 .signup {
   &__inner {

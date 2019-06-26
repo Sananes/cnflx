@@ -1,0 +1,41 @@
+@import '../../../assets/scss/helpers';
+
+.companies {
+
+  &__inner {
+    @extend %layout-container-center;
+    text-align: center;
+  }
+
+  &__title {
+    @include overline;
+    color: $text-subdued;
+  }
+
+  &__list {
+    @extend %layout-container-center;
+    @include clear-list-style;
+    lost-utility: clearfix;
+
+    &-item {
+      lost-column: 1/2;
+
+      @include breakpoint-md {
+        min-width: 180px;
+        lost-column: 1/4;
+
+      }
+
+      img {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      &-link {
+        position: relative;
+        color: $text-dark;
+      }
+
+    }
+  }
+}

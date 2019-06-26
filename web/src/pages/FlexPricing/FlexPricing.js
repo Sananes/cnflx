@@ -66,7 +66,6 @@ class FlexPricingPage extends React.Component {
   };
 
   calculatePrice = value => {
-    const price = this.state.price;
     const tier1 = Math.round(200 * this.state.tier1.value + 10);
     const tier2 = Math.round(
       tier1 + (value - this.state.tier2.min) * this.state.tier2.value
@@ -89,6 +88,7 @@ class FlexPricingPage extends React.Component {
     }
   };
   render() {
+    const { value, min, max, step, price } = this.state;
     return (
       <Layout className={styles["flex-pricing"]}>
         <Page
@@ -102,26 +102,38 @@ class FlexPricingPage extends React.Component {
               src={this.state.image}
             />
             <Slider
-              value={this.state.value}
-              min={this.state.min}
-              max={this.state.max}
-              step={this.state.step}
+              value={value}
+              min={min}
+              max={max}
+              step={step}
               onChange={this.onSliderChange}
             />
             <div className={styles["flex-pricing__slider-users"]}>
-              {this.state.value === 1000
-                ? `${this.state.value}+`
-                : this.state.value}
+              {value === 1000 ? `${value}+` : value}
               <span> Active end users</span>
             </div>
-            <div className={styles["flex-pricing__slider-price"]}>
-              €{this.state.price}
-              <span> per month</span>
+            <div
+              className={
+                value != 1000
+                  ? `${styles["flex-pricing__slider-price"]}`
+                  : `${styles["flex-pricing__slider-price"]} ${
+                      styles["flex-pricing__slider-price--contact"]
+                    }`
+              }
+            >
+              {value === 1000 ? (
+                <a href="mailto:sales@cnflx.io">Contact us</a>
+              ) : (
+                "€" + price
+              )}
+              {value != 1000 ? (
+                <span> per month</span>
+              ) : (
+                <span>for pricing</span>
+              )}
             </div>
             <div className={styles["flex-pricing__slider-button"]}>
-              <Button
-                text={this.state.value === 1000 ? "Contact Us" : "Try it free"}
-              />
+              <a href={"./endusers?=" + value}>Try it free</a>
               <span>14 day free trial. No credit card required.</span>
             </div>
           </div>

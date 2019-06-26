@@ -1,44 +1,19 @@
 // @flow
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
 import Signup from "../../components/Signup";
+import Testimonials from "./Testimonials";
+import Partners from "./Partners";
 import { useSiteMetadata } from "../../hooks";
-import heroSVG from "../../assets/svg/hero.svg";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
 import styles from "./Homepage.module.scss";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export const query = graphql`
   {
-    sanityHomepage {
-      partnersList {
-        name
-        _key
-        url
-        image {
-          asset {
-            url
-          }
-        }
-      }
-      testimonialList {
-        name
-        role
-        _key
-        description
-        image {
-          asset {
-            url
-          }
-        }
-      }
-    }
     heroImage: file(relativePath: { eq: "hero.png" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
@@ -53,23 +28,7 @@ const IndexTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   // const { partnerList } = data.sanityHomepage._rawPartnersList;
   // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
-  var settings = {
-    dots: true,
-    infinite: false,
-    fade: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+
   return (
     <Layout title={siteTitle} description={siteSubtitle}>
       <div className={styles["wrapper"]}>
@@ -90,31 +49,7 @@ const IndexTemplate = ({ data }) => {
           </div>
         </section>
 
-        <section className={styles["companies"]}>
-          <div className={styles["companies__inner"]}>
-            <h3 className={styles["companies__title"]}>
-              Trusted by forward-thinking software teams around the world
-            </h3>
-            <ul className={styles["companies__list"]}>
-              {data.sanityHomepage.partnersList.map(partner => (
-                <li
-                  key={partner._key}
-                  className={styles["companies__list-item"]}
-                >
-                  <a
-                    className={styles["companies__list-item-link"]}
-                    href={partner.url}
-                  >
-                    <img
-                      src={partner.image.asset.url}
-                      className={styles["companies__list-item-logo"]}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <Partners />
 
         <section className={styles["features"]}>
           <div className={styles["features__inner"]}>
@@ -176,46 +111,7 @@ const IndexTemplate = ({ data }) => {
           </div>
         </section>
 
-        <section className={styles["testimonials"]}>
-          <div className={styles["testimonials__inner"]}>
-            <h2 className={styles["testimonials__title"]}>
-              What our customers are saying
-            </h2>
-
-            <Slider {...settings} className={styles["testimonials__list"]}>
-              {data.sanityHomepage.testimonialList.map(testimonial => (
-                <div
-                  key={testimonial._key}
-                  className={styles["testimonials__list-item"]}
-                >
-                  <blockquote>{testimonial.description}</blockquote>
-                  <div className={styles["testimonials__list-item-company"]}>
-                    <img
-                      className={
-                        styles["testimonials__list-item-company-image"]
-                      }
-                      src={testimonial.image.asset.url}
-                    />
-                    <div
-                      className={
-                        styles["testimonials__list-item-company-details"]
-                      }
-                    >
-                      <h6
-                        className={
-                          styles["testimonials__list-item-company-name"]
-                        }
-                      >
-                        {testimonial.name}
-                      </h6>
-                      <small>{testimonial.role}</small>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </section>
+        <Testimonials />
 
         <section className={styles["signup"]}>
           <div className={styles["signup__inner"]}>

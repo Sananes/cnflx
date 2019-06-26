@@ -34,13 +34,22 @@
       margin-right: 32px;
     }
 
+    &-price {
+      &--contact {
+        @include body;
+      }
+    }
+
     &-button {
       @include margin-top(2);
       float: right;
       text-align: right;
 
 
-      button {
+      a {
+        @extend %button-base,
+        %button;
+        display: inline-block;
         @include margin-bottom(0.75);
       }
 

@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 import Page from "../../components/Page";
 import Switch from "../../components/Switch";
 import styles from "./PricingPage.module.scss";
+import Partners from "../Homepage/Partners";
 
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -21,6 +22,18 @@ import companyHoverSVG from "../../assets/svg/pricing/company-hover.svg";
 
 export const query = graphql`
   {
+    sanityHomepage {
+      partnersList {
+        name
+        _key
+        url
+        image {
+          asset {
+            url
+          }
+        }
+      }
+    }
     sanityPricing {
       _rawPackage(resolveReferences: { maxDepth: 10 })
       _rawFaqs(resolveReferences: { maxDepth: 10 })
@@ -180,6 +193,8 @@ class PricingTemplate extends React.Component {
               Contact us
             </Link>
           </section>
+
+          <Partners data={data} />
 
           <section className={styles["faq"]}>
             <h3 className={styles["faq__title"]}>Frequently Asked Questions</h3>

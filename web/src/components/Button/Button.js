@@ -3,12 +3,18 @@ import styles from "./Button.module.scss";
 
 type Props = {
   text?: string,
-  className?: string
+  className?: string,
+  link?: string
 };
 
-const Button = ({ text, className }: Props) => {
+const Button = ({ text, className, link }: Props) => {
   return (
-    <button className={className ? className : styles["button"]}>{text}</button>
+    <a
+      href={link}
+      className={className ? `${className} button` : styles["button"]}
+    >
+      {text}
+    </a>
   );
 };
 
