@@ -111,7 +111,8 @@ class Menu extends React.Component {
           </li>
           <li className={styles["menu__list-item--signup"]} key="signup">
             <Button
-              className={styles["menu__list-item-link"]}
+              link="#"
+              className={styles["menu__list-item-link-button"]}
               text="Try it Free"
             />
           </li>

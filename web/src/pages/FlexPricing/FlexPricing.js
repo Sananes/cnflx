@@ -93,7 +93,7 @@ class FlexPricingPage extends React.Component {
       <Layout className={styles["flex-pricing"]}>
         <Page
           title="Pay as you grow"
-          subtitle="Your subscription can be scaled up or down at any time"
+          subtitle="Your subscription will be scaled up depending on the usage"
           center={true}
         >
           <div className={styles["flex-pricing__slider"]}>

@@ -194,7 +194,7 @@ class PricingTemplate extends React.Component {
             </Link>
           </section>
 
-          <Partners data={data} />
+          <Partners className={styles["pricing-partners"]} />
 
           <section className={styles["faq"]}>
             <h3 className={styles["faq__title"]}>Frequently Asked Questions</h3>

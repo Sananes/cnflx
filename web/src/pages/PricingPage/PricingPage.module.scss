@@ -213,12 +213,13 @@ $desktop-padding: 20px;
 
   &__item {
     @include clear-list-style;
-    lost-column: 1/2 2 16px;
-    flex: 1;
     display: flex;
     position: relative;
     flex-direction: column;
     margin-bottom: 20px;
+    lost-column: 1/2 0 16px;
+    flex: 1;
+
 
     @include breakpoint-md {
       align-items: stretch;
@@ -408,7 +409,6 @@ $desktop-padding: 20px;
 
   align-items: center;
   text-align: left;
-  @include margin-bottom(3);
   @include padding(2, 1);
   text-align: center;
   background: $color-background-highlight;
@@ -451,6 +451,10 @@ $desktop-padding: 20px;
       display: inline-block;
     }
   }
+}
+
+.pricing-partners {
+  @include margin-bottom(2);
 }
 
 .faq {

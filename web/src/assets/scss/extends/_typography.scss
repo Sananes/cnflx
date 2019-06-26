@@ -101,6 +101,7 @@ $base-size: $typographic-base-font-size;
   font-size: $base-size * 1.1;
   @include line-height(1.1);
   @include margin-bottom(1);
+  letter-spacing: 0;
 
   @include breakpoint-md() {
     font-size: $base-size * 1.266;
@@ -112,6 +113,7 @@ $base-size: $typographic-base-font-size;
   font-size: $base-size * 1.066666667;
   @include line-height(1);
   @include margin-bottom(1);
+  letter-spacing: 0;
 
   @include breakpoint-md() {
     font-size: $base-size;

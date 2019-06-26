@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styles from "./Partners.module.scss";
 
-const IndexPartners = () => (
+const IndexPartners = ({ className }) => (
   <StaticQuery
     query={graphql`
       query IndexPartnersQuery {

@@ -4,9 +4,14 @@
 
 
   &__slider {
-    lost-center: 540px;
-    margin-top: -32px;
+    lost-center: 320px;
     text-align: left;
+    margin-top: -16px;
+
+    @include breakpoint-md {
+      lost-center: 540px;
+      margin-top: -32px;
+    }
 
     &-image {
       margin: 0 auto;
@@ -21,17 +26,27 @@
       font-weight: $font-weight-bold;
       display: inline-block;
 
+      @include breakpoint-md {}
+
       span {
-        @include body;
+        @include body-s;
         display: block;
         font-weight: $font-weight-normal;
         letter-spacing: 0;
         color: $text-dimmed;
+
+        @include breakpoint-md {
+          @include body;
+        }
       }
     }
 
     &-users {
-      margin-right: 32px;
+      margin-right: 16px;
+
+      @include breakpoint-md {
+        margin-right: 32px;
+      }
     }
 
     &-price {
@@ -41,9 +56,14 @@
     }
 
     &-button {
+      width: 125px;
       @include margin-top(2);
       float: right;
       text-align: right;
+
+      @include breakpoint-md {
+        width: auto;
+      }
 
 
       a {
@@ -55,6 +75,11 @@
 
       span {
         display: block;
+        @include body-s;
+
+        @include breakpoint-md {
+          @include body;
+        }
       }
     }
   }
