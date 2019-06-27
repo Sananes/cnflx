@@ -4,6 +4,7 @@ import styles from "./Testimonials.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./react-slick.scss";
 
 const settings = {
   dots: true,
@@ -50,32 +51,37 @@ const IndexTestimonials = () => (
           </h2>
 
           <Slider {...settings} className={styles["testimonials__list"]}>
-            {data.sanityHomepage.testimonialList.map(testimonial => (
-              <div
-                key={testimonial._key}
-                className={styles["testimonials__list-item"]}
-              >
-                <blockquote>{testimonial.description}</blockquote>
-                <div className={styles["testimonials__list-item-company"]}>
-                  <img
-                    className={styles["testimonials__list-item-company-image"]}
-                    src={testimonial.image.asset.url}
-                  />
-                  <div
-                    className={
-                      styles["testimonials__list-item-company-details"]
-                    }
-                  >
-                    <h6
-                      className={styles["testimonials__list-item-company-name"]}
+            {data.sanityHomepage.testimonialList.length &&
+              data.sanityHomepage.testimonialList.map(testimonial => (
+                <div
+                  key={testimonial._key}
+                  className={styles["testimonials__list-item"]}
+                >
+                  <blockquote>{testimonial.description}</blockquote>
+                  <div className={styles["testimonials__list-item-company"]}>
+                    <img
+                      className={
+                        styles["testimonials__list-item-company-image"]
+                      }
+                      src={testimonial.image.asset.url}
+                    />
+                    <div
+                      className={
+                        styles["testimonials__list-item-company-details"]
+                      }
                     >
-                      {testimonial.name}
-                    </h6>
-                    <small>{testimonial.role}</small>
+                      <h6
+                        className={
+                          styles["testimonials__list-item-company-name"]
+                        }
+                      >
+                        {testimonial.name}
+                      </h6>
+                      <small>{testimonial.role}</small>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </Slider>
         </div>
       </section>

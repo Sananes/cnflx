@@ -14,7 +14,9 @@
 
   &__list {
     @include clear-list-style;
+    position: relative;
     text-align: left;
+    overflow: hidden;
 
     @include breakpoint-md {
       display: flex;
