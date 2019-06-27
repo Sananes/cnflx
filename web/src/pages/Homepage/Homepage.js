@@ -43,6 +43,7 @@ const IndexTemplate = ({ data }) => {
               <div className={styles["hero__pattern"]} />
               <Img
                 className={styles["hero__image"]}
+                alt="All-in-one feedback managment"
                 fluid={data.heroImage.childImageSharp.fluid}
               />
             </div>
@@ -68,6 +69,7 @@ const IndexTemplate = ({ data }) => {
                 <img
                   className={styles["features__list-image"]}
                   src={collectSVG}
+                  alt="Collecting feedback"
                 />
                 <h3 className={styles["features__list-title"]}>
                   Collecting feedback
@@ -82,6 +84,7 @@ const IndexTemplate = ({ data }) => {
                   <img
                     className={styles["features__list-image"]}
                     src={communicateSVG}
+                    alt="Communicate with your users"
                   />
                   <h3 className={styles["features__list-title"]}>
                     Communicate with your users
@@ -96,6 +99,7 @@ const IndexTemplate = ({ data }) => {
                   <img
                     className={styles["features__list-image"]}
                     src={organiseSVG}
+                    alt="Organise Feedback"
                   />
                   <h3 className={styles["features__list-title"]}>
                     Organise Feedback

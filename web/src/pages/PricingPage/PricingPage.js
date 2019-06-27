@@ -53,6 +53,13 @@ class PricingTemplate extends React.Component {
     });
   };
 
+  setAnnual = e => {
+    e.preventDefault();
+    if (this.toggle === false) {
+      return this.togglePrice();
+    }
+  };
+
   render() {
     const { data } = this.props;
     const pricingList = data.sanityPricing._rawPackage;
@@ -79,7 +86,9 @@ class PricingTemplate extends React.Component {
                 styles["pricing__toggle-label--month"]
               }`}
             >
-              Monthly
+              <span className={styles["pricing__toggle-label-link"]}>
+                Monthly
+              </span>
             </span>
             <Switch toggle={this.togglePrice} />
             <span
@@ -87,7 +96,9 @@ class PricingTemplate extends React.Component {
                 styles["pricing__toggle-label--year"]
               }`}
             >
-              Anually
+              <span className={styles["pricing__toggle-label-link"]}>
+                Anually
+              </span>
             </span>
           </div>
 
@@ -102,6 +113,7 @@ class PricingTemplate extends React.Component {
                       {price.name === "Hobby" ? (
                         <img
                           className={styles["pricing__item-image"]}
+                          alt={price.name}
                           src={hobbyHoverSVG}
                         />
                       ) : (
@@ -111,6 +123,7 @@ class PricingTemplate extends React.Component {
                         <img
                           className={styles["pricing__item-image"]}
                           src={smallBusinessHoverSVG}
+                          alt={price.name}
                         />
                       ) : (
                         ""
@@ -119,6 +132,7 @@ class PricingTemplate extends React.Component {
                         <img
                           className={styles["pricing__item-image"]}
                           src={companyHoverSVG}
+                          alt={price.name}
                         />
                       ) : (
                         ""
@@ -127,6 +141,7 @@ class PricingTemplate extends React.Component {
                         <img
                           className={styles["pricing__item-image"]}
                           src={enterpriseHoverSVG}
+                          alt={price.name}
                         />
                       ) : (
                         ""
@@ -140,7 +155,7 @@ class PricingTemplate extends React.Component {
                         <span
                           className={styles["pricing__item-price-currency"]}
                         >
-                          $
+                          €
                         </span>
                         <h4 className={styles["pricing__item-price-title"]}>
                           {annualPrice
@@ -195,7 +210,7 @@ class PricingTemplate extends React.Component {
 
           <Partners className={styles["pricing-partners"]} />
 
-          <Faqs />
+          <Faqs className={styles["pricing-faq"]} />
         </Page>
       </Layout>
     );

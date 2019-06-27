@@ -1,5 +1,5 @@
 $global-radius: 3px;
-$button-default: 8px 16px 9px 16px;
+$button-default: 7px 16px 7px 16px;
 $button-default-border: 8.5px 14px 10.5px 14px;
 $button-large: 12px 12px;
 
@@ -16,20 +16,25 @@ $button-large: 12px 12px;
 
 %button-base {
   @include button;
-  @include line-height(1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: auto;
   box-sizing: border-box;
   padding: $button-default;
+  height: auto;
   color: $color-white;
   font-weight: $font-weight-bold;
   border-radius: $global-radius;
   outline: 0;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+  color: inherit;
 
   &:hover,
   &:focus {
-    color: $color-white;
+    color: inherit;
   }
 }
 
@@ -44,6 +49,7 @@ button {
   &:focus {
     background: darken($color-primary, 5%);
     border: 1px solid transparent;
+    color: $color-white;
   }
 }
 

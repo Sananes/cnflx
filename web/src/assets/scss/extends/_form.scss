@@ -1,10 +1,11 @@
 $input-height: $typographic-base-line-height+17px+4px;
 
 input {
+  @include body;
+  -webkit-appearance: none;
   display: block;
   width: 100%;
-  padding: 9px 16px;
-  font-size: $typographic-base-font-size;
+  padding: 10px 16px;
   font-family: $typographic-font-family;
   line-height: $typographic-base-line-height;
   color: $text-dark;

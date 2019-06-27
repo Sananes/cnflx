@@ -50,6 +50,7 @@ const IntegrationsListTemplate = ({ data }: Props) => {
                 <img
                   className={styles["integrations__list-item-image"]}
                   src={integration.node.image.asset.url}
+                  alt={integration.node.name}
                 />
                 <h3 className={styles["integrations__list-item-title"]}>
                   {integration.node.name}

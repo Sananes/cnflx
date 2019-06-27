@@ -60,6 +60,7 @@ const IndexTestimonials = () => (
                   <blockquote>{testimonial.description}</blockquote>
                   <div className={styles["testimonials__list-item-company"]}>
                     <img
+                      alt={testimonial.name}
                       className={
                         styles["testimonials__list-item-company-image"]
                       }

@@ -131,7 +131,7 @@ const ProductPage = () => {
               <img
                 className={styles["product__feature-item-image"]}
                 src={emotionAnalysisSVG}
-                alt="Public Dashboard"
+                alt="Emotion Analysis"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -151,7 +151,7 @@ const ProductPage = () => {
               <img
                 className={styles["product__feature-item-image"]}
                 src={automaticTranslationSVG}
-                alt="Public Dashboard"
+                alt="Automatic Translation"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -204,7 +204,7 @@ const ProductPage = () => {
               <img
                 className={styles["product__feature-item-image"]}
                 src={emotionAnalysisSVG}
-                alt="Public Dashboard"
+                alt="Emotion Analysis"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -224,7 +224,7 @@ const ProductPage = () => {
               <img
                 className={styles["product__feature-item-image"]}
                 src={automaticTranslationSVG}
-                alt="Public Dashboard"
+                alt="Automatic translation"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>

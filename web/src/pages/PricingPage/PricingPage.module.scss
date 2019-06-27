@@ -454,6 +454,11 @@ $desktop-padding: 20px;
   }
 }
 
+.pricing-faq {
+  @extend %layout-container,
+  %layout-container-divider;
+}
+
 .pricing-partners {
   @include margin-bottom(2);
 }
