@@ -8,8 +8,8 @@ import Button from "../../components/Button";
 import Page from "../../components/Page";
 import Switch from "../../components/Switch";
 import styles from "./PricingPage.module.scss";
-import Partners from "../Homepage/Partners";
-import Faqs from "./Faqs";
+import Partners from "../Homepage/Partners/Partners";
+import Faqs from "./Faqs/Faqs";
 
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
