@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
+import Faqs from "../PricingPage/Faqs";
 import Button from "../../components/Button";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -137,6 +138,7 @@ class FlexPricingPage extends React.Component {
               <span>14 day free trial. No credit card required.</span>
             </div>
           </div>
+          <Faqs className={styles["flex-pricing__faqs"]} />
         </Page>
       </Layout>
     );

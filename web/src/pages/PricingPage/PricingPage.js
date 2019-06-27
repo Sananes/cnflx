@@ -9,6 +9,7 @@ import Page from "../../components/Page";
 import Switch from "../../components/Switch";
 import styles from "./PricingPage.module.scss";
 import Partners from "../Homepage/Partners";
+import Faqs from "./Faqs";
 
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -36,7 +37,6 @@ export const query = graphql`
     }
     sanityPricing {
       _rawPackage(resolveReferences: { maxDepth: 10 })
-      _rawFaqs(resolveReferences: { maxDepth: 10 })
     }
   }
 `;
@@ -56,7 +56,6 @@ class PricingTemplate extends React.Component {
   render() {
     const { data } = this.props;
     const pricingList = data.sanityPricing._rawPackage;
-    const faqs = data.sanityPricing._rawFaqs;
     const annualPrice = this.state.showPrice;
 
     return (
@@ -196,22 +195,7 @@ class PricingTemplate extends React.Component {
 
           <Partners className={styles["pricing-partners"]} />
 
-          <section className={styles["faq"]}>
-            <h3 className={styles["faq__title"]}>Frequently Asked Questions</h3>
-            <ul className={styles["faq__list"]}>
-              {faqs &&
-                faqs.map(faq => (
-                  <li key={faq._key} className={styles["faq__item"]}>
-                    <h4 className={styles["faq__item-title"]}>
-                      {faq.title && faq.title}
-                    </h4>
-                    <p className={styles["faq__item-body"]}>
-                      {faq.description && faq.description}
-                    </p>
-                  </li>
-                ))}
-            </ul>
-          </section>
+          <Faqs />
         </Page>
       </Layout>
     );

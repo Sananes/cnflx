@@ -197,13 +197,14 @@ $desktop-padding: 20px;
   &__list {
     @include clear-list-style;
     lost-utility: clearfix;
-    display: flex;
-    flex-wrap: wrap;
     position: relative;
-    justify-content: stretch;
 
-    @include breakpoint-lg {
+    @include breakpoint-md {
       margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: stretch;
+      align-items: stretch;
     }
   }
 
@@ -213,15 +214,15 @@ $desktop-padding: 20px;
 
   &__item {
     @include clear-list-style;
-    display: flex;
     position: relative;
     flex-direction: column;
+    align-items: stretch;
     margin-bottom: 20px;
-    lost-column: 1/2 0 16px;
-    flex: 1;
+    lost-column: 1/2 2 16px;
 
 
     @include breakpoint-md {
+      display: flex;
       align-items: stretch;
       lost-column: 1/4 4 20px;
       justify-content: stretch;
@@ -231,8 +232,8 @@ $desktop-padding: 20px;
       padding-left: $mobile-padding;
       text-align: left;
       display: flex;
-      flex-direction: column;
       flex: 1;
+      flex-direction: column;
 
       @include breakpoint-md {
         padding-left: $desktop-padding;
@@ -455,27 +456,4 @@ $desktop-padding: 20px;
 
 .pricing-partners {
   @include margin-bottom(2);
-}
-
-.faq {
-  &>p {
-    @include body-l;
-  }
-
-  &__list {
-    @include clear-list-style;
-    text-align: left;
-  }
-
-  &__item {
-    @include clear-list-style;
-
-    @include breakpoint-md {
-      lost-column: 1/2 2 64px;
-    }
-
-    &-title {
-      @include h5;
-    }
-  }
 }

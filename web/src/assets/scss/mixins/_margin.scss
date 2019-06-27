@@ -2,7 +2,7 @@
  * Margin
  */
 
- $modifier: 1.5;
+$modifier: 1.2;
 
 @mixin margin-top($number) {
     margin-top: #{ $number * ($typographic-leading / $modifier) + "px"};

@@ -1,0 +1,24 @@
+@import '../../../assets/scss/helpers';
+
+.faq {
+  &>p {
+    @include body-l;
+  }
+
+  &__list {
+    @include clear-list-style;
+    text-align: left;
+  }
+
+  &__item {
+    @include clear-list-style;
+
+    @include breakpoint-md {
+      lost-column: 1/2 2 64px;
+    }
+
+    &-title {
+      @include h5;
+    }
+  }
+}

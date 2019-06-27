@@ -1,6 +1,16 @@
 @import '../../assets/scss/helpers';
 
 .flex-pricing {
+  // background-image: url('../../assets/svg/pattern-bg-top.svg');
+  // background-size: 200% 1503px;
+  // background-position: center -100px;
+  // background-origin: content-box;
+  // background-repeat: no-repeat;
+
+  &__faqs {
+    @extend %layout-container,
+    %layout-container-divider;
+  }
 
 
   &__slider {
