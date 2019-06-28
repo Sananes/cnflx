@@ -35,68 +35,7 @@
       display: inline-flex;
     }
 
-    &-mobile {
-      @include clear-list-style;
-      position: absolute;
-      opacity: 0;
-      background: $color-white;
-      transform: translateY($header-mobile-height);
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      visibility: hidden;
-      width: 100%;
-      height: calc(100vh - #{$header-mobile-height});
-      padding: 0px 16px;
-      transition: visiblity 100ms ease-in-out, opacity 100ms ease-in-out;
 
-      @include breakpoint-md {
-        display: none;
-      }
-
-      &-wrapper {
-        position: absolute;
-        bottom: 16px;
-        left: 16px;
-      }
-
-      &--is-active {
-        position: fixed;
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        z-index: 900;
-
-        @include breakpoint-md {
-          display: none;
-        }
-      }
-
-      &-item {
-        @include clear-list-style;
-        font-size: 28px;
-
-        &-link {
-          display: block;
-          color: $text-dimmed;
-          padding: 8px 0;
-        }
-
-        &--signup button {
-          @extend %button-reset;
-          margin: 0;
-          color: $color-primary;
-          padding: 8px 0;
-
-
-          &:hover {
-            color: $color-primary;
-            padding: 8px 0;
-          }
-        }
-      }
-    }
 
     &-item {
       @include clear-list-style;

@@ -29,7 +29,7 @@ class FlexPricingPage extends React.Component {
       price: 10,
       image: hobbySVG,
       tier1: {
-        value: 0.2,
+        value: 0.18,
         min: 51,
         max: 250
       },
