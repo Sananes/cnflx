@@ -7,6 +7,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./slider.scss";
 import styles from "./FlexPricing.module.scss";
+import { useSiteMetadata } from "../../hooks";
 
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -89,9 +90,14 @@ class FlexPricingPage extends React.Component {
     }
   };
   render() {
+    const { name } = useSiteMetadata();
     const { value, min, max, step, price } = this.state;
     return (
-      <Layout className={styles["flex-pricing"]}>
+      <Layout
+        title={`Flexible Pricing | ${name}`}
+        description="Your Conflux subscription will be scaled up depending on the usage"
+        className={styles["flex-pricing"]}
+      >
         <Page
           title="Pay as you grow"
           subtitle="Your subscription will be scaled up depending on the usage"

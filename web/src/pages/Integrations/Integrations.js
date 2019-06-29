@@ -18,13 +18,13 @@ export const query = graphql`
 `;
 
 const IntegrationsListTemplate = ({ data }: Props) => {
-  const { title, subtitle } = useSiteMetadata();
+  const { name } = useSiteMetadata();
   const integrationList = useIntegrationList();
   const integrationPage = data.sanitySiteIntegration;
   return (
     <Layout
-      title={`Integrations - ${title}`}
-      description={subtitle}
+      title={`Integrations | ${name}`}
+      description={integrationPage.subtitle}
       className={styles["integrations"]}
     >
       <Page

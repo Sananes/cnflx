@@ -10,7 +10,7 @@ import Switch from "../../components/Switch";
 import styles from "./PricingPage.module.scss";
 import Partners from "../Homepage/Partners/Partners";
 import Faqs from "./Faqs/Faqs";
-
+import { useSiteMetadata } from "../../hooks";
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
 import enterpriseHoverSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -42,6 +42,7 @@ export const query = graphql`
 `;
 
 const PricingTemplate = ({ data }) => {
+  const { name } = useSiteMetadata();
   const [showAnnual, setAnnual] = useState(false);
 
   function togglePrice() {
@@ -52,7 +53,10 @@ const PricingTemplate = ({ data }) => {
   const annualPrice = showAnnual;
 
   return (
-    <Layout title={`Pricing`}>
+    <Layout
+      title={`Pricing | ${name}`}
+      description="Conflux is perfect for individuals and teams of all sizes. Start for free."
+    >
       <Page
         title="Pricing that suits your needs"
         subtitle="

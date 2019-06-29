@@ -19,12 +19,12 @@ import notificationDigest from "../../assets/svg/product/notification-digest.svg
 import filtersSVG from "../../assets/svg/product/filters.svg";
 
 const ProductPage = () => {
-  const { title, subtitle } = useSiteMetadata();
+  const { name } = useSiteMetadata();
 
   return (
     <Layout
-      title={`Product - ${title}`}
-      description={subtitle}
+      title={`Product | ${name}`}
+      description="Streamline your feedback, from anywhere, anytime."
       className={styles["product"]}
     >
       <Page

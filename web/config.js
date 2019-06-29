@@ -1,9 +1,10 @@
 "use strict";
 
 module.exports = {
-  url: "https://conflux.netlify.com",
+  url: "https://cnflx.netlify.com",
   title: "Feedback management is the epicenter of success",
   subtitle: "Prioritise, manage and track your customer feedback with Conflux.",
+  name: "Conflux",
   copyright: "© All rights reserved.",
   disqusShortname: "",
   postsPerPage: 4,

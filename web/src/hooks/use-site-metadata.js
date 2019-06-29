@@ -1,5 +1,5 @@
 // @flow
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby";
 
 const useSiteMetadata = () => {
   const { site } = useStaticQuery(
@@ -24,6 +24,7 @@ const useSiteMetadata = () => {
               label
               path
             }
+            name
             url
             title
             subtitle

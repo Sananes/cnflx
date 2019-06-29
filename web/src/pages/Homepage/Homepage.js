@@ -25,19 +25,19 @@ export const query = graphql`
 `;
 
 const IndexTemplate = ({ data }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title, subtitle, name } = useSiteMetadata();
   // const { partnerList } = data.sanityHomepage._rawPartnersList;
   // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
 
   return (
-    <Layout title={siteTitle} description={siteSubtitle}>
+    <Layout title={`${title} | ${name}`} description={subtitle}>
       <div className={styles["wrapper"]}>
         <section className={styles["hero"]}>
           <div className={styles["hero__inner"]}>
             <h1 className={styles["hero__title"]}>
               All-in-one feedback management
             </h1>
-            <p className={styles["hero__subtitle"]}>{siteSubtitle}</p>
+            <p className={styles["hero__subtitle"]}>{subtitle}</p>
             <Signup className={styles["hero__signup"]} />
             <div className={styles["hero__image-wrapper"]}>
               <div className={styles["hero__pattern"]} />
