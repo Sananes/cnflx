@@ -12,7 +12,9 @@ const useIntegrationList = () => {
               description
               image {
                 asset {
-                  url
+                  fluid(maxWidth: 1000) {
+                    ...GatsbySanityImageFluid_noBase64
+                  }
                 }
               }
               slug {

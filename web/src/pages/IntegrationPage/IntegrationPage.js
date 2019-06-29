@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import Image from "gatsby-image";
 import styles from "./IntegrationPage.module.scss";
 import Layout from "../../components/Layout";
 import Icon from "../../components/Icon";
@@ -16,7 +16,9 @@ export const query = graphql`
       description
       image {
         asset {
-          url
+          fluid(maxWidth: 1000) {
+            ...GatsbySanityImageFluid_noBase64
+          }
         }
       }
       slug {
@@ -34,9 +36,10 @@ const IntegrationTemplate = ({ data }: Props) => {
       <Page>
         <div className={styles["integration__wrapper"]}>
           <div className={styles["integration__connect"]}>
-            <img
+            <Image
               className={styles["integration__company-logo"]}
-              src={data.sanityIntegration.image.asset.url}
+              fluid={data.sanityIntegration.image.asset.fluid}
+              title={data.sanityIntegration.name}
             />
             <Icon
               name="plus"

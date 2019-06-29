@@ -47,10 +47,10 @@ const IntegrationsListTemplate = ({ data }: Props) => {
                   integration.node.slug.current
                 }
               >
-                <img
+                <Image
                   className={styles["integrations__list-item-image"]}
-                  src={integration.node.image.asset.url}
-                  alt={integration.node.name}
+                  fluid={integration.node.image.asset.fluid}
+                  title={integration.node.name}
                 />
                 <h3 className={styles["integrations__list-item-title"]}>
                   {integration.node.name}
