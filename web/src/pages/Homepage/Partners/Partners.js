@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 import styles from "./Partners.module.scss";
 
 const IndexPartners = ({ className }) => (
@@ -13,7 +14,9 @@ const IndexPartners = ({ className }) => (
             url
             image {
               asset {
-                url
+                fluid(maxWidth: 1000) {
+                  ...GatsbySanityImageFluid_noBase64
+                }
               }
             }
           }
@@ -33,9 +36,9 @@ const IndexPartners = ({ className }) => (
                   className={styles["companies__list-item-link"]}
                   href={partner.url}
                 >
-                  <img
-                    src={partner.image.asset.url}
-                    alt={partner.name}
+                  <Image
+                    fluid={partner.image.asset.fluid}
+                    title={partner.name}
                     className={styles["companies__list-item-logo"]}
                   />
                 </a>
