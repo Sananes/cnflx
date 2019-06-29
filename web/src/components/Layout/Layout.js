@@ -12,24 +12,26 @@ type Props = {
   description?: string
 };
 
-const Layout = ({ children, title, description, className }: Props) => (
-  <div className={className ? className : styles.layout}>
-    <Helmet>
-      <html lang="en" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta property="og:site_name" content={title} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      <link
-        href="https://fonts.googleapis.com/css?family=Barlow:400,500,600&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
-    <Header />
-    {children}
-    <Footer />
-  </div>
-);
+const Layout = ({ children, title, description, className }: Props) => {
+  return (
+    <div className={className ? className : styles.layout}>
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:site_name" content={title} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <link
+          href="https://fonts.googleapis.com/css?family=Barlow:400,500,600&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  );
+};
 
 export default Layout;

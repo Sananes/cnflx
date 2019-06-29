@@ -35,6 +35,7 @@ const IndexPartners = ({ className }) => (
                 >
                   <img
                     src={partner.image.asset.url}
+                    alt={partner.name}
                     className={styles["companies__list-item-logo"]}
                   />
                 </a>

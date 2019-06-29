@@ -12,7 +12,10 @@ import organiseSVG from "../../assets/svg/organise-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import publicDashboardSVG from "../../assets/svg/product/public-dashboard.svg";
 import emotionAnalysisSVG from "../../assets/svg/product/emotion-analysis.svg";
+import automationRules from "../../assets/svg/product/rules.svg";
+import attachFeedback from "../../assets/svg/product/attach-feedback.svg";
 import automaticTranslationSVG from "../../assets/svg/product/automatic-translation.svg";
+import notificationDigest from "../../assets/svg/product/notification-digest.svg";
 import filtersSVG from "../../assets/svg/product/filters.svg";
 
 const ProductPage = () => {
@@ -32,10 +35,7 @@ const ProductPage = () => {
         <section>
           <ul className={styles["product__navigation-list"]}>
             <li className={styles["product__navigation-list-item"]}>
-              <Link
-                className={styles["product__navigation-link"]}
-                to="#product"
-              >
+              <a href="#collect" className={styles["product__navigation-link"]}>
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img
                     className={styles["product__navigation-image"]}
@@ -47,18 +47,18 @@ const ProductPage = () => {
                 <p className={styles["product__navigation-subtitle"]}>
                   Manually or through integrations
                 </p>
-              </Link>
+              </a>
             </li>
             <li className={styles["product__navigation-list-item"]}>
-              <Link
+              <a
                 className={styles["product__navigation-link"]}
-                to="#product"
+                href="#organise"
               >
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img
                     className={styles["product__navigation-image"]}
                     src={organiseSVG}
-                    alt="Collect Feedback"
+                    alt="Organise Feedback"
                   />
                 </div>
                 <h4 className={styles["product__navigation-title"]}>
@@ -67,18 +67,18 @@ const ProductPage = () => {
                 <p className={styles["product__navigation-subtitle"]}>
                   Easily find what's important
                 </p>
-              </Link>
+              </a>
             </li>
             <li className={styles["product__navigation-list-item"]}>
-              <Link
+              <a
                 className={styles["product__navigation-link"]}
-                to="#product"
+                href="#communicate"
               >
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img
                     className={styles["product__navigation-image"]}
                     src={communicateSVG}
-                    alt="Collect Feedback"
+                    alt="Communicate Feedback"
                   />
                 </div>
                 <h4 className={styles["product__navigation-title"]}>
@@ -87,12 +87,12 @@ const ProductPage = () => {
                 <p className={styles["product__navigation-subtitle"]}>
                   Complete the cycle
                 </p>
-              </Link>
+              </a>
             </li>
           </ul>
         </section>
 
-        <section className={styles["product__feature"]}>
+        <section id="collect" className={styles["product__feature"]}>
           <div className={styles["product__feature-headline"]}>
             <h2 className={styles["product__feature-headline-title"]}>
               Collect your feedback
@@ -166,7 +166,7 @@ const ProductPage = () => {
           </div>
         </section>
 
-        <section className={styles["product__feature"]}>
+        <section id="organise" className={styles["product__feature"]}>
           <div className={styles["product__feature-headline"]}>
             <h2 className={styles["product__feature-headline-title"]}>
               Organise your feedback
@@ -203,19 +203,19 @@ const ProductPage = () => {
             <div className={styles["product__feature-item-image-wrapper"]}>
               <img
                 className={styles["product__feature-item-image"]}
-                src={emotionAnalysisSVG}
-                alt="Emotion Analysis"
+                src={automationRules}
+                alt="Automation Rules"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
               <h2 className={styles["product__feature-item-title"]}>
-                Emotion Analysis
+                Automation Rules
               </h2>
               <p className={styles["product__feature-item-body"]}>
-                All incoming feedback will go through our Emotion Analysis
-                Engine, giving you a first insight of the feedback. Easily
-                address customers that are having a negative experience so they
-                can see you're worth paying for.
+                Once feedback starts dripping in continuously it might be easy
+                to get some things done automatically. Any feedback that comes
+                in first goes through your automation rules, apply tags based on
+                what the feedback is about and off it goes!
               </p>
             </div>
           </div>
@@ -223,17 +223,98 @@ const ProductPage = () => {
             <div className={styles["product__feature-item-image-wrapper"]}>
               <img
                 className={styles["product__feature-item-image"]}
-                src={automaticTranslationSVG}
-                alt="Automatic translation"
+                src={attachFeedback}
+                alt="Attach feedback to ideas"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
               <h2 className={styles["product__feature-item-title"]}>
-                Automatic Translation
+                Attach feedback to ideas
               </h2>
               <p className={styles["product__feature-item-body"]}>
-                It doesn't matter what language your customers speak. Our
-                automatic translation engine, will make sure you'll understand.
+                You are in charge of your ideas, but that doesn't mean you can't
+                use your user's feedback to fuel those ideas. Attach feedback
+                from your users to your existing ideas (or create a new one!) to
+                group your users together and inform them about progress on your
+                ideas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="communicate" className={styles["product__feature"]}>
+          <div className={styles["product__feature-headline"]}>
+            <h2 className={styles["product__feature-headline-title"]}>
+              Communicate with your users
+            </h2>
+            <p className={styles["product__feature-headline-subtitle"]}>
+              This is where most of the magic happens. Your supporters are
+              ambassadors of your product. Show them you're listening by
+              communicating updates on ideas that matter most to them.
+            </p>
+          </div>
+          <div className={`${styles["product__feature-item"]}`}>
+            <div className={styles["product__feature-item-image-wrapper"]}>
+              <img
+                className={styles["product__feature-item-image"]}
+                src={notificationDigest}
+                alt="Notifications &amp; Digests"
+              />
+            </div>
+            <div className={styles["product__feature-item-content"]}>
+              <h2 className={styles["product__feature-item-title"]}>
+                Notifications &amp; Digests
+              </h2>
+              <p className={styles["product__feature-item-body"]}>
+                Conflux integrates with Slack for notifications about feedback
+                and ideas. If you don't have Slack, we can also update you
+                through e-mail with our digest feature. Digests can also be used
+                to keep your stakeholders up to date as it shows a weekly (or
+                daily) overview on what's been going on.
+              </p>
+            </div>
+          </div>
+          <div
+            className={`${styles["product__feature-item"]} ${
+              styles["product__feature-item--right"]
+            }`}
+          >
+            <div className={styles["product__feature-item-image-wrapper"]}>
+              <img
+                className={styles["product__feature-item-image"]}
+                src={automationRules}
+                alt="1-on-1 Communication"
+              />
+            </div>
+            <div className={styles["product__feature-item-content"]}>
+              <h2 className={styles["product__feature-item-title"]}>
+                1-on-1 Communication
+              </h2>
+              <p className={styles["product__feature-item-body"]}>
+                Sometimes you need some more information from your user, luckily
+                you can do all that from within Conflux. Conflux allows you to
+                communicate 1-on-1 with your users via e-mail. This means you
+                never have to switch back and forth between apps.
+              </p>
+            </div>
+          </div>
+          <div className={`${styles["product__feature-item"]}`}>
+            <div className={styles["product__feature-item-image-wrapper"]}>
+              <img
+                className={styles["product__feature-item-image"]}
+                src={attachFeedback}
+                alt="Status updates"
+              />
+            </div>
+            <div className={styles["product__feature-item-content"]}>
+              <h2 className={styles["product__feature-item-title"]}>
+                Status updates
+              </h2>
+              <p className={styles["product__feature-item-body"]}>
+                Through Status Updates you can keep your users in the loop about
+                changes to an idea. Has something been accepted and entered
+                development? Let them know! Feature complete? Let your users
+                know!
               </p>
             </div>
           </div>

@@ -8,11 +8,12 @@ import Headroom from "react-headroom";
 import Menu from "./Menu";
 import MobileMenu from "./Menu/MobileMenu";
 
-const Header = () => {
+const Header = props => {
   const { menu } = useSiteMetadata();
   const [showMenu, setShowMenu] = useState(false);
 
-  function toggleMenu() {
+  function toggleMenu(e) {
+    e.preventDefault();
     setShowMenu(!showMenu);
   }
 
