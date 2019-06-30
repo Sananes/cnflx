@@ -17,6 +17,80 @@ import attachFeedback from "../../assets/svg/product/attach-feedback.svg";
 import automaticTranslationSVG from "../../assets/svg/product/automatic-translation.svg";
 import notificationDigest from "../../assets/svg/product/notification-digest.svg";
 import filtersSVG from "../../assets/svg/product/filters.svg";
+import oneOnOneSVG from "../../assets/svg/product/1-1-communication.svg";
+import statusUpdateSVG from "../../assets/svg/product/status-update.svg";
+{
+  /*
+export const query = graphql`
+  {
+    collectFeedback: file(relativePath: { eq: "collect-feedback.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    organiseFeedback: file(relativePath: { eq: "organise-feedback.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    communicate: file(relativePath: { eq: "communicate.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    publicDashboard: file(relativePath: { eq: "public-dashboard.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    emotionAnalysis: file(relativePath: { eq: "emotion-analysis.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    automationRules: file(relativePath: { eq: "rules.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    attachFeedback: file(relativePath: { eq: "attach-feedback.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    automaticTranslation: file(
+      relativePath: { eq: "automation-translation.svg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    filters: file(relativePath: { eq: "filters.svg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`; */
+}
 
 const ProductPage = () => {
   const { name } = useSiteMetadata();
@@ -282,7 +356,7 @@ const ProductPage = () => {
             <div className={styles["product__feature-item-image-wrapper"]}>
               <img
                 className={styles["product__feature-item-image"]}
-                src={automationRules}
+                src={oneOnOneSVG}
                 alt="1-on-1 Communication"
               />
             </div>
@@ -298,11 +372,15 @@ const ProductPage = () => {
               </p>
             </div>
           </div>
-          <div className={`${styles["product__feature-item"]}`}>
+          <div
+            className={`${styles["product__feature-item"]} ${
+              styles["product__feature-item--last-child"]
+            }`}
+          >
             <div className={styles["product__feature-item-image-wrapper"]}>
               <img
                 className={styles["product__feature-item-image"]}
-                src={attachFeedback}
+                src={statusUpdateSVG}
                 alt="Status updates"
               />
             </div>

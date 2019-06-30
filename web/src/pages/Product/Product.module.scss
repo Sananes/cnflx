@@ -6,7 +6,7 @@
     lost-utility: clearfix;
     @include clear-list-style;
     @include margin-top(2);
-    @include margin-bottom(5);
+    @include margin-bottom(2);
 
     &-item {
       @include clear-list-style;
@@ -75,11 +75,10 @@
     }
   }
 
-  &__feature+&__feature {
-    @include margin-top(6);
-  }
-
   &__feature {
+    @extend %layout-container,
+    %layout-container-divider;
+
     &-headline {
       @include margin-bottom(3);
 
@@ -91,6 +90,10 @@
         @include body-l;
         lost-center: 640px;
       }
+    }
+
+    &-item:last-child {
+      @include margin-bottom(0);
     }
 
     &-item {
