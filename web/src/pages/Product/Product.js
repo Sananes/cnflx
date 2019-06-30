@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
-import { Link } from "gatsby";
+import { graphql } from "gatsby";
+import Image from "gatsby-image";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
 import styles from "./Product.module.scss";
@@ -10,6 +11,8 @@ import { useSiteMetadata } from "../../hooks";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
+{
+  /*
 import publicDashboardSVG from "../../assets/svg/product/public-dashboard.svg";
 import emotionAnalysisSVG from "../../assets/svg/product/emotion-analysis.svg";
 import automationRules from "../../assets/svg/product/rules.svg";
@@ -18,81 +21,113 @@ import automaticTranslationSVG from "../../assets/svg/product/automatic-translat
 import notificationDigest from "../../assets/svg/product/notification-digest.svg";
 import filtersSVG from "../../assets/svg/product/filters.svg";
 import oneOnOneSVG from "../../assets/svg/product/1-1-communication.svg";
-import statusUpdateSVG from "../../assets/svg/product/status-update.svg";
-{
-  /*
+import statusUpdateSVG from "../../assets/svg/product/status-update.svg"; */
+}
+
 export const query = graphql`
   {
-    collectFeedback: file(relativePath: { eq: "collect-feedback.svg" }) {
+    collectFeedback: file(
+      relativePath: { eq: "product/collect-feedback.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    organiseFeedback: file(relativePath: { eq: "organise-feedback.svg" }) {
+    organiseFeedback: file(
+      relativePath: { eq: "product/organise-feedback.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    communicate: file(relativePath: { eq: "communicate.svg" }) {
+    communicate: file(relativePath: { eq: "product/communicate.png" }) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    publicDashboard: file(relativePath: { eq: "public-dashboard.svg" }) {
+    publicDashboard: file(
+      relativePath: { eq: "product/public-dashboard.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    emotionAnalysis: file(relativePath: { eq: "emotion-analysis.svg" }) {
+    emotionAnalysis: file(
+      relativePath: { eq: "product/emotion-analysis.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    automationRules: file(relativePath: { eq: "rules.svg" }) {
+    automationRules: file(
+      relativePath: { eq: "product/automation-rules.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    attachFeedback: file(relativePath: { eq: "attach-feedback.svg" }) {
+    attachFeedback: file(relativePath: { eq: "product/attach-feedback.png" }) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     automaticTranslation: file(
-      relativePath: { eq: "automation-translation.svg" }
+      relativePath: { eq: "product/automatic-translation.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
-    filters: file(relativePath: { eq: "filters.svg" }) {
+    notificationDigest: file(
+      relativePath: { eq: "product/notification-digest.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    filters: file(relativePath: { eq: "product/filters.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    oneOnOne: file(relativePath: { eq: "product/1-1-communication.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    statusUpdate: file(relativePath: { eq: "product/status-updates.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
   }
-`; */
-}
+`;
 
-const ProductPage = () => {
+const ProductPage = ({ data }) => {
   const { name } = useSiteMetadata();
 
   return (
@@ -179,10 +214,10 @@ const ProductPage = () => {
           </div>
           <div className={`${styles["product__feature-item"]}`}>
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={publicDashboardSVG}
-                alt="Public Dashboard"
+                fluid={data.publicDashboard.childImageSharp.fluid}
+                title="Public Dashboard"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -202,11 +237,13 @@ const ProductPage = () => {
             }`}
           >
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
-                className={styles["product__feature-item-image"]}
-                src={emotionAnalysisSVG}
-                alt="Emotion Analysis"
-              />
+              {data.emotionAnalysis.childImageSharp.fluid ? (
+                <Image
+                  className={styles["product__feature-item-image"]}
+                  fluid={data.emotionAnalysis.childImageSharp.fluid}
+                  title="Emotion Analysis"
+                />
+              ) : null}
             </div>
             <div className={styles["product__feature-item-content"]}>
               <h2 className={styles["product__feature-item-title"]}>
@@ -222,10 +259,10 @@ const ProductPage = () => {
           </div>
           <div className={`${styles["product__feature-item"]}`}>
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={automaticTranslationSVG}
-                alt="Automatic Translation"
+                fluid={data.automaticTranslation.childImageSharp.fluid}
+                title="Automatic Translation"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -253,10 +290,10 @@ const ProductPage = () => {
           </div>
           <div className={`${styles["product__feature-item"]}`}>
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={filtersSVG}
-                alt="Filters"
+                fluid={data.filters.childImageSharp.fluid}
+                title="Filters"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -275,10 +312,10 @@ const ProductPage = () => {
             }`}
           >
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={automationRules}
-                alt="Automation Rules"
+                fluid={data.automationRules.childImageSharp.fluid}
+                title="Automation Rules"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -295,10 +332,10 @@ const ProductPage = () => {
           </div>
           <div className={`${styles["product__feature-item"]}`}>
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={attachFeedback}
-                alt="Attach feedback to ideas"
+                fluid={data.attachFeedback.childImageSharp.fluid}
+                title="Attach feedback to ideas"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -329,10 +366,10 @@ const ProductPage = () => {
           </div>
           <div className={`${styles["product__feature-item"]}`}>
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={notificationDigest}
-                alt="Notifications &amp; Digests"
+                fluid={data.notificationDigest.childImageSharp.fluid}
+                title="Notifications &amp; Digests"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -354,10 +391,10 @@ const ProductPage = () => {
             }`}
           >
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={oneOnOneSVG}
-                alt="1-on-1 Communication"
+                fluid={data.oneOnOne.childImageSharp.fluid}
+                title="1-on-1 Communication"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
@@ -378,10 +415,10 @@ const ProductPage = () => {
             }`}
           >
             <div className={styles["product__feature-item-image-wrapper"]}>
-              <img
+              <Image
                 className={styles["product__feature-item-image"]}
-                src={statusUpdateSVG}
-                alt="Status updates"
+                fluid={data.statusUpdate.childImageSharp.fluid}
+                title="Status updates"
               />
             </div>
             <div className={styles["product__feature-item-content"]}>
