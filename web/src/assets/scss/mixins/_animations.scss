@@ -1,0 +1,22 @@
+@keyframes slideInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideInUp {
+  animation: slideInUp 200ms ease-in-out;
+}
+
+.slideInOut {
+  animation: slideInOut 200ms ease-in-out reverse;
+}

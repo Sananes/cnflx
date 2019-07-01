@@ -37,7 +37,7 @@ class FlexPricingPage extends React.Component {
         max: 500
       },
       tier3: {
-        value: 0.13,
+        value: 0,
         min: 501,
         max: 1000
       }

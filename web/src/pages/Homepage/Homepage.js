@@ -3,6 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
+// import ScrollAnimation from "react-animate-on-scroll";
 import Signup from "../../components/Signup";
 import Testimonials from "./Testimonials/Testimonials";
 import Partners from "./Partners/Partners";
@@ -26,6 +27,12 @@ export const query = graphql`
 
 const IndexTemplate = ({ data }) => {
   const { title, subtitle, name } = useSiteMetadata();
+
+  // const animationDuration = {
+  //   duration: 0.3,
+  //   animateIn: "slideInUp",
+  //   animateOut: ""
+  // };
   // const { partnerList } = data.sanityHomepage._rawPartnersList;
   // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
 

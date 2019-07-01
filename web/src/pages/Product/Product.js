@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { scroller, scroll } from "react-scroll";
+import { scroller } from "react-scroll";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
 import Layout from "../../components/Layout";
