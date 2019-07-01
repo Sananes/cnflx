@@ -13,6 +13,16 @@
   }
 }
 
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .slideInUp {
   animation: slideInUp 200ms ease-in-out;
 }

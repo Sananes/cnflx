@@ -42,10 +42,17 @@
     border-radius: 300px;
     padding: 12px;
     margin: 0 8px;
+    animation: moveUpDown 2s ease-in-out infinite alternate-reverse;
 
     @include breakpoint-md {
       padding: 20px;
       margin: 0 16px;
+    }
+
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (5s /2);
+      }
     }
 
     &--slack,
