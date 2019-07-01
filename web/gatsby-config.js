@@ -30,6 +30,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "favicons",
+        path: `${__dirname}/src/assets/favicons`
+      }
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "yv2hpkrm",
@@ -117,9 +124,9 @@ module.exports = {
         short_name: siteConfig.title,
         start_url: "/",
         background_color: "#FFF",
-        theme_color: "#F7A046",
-        display: "standalone"
-        // icon: "static/photo.jpg"
+        theme_color: "#009AF1",
+        display: "standalone",
+        icon: `src/assets/favicons/favicon.png`
       }
     },
     // "gatsby-plugin-page-transitions",
