@@ -18,7 +18,7 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/templates/not-found-template.js")
   });
 
-  // 404
+  // Flex Pricing
   createPage({
     path: "/flex-pricing",
     component: path.resolve("./src/pages/FlexPricing/FlexPricing.js")
@@ -40,6 +40,18 @@ const createPages = async ({ graphql, actions }) => {
   createPage({
     path: "/pricing",
     component: path.resolve("./src/pages/PricingPage/PricingPage.js")
+  });
+
+  // Signin
+  createPage({
+    path: "/signin",
+    component: path.resolve("./src/pages/Signin/Signin.js")
+  });
+
+  // Signin
+  createPage({
+    path: "/signup",
+    component: path.resolve("./src/pages/Signup/Signup.js")
   });
 
   // Posts and pages from markdown
