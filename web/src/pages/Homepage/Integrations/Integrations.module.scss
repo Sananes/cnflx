@@ -1,0 +1,79 @@
+@import '../../../assets/scss/helpers';
+
+.integrations {
+  @extend %layout-container-center,
+  %layout-container-divider;
+
+
+  &__title {
+    @extend %title;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+  }
+
+  &__list {
+    @include clear-list-style;
+    @include margin-bottom(2);
+  }
+
+  &__split {
+    display: block;
+    width: 100%;
+  }
+
+  &__button {
+    @extend %button-base,
+    %button-plain;
+    color: $color-primary;
+    padding: 8px 12px;
+    @include margin-bottom(0);
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__item {
+    @include clear-list-style;
+    background: $color-background-highlight;
+    display: inline-block;
+    border-radius: 300px;
+    padding: 12px;
+    margin: 0 8px;
+
+    @include breakpoint-md {
+      padding: 20px;
+      margin: 0 16px;
+    }
+
+    &--slack,
+    &--jira {
+      background: #F6F1FB;
+    }
+
+    &--twitter,
+    &--intercom {
+      background-color: #EEF7FD;
+    }
+
+    &--gmail {
+      background-color: #FCEEEC;
+    }
+
+    &--zapier {
+      background-color: #FEF8EC;
+    }
+
+    &--zendesk,
+    &--chrome {
+      background-color: #E8F6F4;
+    }
+
+    &-image {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

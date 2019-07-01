@@ -6,6 +6,7 @@ import Layout from "../../components/Layout";
 // import ScrollAnimation from "react-animate-on-scroll";
 import Signup from "../../components/Signup";
 import Testimonials from "./Testimonials/Testimonials";
+import Integrations from "./Integrations/Integrations";
 import Partners from "./Partners/Partners";
 import { useSiteMetadata } from "../../hooks";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
@@ -121,6 +122,8 @@ const IndexTemplate = ({ data }) => {
             </ul>
           </div>
         </section>
+
+        <Integrations />
 
         <Testimonials />
 

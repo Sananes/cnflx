@@ -12,9 +12,11 @@
     width: 50%;
   }
 
-  &__wrapper + &__button {
+  &__wrapper+&__button {
     margin-left: 16px;
   }
+
+  &__input {}
 
   &__button {
     @extend %button;

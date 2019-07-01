@@ -34,7 +34,7 @@ $tablet-padding: 24px;
     content: "";
     position: absolute;
     width: calc(100% - #{$mobile-padding * 2});
-    height: 100%;
+    height: 1px;
     top: 0;
     left: $mobile-padding;
     right: $mobile-padding;

@@ -45,6 +45,7 @@
     &-item {
       text-align: center;
       @include margin-bottom(2);
+      @include padding-bottom(1.5);
       width: 100%;
       outline: 0;
 
@@ -52,6 +53,7 @@
       @include breakpoint-md {
         padding-right: 32px;
         padding-left: 32px;
+        @include padding-bottom(0);
         border-right: 1px solid $color-border;
         text-align: left;
         margin-bottom: 0;

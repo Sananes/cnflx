@@ -1,0 +1,8 @@
+%title {
+  @include h3;
+}
+
+%subtitle {
+  @include body-l;
+  @include margin-bottom(3);
+}
