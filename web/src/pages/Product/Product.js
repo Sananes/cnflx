@@ -1,5 +1,6 @@
 // @flow
 import React from "react";
+import { scroller, scroll } from "react-scroll";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
 import Layout from "../../components/Layout";
@@ -130,6 +131,13 @@ export const query = graphql`
 const ProductPage = ({ data }) => {
   const { name } = useSiteMetadata();
 
+  function scrollTo(e) {
+    scroller.scrollTo(e, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart"
+    });
+  }
   return (
     <Layout
       title={`Product | ${name}`}
@@ -144,7 +152,10 @@ const ProductPage = ({ data }) => {
         <section>
           <ul className={styles["product__navigation-list"]}>
             <li className={styles["product__navigation-list-item"]}>
-              <a href="#collect" className={styles["product__navigation-link"]}>
+              <a
+                onClick={() => scrollTo("collect")}
+                className={styles["product__navigation-link"]}
+              >
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img
                     className={styles["product__navigation-image"]}
@@ -161,7 +172,7 @@ const ProductPage = ({ data }) => {
             <li className={styles["product__navigation-list-item"]}>
               <a
                 className={styles["product__navigation-link"]}
-                href="#organise"
+                onClick={() => scrollTo("organise")}
               >
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img
@@ -181,7 +192,7 @@ const ProductPage = ({ data }) => {
             <li className={styles["product__navigation-list-item"]}>
               <a
                 className={styles["product__navigation-link"]}
-                href="#communicate"
+                onClick={() => scrollTo("communicate")}
               >
                 <div className={styles["product__navigation-image-wrapper"]}>
                   <img

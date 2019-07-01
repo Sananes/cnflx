@@ -1,7 +1,6 @@
 // @flow
 import React from "react";
 import { Link } from "gatsby";
-import { getSvg } from "../../utils";
 import Svg from "../Svg";
 import styles from "./Footer.module.scss";
 
@@ -11,22 +10,27 @@ const Footer = () => (
       <ul className={styles["footer__list"]}>
         <h5 className={styles["footer__list-title"]}>Product</h5>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <Link to="/" className={styles["footer__list-item-link"]}>
             Home
           </Link>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <Link to="/product" className={styles["footer__list-item-link"]}>
             Product
           </Link>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <Link to="/pricing" className={styles["footer__list-item-link"]}>
             Pricing
           </Link>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <Link to="/flex-pricing" className={styles["footer__list-item-link"]}>
+            Flex Pricing
+          </Link>
+        </li>
+        <li className={styles["footer__list-item"]}>
+          <Link to="/integrations" className={styles["footer__list-item-link"]}>
             Integrations
           </Link>
         </li>
@@ -35,33 +39,45 @@ const Footer = () => (
       <ul className={styles["footer__list"]}>
         <h5 className={styles["footer__list-title"]}>Connect</h5>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <a
+            href="https://www.twitter.com/getconflux"
+            className={styles["footer__list-item-link"]}
+          >
             Twitter
-          </Link>
+          </a>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <a
+            href="https://www.producthunt.com/posts/conflux-2"
+            className={styles["footer__list-item-link"]}
+          >
             Product Hunt
-          </Link>
+          </a>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <a
+            href="linkedin.com/company/getconflux"
+            className={styles["footer__list-item-link"]}
+          >
             Linked In
-          </Link>
+          </a>
         </li>
       </ul>
 
       <ul className={styles["footer__list"]}>
         <h5 className={styles["footer__list-title"]}>Support</h5>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <a
+            href="https://ideas.cnflx.io"
+            className={styles["footer__list-item-link"]}
+          >
             Feature requests
-          </Link>
+          </a>
         </li>
         <li className={styles["footer__list-item"]}>
-          <Link to="#" className={styles["footer__list-item-link"]}>
+          <a href="#" className={styles["footer__list-item-link"]}>
             Contact us
-          </Link>
+          </a>
         </li>
       </ul>
 

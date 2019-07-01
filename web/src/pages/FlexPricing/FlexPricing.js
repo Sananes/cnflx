@@ -7,16 +7,13 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./slider.scss";
 import styles from "./FlexPricing.module.scss";
-import { useSiteMetadata } from "../../hooks";
 
 // SVGs
-import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
+
 import enterpriseHoverSVG from "../../assets/svg/pricing/enterprise.svg";
 import hobbySVG from "../../assets/svg/pricing/hobby.svg";
 import hobbyHoverSVG from "../../assets/svg/pricing/hobby-hover.svg";
-import smallBusinessSVG from "../../assets/svg/pricing/small-business.svg";
 import smallBusinessHoverSVG from "../../assets/svg/pricing/small-business-hover.svg";
-import companySVG from "../../assets/svg/pricing/company.svg";
 import companyHoverSVG from "../../assets/svg/pricing/company-hover.svg";
 
 class FlexPricingPage extends React.Component {
@@ -90,11 +87,10 @@ class FlexPricingPage extends React.Component {
     }
   };
   render() {
-    const { name } = useSiteMetadata();
     const { value, min, max, step, price } = this.state;
     return (
       <Layout
-        title={`Flexible Pricing | ${name}`}
+        title={`Flexible Pricing | Conflux`}
         description="Your Conflux subscription will be scaled up depending on the usage"
         className={styles["flex-pricing"]}
       >

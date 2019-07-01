@@ -36,7 +36,7 @@
     lost-column: 1/2;
 
     @include breakpoint-sm {
-      lost-column: 1/2;
+      lost-column: 1/3;
     }
 
     @include breakpoint-md {
@@ -45,7 +45,7 @@
 
     &-item {
       @include clear-list-style;
-      padding: 0;
+      @include padding(0.2, 0);
 
       &-link {
         color: $text-dark;
@@ -54,7 +54,7 @@
 
     &-title {
       @include overline;
-      color: $text-dimmed;
+      color: $text-muted;
       margin-top: 0;
     }
   }
@@ -67,6 +67,10 @@
 
   &__details {
     lost-column: 1;
+
+    @include breakpoint-sm {
+      lost-column: 1/3;
+    }
 
     @include breakpoint-md {
       lost-column: 1/4;

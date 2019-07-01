@@ -59,15 +59,6 @@ export default () =>
                     .documentId("siteIntegration")
                 ),
               S.listItem()
-                .title("Custom test")
-                .icon(MDPage)
-                .child(
-                  S.editor()
-                    .id("test")
-                    .schemaType("test")
-                    .documentId("test")
-                ),
-              S.listItem()
                 .title("Pricing")
                 .icon(MDHdmi)
                 .child(
