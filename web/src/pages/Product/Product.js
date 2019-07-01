@@ -218,9 +218,9 @@ const ProductPage = ({ data }) => {
               Collect your feedback
             </h2>
             <p className={styles["product__feature-headline-subtitle"]}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
-              quidem hic facilis asperiores enim, illo eveniet vitae architecto
-              quae laboriosam.
+              Collecting feedback is critical for the maturation of your
+              product. Stay ahead of the competition by listening to what your
+              Users really want.
             </p>
           </div>
           <div className={`${styles["product__feature-item"]}`}>
