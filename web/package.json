@@ -50,7 +50,7 @@
     "gatsby-plugin-feed": "^2.2.2",
     "gatsby-plugin-flow": "^1.0.6",
     "gatsby-plugin-google-gtag": "^1.0.17",
-    "gatsby-plugin-intercom-spa": "^0.1.0",
+    "gatsby-plugin-intercom": "^0.1.4",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-page-transitions": "^1.0.8",

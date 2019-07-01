@@ -143,10 +143,10 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-intercom-spa",
+      resolve: "gatsby-plugin-intercom",
       options: {
-        app_id: "jkseu45h",
-        include_in_development: true
+        appId: "jkseu45h",
+        includeInDevelopment: false
       }
     },
     "gatsby-plugin-flow"
