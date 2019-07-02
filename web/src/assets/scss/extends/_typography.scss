@@ -58,7 +58,7 @@ $base-size: $typographic-base-font-size;
 
   @include breakpoint-md {
     font-size: $base-size * 2.133;
-    @include line-height(1);
+    @include line-height(1.8);
     @include margin-top(2);
     @include margin-bottom(1);
   }

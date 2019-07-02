@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "gatsby";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
+import Icon from "../../components/Icon";
+import Svg from "../../components/Svg";
 import styles from "./Signin.module.scss";
 import { useSiteMetadata } from "../../hooks";
 
@@ -12,39 +15,56 @@ const SigninIndex = () => {
       customStyle={true}
       className={styles["signin"]}
     >
+      <Link to="/" className={styles["back"]}>
+        <Icon name="close" />
+      </Link>
       <div className={styles["signin__sidebar"]}>
-        <h2 className={styles["signin__sidebar-title"]}>
-          Good afternoon! <br /> Welcome back.
-        </h2>
-        <form className={styles["form"]}>
-          <div className={styles["input-wrapper"]}>
-            <label for="email" className={styles["label"]}>
-              Email address:
-            </label>
-            <input
-              id="email"
-              className={styles["input"]}
-              type="text"
-              placeholder="you@example.com"
-            />
+        <Link to="/" className={styles["logo"]}>
+          <Svg name="logo" />
+        </Link>
+        <div className={styles["signin__form"]}>
+          <form className={styles["form"]}>
+            <h2 className={styles["signin__sidebar-title"]}>
+              Welcome back.
+              <br /> <span>Sign into your workspace.</span>
+            </h2>
+
+            <div className={styles["fieldset"]}>
+              <label for="email" className={styles["label"]}>
+                Workspace URL:
+              </label>
+              <div
+                className={`${styles["input-wrapper"]} ${
+                  styles["input-wrapper--prefix"]
+                }`}
+              >
+                <input
+                  id="email"
+                  className={styles["input"]}
+                  type="text"
+                  placeholder="your-workspace-url"
+                />
+                <span className={styles["input-prefix"]}>cnflx.io</span>
+              </div>
+            </div>
+            <Button className={styles["button"]} text="Continue" />
+          </form>
+          <div className={styles["notice"]}>
+            <p>
+              Don’t know your workspace URL?{" "}
+              <Link to="/signup" className={styles["link"]}>
+                Find your workspace{" "}
+              </Link>
+            </p>
           </div>
-          <div className={styles["input-wrapper"]}>
-            <label for="password" className={styles["label"]}>
-              Password:
-              <a className={styles["forgot"]} href="#">
-                Forgot Password?
-              </a>
-            </label>
-            <input
-              id="password"
-              className={styles["input"]}
-              type="password"
-              placeholder="Enter 6 characters or more"
-            />
+          <div className={styles["notice"]}>
+            <p>
+              Don't have an account? <Link to="/signup">Sign up</Link>
+            </p>
           </div>
-          <Button className={styles["button"]} text="Signin" />
-        </form>
+        </div>
       </div>
+      <div className={styles["signin__promotion"]} />
     </Layout>
   );
 };
