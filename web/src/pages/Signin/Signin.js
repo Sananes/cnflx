@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Layout from "../../components/Layout";
+import InputLabel from "../../components/InputLabel";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
 import Svg from "../../components/Svg";
@@ -18,35 +19,25 @@ const SigninIndex = () => {
       <Link to="/" className={styles["back"]}>
         <Icon name="close" />
       </Link>
-      <div className={styles["signin__sidebar"]}>
+      <div className={styles["sidebar"]}>
         <Link to="/" className={styles["logo"]}>
           <Svg name="logo" />
         </Link>
-        <div className={styles["signin__form"]}>
+        <div className={styles["form-container"]}>
           <form className={styles["form"]}>
-            <h2 className={styles["signin__sidebar-title"]}>
+            <h2 className={styles["sidebar-title"]}>
               Welcome back.
               <br /> <span>Sign into your workspace.</span>
             </h2>
 
-            <div className={styles["fieldset"]}>
-              <label for="email" className={styles["label"]}>
-                Workspace URL:
-              </label>
-              <div
-                className={`${styles["input-wrapper"]} ${
-                  styles["input-wrapper--prefix"]
-                }`}
-              >
-                <input
-                  id="email"
-                  className={styles["input"]}
-                  type="text"
-                  placeholder="your-workspace-url"
-                />
-                <span className={styles["input-prefix"]}>cnflx.io</span>
-              </div>
-            </div>
+            <InputLabel
+              label="Workspace URL"
+              placeholder="your-workspace-url"
+              prefix={true}
+              prefixText="cnflx.io"
+              name="workspace"
+              className={styles["fieldset"]}
+            />
             <Button className={styles["button"]} text="Continue" />
           </form>
           <div className={styles["notice"]}>
@@ -64,7 +55,7 @@ const SigninIndex = () => {
           </div>
         </div>
       </div>
-      <div className={styles["signin__promotion"]} />
+      <div className={styles["promotion"]} />
     </Layout>
   );
 };

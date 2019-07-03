@@ -15,64 +15,70 @@ $promotion-width: calc(100% - #{$sidebar-width});
   justify-content: space-between;
   align-items: stretch;
 
-  &__sidebar {
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding-top: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
-
-
-    @include breakpoint-md {
-      width: $sidebar-width;
-      padding-right: 10%;
-      padding-left: 10%;
-    }
-
-    &-title {
-      @include h3;
-      @include margin-top(0);
-      @include margin-bottom(2);
-
-      span {
-        font-weight: $font-weight-normal;
-      }
-    }
-
-    &-title+&-subtitle {
-      @include margin-bottom(2);
-    }
-  }
-
   &__register {
     @include margin-bottom(2);
   }
 
-  &__promotion {
-    display: none;
 
-    @include breakpoint-md {
-      display: block;
-      width: $promotion-width;
-      height: 100%;
-      background: $color-primary;
-    }
+
+
+
+}
+
+.sidebar {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+
+  @include breakpoint-md {
+    width: $sidebar-width;
+    padding-right: 10%;
+    padding-left: 10%;
   }
 
-  &__form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 400px;
+}
+
+
+.sidebar-title {
+  @include h3;
+  @include margin-top(0);
+  @include margin-bottom(2);
+
+  span {
+    font-weight: $font-weight-normal;
+  }
+}
+
+.sidebar-title+.sidebar-subtitle {
+  @include margin-bottom(2);
+}
+
+.promotion {
+  display: none;
+
+  @include breakpoint-md {
+    display: block;
+    width: $promotion-width;
     height: 100%;
-    width: 100%;
+    background: $color-primary;
   }
+}
 
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  height: 100%;
+  width: 100%;
 }
 
 .logo {
@@ -114,23 +120,7 @@ $promotion-width: calc(100% - #{$sidebar-width});
   }
 }
 
-.fieldset {
-  @include margin-bottom(1);
-}
 
-.label {
-  font-weight: $font-weight-medium;
-  display: inline-flex;
-  width: 100%;
-  cursor: pointer;
-  color: $text-dimmed;
-  @include margin-bottom(0.5);
-
-  &:hover,
-  .input-wrapper:hover & {
-    color: $text-dark;
-  }
-}
 
 .forgot {
   flex: 1;

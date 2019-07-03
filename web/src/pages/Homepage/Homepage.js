@@ -12,13 +12,18 @@ import { useSiteMetadata } from "../../hooks";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
+import catSVG from "../../assets/svg/cat-mascot.svg";
+import slackCard from "../../assets/svg/slack-card.svg";
+import twitterCard from "../../assets/svg/twitter-card.svg";
+import jiraCard from "../../assets/svg/jira-card.svg";
+import intercomCard from "../../assets/svg/intercom-card.svg";
 import styles from "./Homepage.module.scss";
 
 export const query = graphql`
   {
-    heroImage: file(relativePath: { eq: "hero.png" }) {
+    heroImage: file(relativePath: { eq: "hero-app.png" }) {
       childImageSharp {
-        fluid(maxWidth: 4000) {
+        fluid {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -49,6 +54,37 @@ const IndexTemplate = ({ data }) => {
             <Signup className={styles["hero__signup"]} />
             <div className={styles["hero__image-wrapper"]}>
               <div className={styles["hero__pattern"]} />
+              <img src={catSVG} alt="Cat" className={styles["hero-cat"]} />
+              <ul>
+                <img
+                  src={slackCard}
+                  alt="Slack"
+                  className={`${styles["hero-card"]} ${
+                    styles["hero-card-slack"]
+                  }`}
+                />
+                <img
+                  src={twitterCard}
+                  alt="Twitter"
+                  className={`${styles["hero-card"]} ${
+                    styles["hero-card-twitter"]
+                  }`}
+                />
+                <img
+                  src={jiraCard}
+                  alt="JIRA"
+                  className={`${styles["hero-card"]} ${
+                    styles["hero-card-jira"]
+                  }`}
+                />
+                <img
+                  src={intercomCard}
+                  alt="Intercom"
+                  className={`${styles["hero-card"]} ${
+                    styles["hero-card-intercom"]
+                  }`}
+                />
+              </ul>
               <Img
                 className={styles["hero__image"]}
                 alt="All-in-one feedback managment"

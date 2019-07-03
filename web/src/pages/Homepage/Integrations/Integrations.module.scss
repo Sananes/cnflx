@@ -39,30 +39,33 @@
     @include clear-list-style;
     background: $color-background-highlight;
     display: inline-block;
-    border-radius: 300px;
-    padding: 12px;
+    border-radius: 38% 62% 55% 45% / 46% 47% 53% 54%;
+    padding: 24px;
     margin: 0 8px;
     animation: moveUpDown 2s ease-in-out infinite alternate-reverse;
+
+    svg {
+      height: 32px;
+      width: 32px;
+    }
 
     @include breakpoint-md {
       padding: 20px;
       margin: 0 16px;
     }
 
-    @for $i from 1 through 9 {
-      &:nth-child(#{$i}) {
-        animation-delay: $i * (5s /2);
-      }
-    }
+    @include delay(animation-delay, 9, 1s);
 
     &--slack,
     &--jira {
       background: #F6F1FB;
+      border-radius: 60% 40% 54% 46% / 57% 51% 49% 43%
     }
 
     &--twitter,
     &--intercom {
       background-color: #EEF7FD;
+      border-radius: 71% 30% 33% 67% / 38% 35% 63% 60%;
     }
 
     &--gmail {

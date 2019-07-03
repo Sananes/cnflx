@@ -30,13 +30,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "favicons",
-        path: `${__dirname}/src/assets/favicons`
-      }
-    },
-    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "yv2hpkrm",

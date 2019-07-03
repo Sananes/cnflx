@@ -1,0 +1,12 @@
+@import "../../assets/scss/helpers";
+
+
+.input {
+  flex: 1;
+  @include margin-bottom(0);
+
+
+  &:hover {
+    border: 1px solid darken($color-border, 15%);
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../assets/scss/helpers";
+
+.fieldset {
+  @include margin-bottom(1);
+
+  &:hover input {
+    border: 1px solid darken($color-border, 15%);
+  }
+}
+
+.label {
+  font-weight: $font-weight-medium;
+  display: inline-flex;
+  width: 100%;
+  cursor: pointer;
+  color: $text-dimmed;
+  @include margin-bottom(0.5);
+
+  &:hover,
+  .wrapper:hover & {
+    color: $text-dark;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &.prefix {
+    flex-direction: unset;
+  }
+}
+
+.input {
+  flex: 1;
+  @include margin-bottom(0);
+}
+
+.input-prefix {
+  color: $text-dark;
+  font-weight: $font-weight-medium;
+  padding-left: 16px;
+}

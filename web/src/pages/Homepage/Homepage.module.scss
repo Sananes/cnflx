@@ -2,6 +2,18 @@
 
 $section-spacing: 50px;
 
+$cards: slack twitter jira intercom;
+
+@keyframes heroSize {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
 .wrapper {
   background-image: url('../../assets/svg/pattern-bg-top.svg');
   background-size: 200% 1503px;
@@ -50,7 +62,10 @@ $section-spacing: 50px;
   }
 
 
-  &__image-wrapper {}
+  &__image-wrapper {
+    position: relative;
+    @include margin-top(2);
+  }
 
   &__pattern {
     display: none;
@@ -66,8 +81,63 @@ $section-spacing: 50px;
     margin-right: -50vw;
   }
 
+  ul>.hero-card {
+    position: absolute;
+    right: 0px;
+    z-index: 110;
+    animation: slideInUp 1s $animation-default both;
+    width: 200px;
+
+    @include delay(animation-delay, 4, 1s);
+
+    @include breakpoint-md {
+      width: auto;
+    }
+
+    &.hero-card-slack {
+      top: -20px;
+      right: 30px;
+    }
+
+    &.hero-card-twitter {
+      right: -50px;
+      top: 25%;
+    }
+
+    &.hero-card-jira {
+      right: -50px;
+      top: 54%;
+    }
+
+    &.hero-card-intercom {
+      right: 30px;
+      top: unset;
+      bottom: -40px;
+    }
+  }
+
   &__image {
     position: relative;
+    top: 0;
+    width: 90%;
+    z-index: 100;
+    animation: heroSize 1s 0.5s $animation-default both;
+    transform-origin: 100% 50%;
+  }
+
+  .hero-cat {
+    z-index: 50;
+    position: absolute;
+    top: -40px;
+    left: 5%;
+    width: 40px;
+
+    animation: moveUp 4s 2s $animation-default both;
+
+    @include breakpoint-md {
+      top: -55px;
+      width: auto;
+    }
   }
 }
 

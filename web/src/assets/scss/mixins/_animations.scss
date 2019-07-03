@@ -1,3 +1,23 @@
+@mixin delay($rule, $number, $value) {
+  @for $i from 1 to ($number + 1) {
+    &:nth-child(#{$i}) {
+      -webkit-#{$rule}: (#{$i*$value});
+      #{$rule}: (#{$i*$value}) !important;
+    }
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100%);
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes slideInUp {
   0% {
     transform: translateY(20px);
@@ -22,6 +42,7 @@
     transform: translateY(0);
   }
 }
+
 
 .slideInUp {
   animation: slideInUp 200ms ease-in-out;
