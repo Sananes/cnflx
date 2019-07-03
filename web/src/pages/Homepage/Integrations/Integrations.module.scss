@@ -40,9 +40,12 @@
     background: $color-background-highlight;
     display: inline-block;
     border-radius: 38% 62% 55% 45% / 46% 47% 53% 54%;
-    padding: 24px;
-    margin: 0 8px;
-    animation: moveUpDown 2s ease-in-out infinite alternate-reverse;
+    padding: 20px;
+    margin: 8px 8px;
+    animation: moveUpDown 3s ease-in-out infinite alternate both;
+
+    @include delay(animation-delay, 9, 0.5s);
+    @include alternate(animation-direction, 9/3, alternate-reverse);
 
     svg {
       height: 32px;
@@ -50,11 +53,11 @@
     }
 
     @include breakpoint-md {
-      padding: 20px;
-      margin: 0 16px;
+      padding: 24px;
+      margin: 8px 16px;
     }
 
-    @include delay(animation-delay, 9, 1s);
+
 
     &--slack,
     &--jira {

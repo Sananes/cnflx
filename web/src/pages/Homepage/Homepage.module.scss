@@ -61,10 +61,14 @@ $cards: slack twitter jira intercom;
     }
   }
 
-
   &__image-wrapper {
     position: relative;
     @include margin-top(2);
+    @include margin-bottom(3);
+
+    @include breakpoint-md {
+      @include margin-bottom(0);
+    }
   }
 
   &__pattern {
@@ -81,14 +85,44 @@ $cards: slack twitter jira intercom;
     margin-right: -50vw;
   }
 
+  .hero-no-animate {
+
+    .hero-app,
+    .hero-card,
+    .hero-cat {
+      visibility: hidden;
+    }
+  }
+
+  .hero-animate {
+
+    .hero-app,
+    .hero-card,
+    .hero-cat {
+      visibility: visible;
+    }
+
+    .hero-app {
+      animation: heroSize 1s 0.5s $animation-fast both;
+    }
+
+    .hero-card {
+      animation: slideInUp 1s $animation-medium both;
+    }
+
+    .hero-cat {
+      animation: moveUp 2s 3s $animation-medium both;
+
+    }
+  }
+
   ul>.hero-card {
     position: absolute;
     right: 0px;
     z-index: 110;
-    animation: slideInUp 1s $animation-default both;
     width: 200px;
 
-    @include delay(animation-delay, 4, 1s);
+    @include delay(animation-delay, 4, 0.5s);
 
     @include breakpoint-md {
       width: auto;
@@ -116,12 +150,12 @@ $cards: slack twitter jira intercom;
     }
   }
 
-  &__image {
+
+  .hero-app {
     position: relative;
     top: 0;
-    width: 90%;
+    width: 100%;
     z-index: 100;
-    animation: heroSize 1s 0.5s $animation-default both;
     transform-origin: 100% 50%;
   }
 
@@ -132,7 +166,6 @@ $cards: slack twitter jira intercom;
     left: 5%;
     width: 40px;
 
-    animation: moveUp 4s 2s $animation-default both;
 
     @include breakpoint-md {
       top: -55px;

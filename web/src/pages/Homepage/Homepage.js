@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
@@ -33,6 +33,10 @@ export const query = graphql`
 
 const IndexTemplate = ({ data }) => {
   const { title, subtitle, name } = useSiteMetadata();
+  const [heroAnimation, setHeroAnimation] = useState(false);
+  const animate = heroAnimation
+    ? styles["hero-animate"]
+    : styles["hero-no-animate"];
 
   // const animationDuration = {
   //   duration: 0.3,
@@ -52,9 +56,10 @@ const IndexTemplate = ({ data }) => {
             </h1>
             <p className={styles["hero__subtitle"]}>{subtitle}</p>
             <Signup className={styles["hero__signup"]} />
-            <div className={styles["hero__image-wrapper"]}>
+            <div className={`${styles["hero__image-wrapper"]} ${animate}`}>
               <div className={styles["hero__pattern"]} />
               <img src={catSVG} alt="Cat" className={styles["hero-cat"]} />
+
               <ul>
                 <img
                   src={slackCard}
@@ -86,8 +91,9 @@ const IndexTemplate = ({ data }) => {
                 />
               </ul>
               <Img
-                className={styles["hero__image"]}
+                className={styles["hero-app"]}
                 alt="All-in-one feedback managment"
+                onLoad={() => setHeroAnimation(!heroAnimation)}
                 fluid={data.heroImage.childImageSharp.fluid}
               />
             </div>

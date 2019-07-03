@@ -106,4 +106,5 @@ $font-weight-bold: 600;
 $header-height: 80px;
 $header-mobile-height: 48px;
 
-$animation-default: cubic-bezier(0, .71, .24, 1);
+$animation-fast: cubic-bezier(0, .71, .24, 1);
+$animation-medium: cubic-bezier(0, .36, .25, 1.02);

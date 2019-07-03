@@ -7,6 +7,15 @@
   }
 }
 
+@mixin alternate($rule, $number, $value) {
+  @for $i from 1 to ($number + 1) {
+    &:nth-child(#{$number}n) {
+      -webkit-#{$rule}: $value;
+      #{$rule}: $value !important;
+    }
+  }
+}
+
 @keyframes moveUp {
   0% {
     transform: translateY(100%);
@@ -35,11 +44,11 @@
 
 @keyframes moveUpDown {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-5px) scale(1);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1.1);
   }
 }
 
