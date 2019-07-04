@@ -19,6 +19,7 @@ const Layout = ({ children, title, description, className }: Props) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:site_name" content={title} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
