@@ -9,6 +9,12 @@ import { useSiteMetadata } from "../../../hooks";
 
 const SigninIndex = () => {
   const { name } = useSiteMetadata();
+
+  const validations = {
+    email: ["required", "email"],
+    password: ["required", "password", "min:3", "max:15"]
+  };
+
   return (
     <LayoutUser title={`Signin | ${name}`} className={styles["signup"]}>
       <div className={styles["form-container"]}>
@@ -19,16 +25,29 @@ const SigninIndex = () => {
         <Form className={styles["form"]}>
           <InputLabel
             name="email"
+            type="email"
             label="Email address"
+            required={true}
+            validations={validations}
             placeholder="you@example.com"
           />
           <InputLabel
             name="password"
             type="password"
             label="Password"
+            required={true}
+            validations={validations}
             placeholder="Enter 5 or more characters"
             helper="Forgot Password?"
             helperLink="/forgot-password"
+          />
+          <InputLabel
+            name="confirmPassword"
+            type="password"
+            label="Confirm Password"
+            required={true}
+            validations={validations}
+            placeholder="Enter 5 or more characters"
           />
           <InputLabel
             label="Workspace URL"

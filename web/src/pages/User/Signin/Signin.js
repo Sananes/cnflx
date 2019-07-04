@@ -11,6 +11,10 @@ import { useSiteMetadata } from "../../../hooks";
 
 const SigninIndex = () => {
   const { name } = useSiteMetadata();
+  const validations = {
+    email: ["required", "email"],
+    password: ["required", "min:3", "max:15"]
+  };
   return (
     <LayoutUser title={`Signin | ${name}`} className={styles["signin"]}>
       <div className={styles["form-container"]}>
