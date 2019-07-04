@@ -47,7 +47,7 @@ const Menu = ({ menu, showMenu, toggleMenu }: Props) => {
         </li>
         <li className={styles["menu__list-item--signup"]} key="signup">
           <Button
-            link="#"
+            link="/signup"
             className={styles["menu__list-item-link-button"]}
             text="Try it Free"
           />

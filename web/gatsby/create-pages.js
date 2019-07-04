@@ -45,13 +45,13 @@ const createPages = async ({ graphql, actions }) => {
   // Signin
   createPage({
     path: "/signin",
-    component: path.resolve("./src/pages/Signin/Signin.js")
+    component: path.resolve("./src/pages/User/Signin/Signin.js")
   });
 
   // Signin
   createPage({
     path: "/signup",
-    component: path.resolve("./src/pages/Signup/Signup.js")
+    component: path.resolve("./src/pages/User/Signup/Signup.js")
   });
 
   // Posts and pages from markdown

@@ -12,18 +12,6 @@ import { useSiteMetadata } from "../../hooks";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
-{
-  /*
-import publicDashboardSVG from "../../assets/svg/product/public-dashboard.svg";
-import emotionAnalysisSVG from "../../assets/svg/product/emotion-analysis.svg";
-import automationRules from "../../assets/svg/product/rules.svg";
-import attachFeedback from "../../assets/svg/product/attach-feedback.svg";
-import automaticTranslationSVG from "../../assets/svg/product/automatic-translation.svg";
-import notificationDigest from "../../assets/svg/product/notification-digest.svg";
-import filtersSVG from "../../assets/svg/product/filters.svg";
-import oneOnOneSVG from "../../assets/svg/product/1-1-communication.svg";
-import statusUpdateSVG from "../../assets/svg/product/status-update.svg"; */
-}
 
 export const query = graphql`
   {
@@ -145,7 +133,7 @@ const ProductPage = ({ data }) => {
       className={styles["product"]}
     >
       <Page
-        title="Streamline your feedback, from anywhere, anytime."
+        title="Next-generation feedback management platform"
         narrow={true}
         center={true}
       >

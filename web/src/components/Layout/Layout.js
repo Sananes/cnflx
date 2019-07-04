@@ -8,18 +8,11 @@ import styles from "./Layout.module.scss";
 type Props = {
   children: ReactNode,
   title: string,
-  customStyle: false,
   className?: string,
   description?: string
 };
 
-const Layout = ({
-  children,
-  title,
-  customStyle,
-  description,
-  className
-}: Props) => {
+const Layout = ({ children, title, description, className }: Props) => {
   return (
     <div className={className ? className : styles.layout}>
       <Helmet>
@@ -34,9 +27,9 @@ const Layout = ({
           rel="stylesheet"
         />
       </Helmet>
-      {!customStyle && <Header />}
+      <Header />
       {children}
-      {!customStyle && <Footer />}
+      <Footer />
     </div>
   );
 };

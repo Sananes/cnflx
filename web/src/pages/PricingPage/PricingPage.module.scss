@@ -4,191 +4,6 @@ $desktop-padding: 20px;
 
 // TODO: Follow netlify pricing plan
 
-// .pricing {
-//   &__wrapper {
-//     position: relative;
-//   }
-
-//   &__list {
-//     display: flex;
-//     position: relative;
-//     justify-content: stretch;
-//     flex-wrap: wrap;
-//     lost-utility: clearfix;
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
-
-//     @include breakpoint-lg {
-//       margin: 0;
-//     }
-//   }
-
-//   &__signup {
-//     @include margin-top(-2);
-//   }
-
-//   &__item {
-//     lost-column: 1/2 2 16px;
-//     display: flex;
-//     position: relative;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: stretch;
-//     box-sizing: border-box;
-//     border-radius: 8px;
-//     background-color: $color-background-highlight;
-//     padding: 20px;
-//     margin-bottom: 20px;
-
-//     @include breakpoint-md {
-//       lost-column: 1/4 4 20px;
-//     }
-
-//     &-image {
-//       margin-left: auto;
-//       margin-right: auto;
-//     }
-
-//     &-image+&-title {
-//       @include margin-top(0.5);
-//     }
-
-//     &-price {
-//       display: inline-flex;
-//       margin: 0 auto;
-//       margin-top: -4px;
-//     }
-
-//     &-price-currency,
-//     &-price-title,
-//     &-price-date {
-//       display: inline;
-//     }
-
-//     &-price-currency {
-//       margin-top: 6px;
-//     }
-
-//     &-price-date {
-//       align-self: flex-end;
-//       margin-bottom: 8px;
-//     }
-
-//     &-price-title {
-//       @include h2;
-//       padding: 0 4px;
-//       @include margin-top(0);
-//       @include margin-bottom(0);
-//     }
-
-//     &-title {
-//       @include h5;
-//       @include margin-top(0);
-//     }
-
-//     &-subtitle {
-//       flex: 1;
-//       @include body-s;
-//       @include margin-top(0);
-//       @include margin-bottom(1.5);
-
-//       @include breakpoint-md {
-//         @include margin-bottom(1);
-//       }
-//     }
-
-//     &-features {
-//       list-style: none;
-//       padding: 0;
-//       margin: 0;
-//       text-align: left;
-
-//       @include breakpoint-md {
-//         display: flex;
-//         justify-content: center;
-//         flex-direction: column;
-//       }
-
-//       &-item {
-//         @include body-s;
-//         @include margin-bottom(0.5);
-//         display: flex;
-//         width: auto;
-//         align-items: center;
-//         justify-content: center;
-
-//         @include breakpoint-sm {
-//           justify-content: flex-start;
-//         }
-//       }
-//     }
-
-//     &-checkmark {
-//       padding: 1px;
-//       height: 14px;
-//       width: 14px;
-//       margin: 0px;
-//       margin-right: 8px;
-//       background-color: transparentize($color-primary, 0.8);
-//       border-radius: 300px;
-//       color: $color-primary;
-//     }
-
-//     &-button {
-//       display: block;
-//       @extend %button;
-//       @include margin-top(1);
-//       @include margin-bottom(0);
-//     }
-//   }
-
-//   &__toggle {
-//     position: relative;
-//     @include margin-top(6);
-//     @include margin-bottom(2);
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     overflow: visible;
-
-//     @include breakpoint-md {
-//       @include margin-top(0);
-//     }
-
-//     &-arrow {
-//       position: absolute;
-//       width: 23px;
-//       color: $color-green;
-//       height: 39px;
-//       right: -30px;
-//       top: 10px;
-//     }
-
-//     &-discount {
-//       @include overline;
-//       position: absolute;
-//       left: 50%;
-//       transform: translateX(-50%);
-//       top: -40px;
-//       line-height: 1;
-//       border-radius: 300px;
-//       background-color: $color-green;
-//       color: $color-white;
-//       padding: 6px 12px;
-//     }
-
-//     &-label {
-//       padding: 0 12px;
-//       cursor: pointer;
-
-//       &:hover {
-//         color: $text-dark;
-//       }
-//     }
-//   }
-// }
-
 .pricing {
   &__wrapper {
     position: relative;
@@ -201,10 +16,6 @@ $desktop-padding: 20px;
 
     @include breakpoint-md {
       margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: stretch;
-      align-items: stretch;
     }
   }
 
@@ -301,10 +112,10 @@ $desktop-padding: 20px;
     }
 
     &-subtitle {
-      flex: 1;
       @include body-s;
       @include margin-top(0);
       @include margin-bottom(1.5);
+      height: 36px;
 
       @include breakpoint-md {
         @include margin-bottom(1);

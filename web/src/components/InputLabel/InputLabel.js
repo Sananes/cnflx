@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import Input from "../Input";
 import styles from "./InputLabel.module.scss";
 
@@ -8,6 +9,8 @@ const InputLabel = ({
   placeholder,
   name,
   label,
+  helper,
+  helperLink,
   className,
   prefix,
   prefixText
@@ -20,7 +23,12 @@ const InputLabel = ({
     <div className={`${className} ${styles["fieldset"]}`}>
       {label && (
         <label for={name} className={styles["label"]}>
-          {label ? label : "Label"}
+          {label && <span>{label}</span>}
+          {helper && helperLink && (
+            <Link to={helperLink} className={styles["label--link"]}>
+              {helper}
+            </Link>
+          )}
         </label>
       )}
       <div className={isPrefix}>
@@ -30,7 +38,7 @@ const InputLabel = ({
           name={name}
           className={styles["input"]}
         />
-        <span className={styles["input-prefix"]}>{prefixText}</span>
+        {prefix && <span className={styles["input-prefix"]}>{prefixText}</span>}
       </div>
     </div>
   );
@@ -42,6 +50,7 @@ InputLabel.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
+  labelLink: PropTypes.string,
   prefix: PropTypes.boolean,
   prefixText: PropTypes.string,
   placeholder: PropTypes.string,

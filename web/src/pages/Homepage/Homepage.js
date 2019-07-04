@@ -175,10 +175,7 @@ const IndexTemplate = ({ data }) => {
             <p className={styles["signup__subtitle"]}>
               Free 14 day trial · No credit card&nbsp;required
             </p>
-            <Signup
-              notice="No credit card required."
-              className={styles["signup__wrapper"]}
-            />
+            <Signup className={styles["signup__wrapper"]} />
           </div>
         </section>
       </div>

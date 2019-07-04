@@ -48,6 +48,7 @@ const MobileMenu = ({ menu, showMenu }) => {
             key="signup"
           >
             <Button
+              link="/signup"
               className={`${styles["mobile__menu-item-link"]} ${
                 styles["mobile__menu-item-link"]
               }`}

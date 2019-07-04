@@ -17,6 +17,7 @@ const useIntegrationList = () => {
                   }
                 }
               }
+              _key
               slug {
                 current
               }

@@ -20,6 +20,14 @@
   .wrapper:hover & {
     color: $text-dark;
   }
+
+  span {
+    flex: 1;
+  }
+
+  &--link {
+    text-align: right;
+  }
 }
 
 .wrapper {

@@ -120,9 +120,13 @@ $cards: slack twitter jira intercom;
     position: absolute;
     right: 0px;
     z-index: 110;
-    width: 200px;
+    width: 150px;
 
     @include delay(animation-delay, 4, 0.5s);
+
+    @include breakpoint-sm {
+      width: 200px;
+    }
 
     @include breakpoint-md {
       width: auto;
@@ -130,21 +134,21 @@ $cards: slack twitter jira intercom;
 
     &.hero-card-slack {
       top: -20px;
-      right: 30px;
+      right: 8%;
     }
 
     &.hero-card-twitter {
-      right: -50px;
       top: 25%;
+      right: 0;
     }
 
     &.hero-card-jira {
-      right: -50px;
+      right: 0;
       top: 54%;
     }
 
     &.hero-card-intercom {
-      right: 30px;
+      right: 8%;
       top: unset;
       bottom: -40px;
     }
@@ -294,6 +298,12 @@ $cards: slack twitter jira intercom;
 
   &__subtitle {
     @include body-l;
+    @include margin-top(0);
+    @include margin-bottom(1);
+
+    @include breakpoint-sm {
+      @include margin-top(-0.5);
+    }
   }
 
   &__newsletter {

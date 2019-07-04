@@ -1,4 +1,6 @@
 $input-height: $typographic-base-line-height+17px+4px;
+$color-primary-light: lighten($color-primary, 35%);
+$color-primary-medium: lighten($color-primary, 25%);
 
 input {
   @include body;
@@ -13,6 +15,18 @@ input {
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid $color-input-border;
   border-radius: $base-border-radius;
+
+  &:focus {
+    border: 1px solid $color-primary-medium;
+    box-shadow: 0 0 0 3px $color-primary-light;
+    outline: 0;
+
+    &:hover {
+      border: 1px solid $color-primary-medium;
+      box-shadow: 0 0 0 3px $color-primary-light;
+      outline: 0;
+    }
+  }
 
   @include placeholder;
 
