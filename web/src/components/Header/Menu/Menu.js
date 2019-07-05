@@ -13,7 +13,6 @@ type Props = {
   }
 };
 const Menu = ({ menu, showMenu, toggleMenu }: Props) => {
-  const menuActive = showMenu ? styles["menu__list-mobile--is-active"] : "";
   const burgerActive = showMenu ? styles["menu__toggle--is-active"] : "";
 
   return (

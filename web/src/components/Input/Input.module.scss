@@ -5,6 +5,12 @@
   flex: 1;
   @include margin-bottom(0);
 
+  &--required,
+  &--required:focus,
+  &--required:hover {
+    border-color: red !important;
+  }
+
 
   &:hover {
     border: 1px solid darken($color-border, 15%);
