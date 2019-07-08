@@ -217,3 +217,25 @@ figcaption {
 .menu-overlay {
   overflow-y: hidden;
 }
+
+.react-cookie-banner {
+  position: fixed !important;
+  bottom: 0;
+  max-width: 300px;
+  background: $color-white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 9999;
+  margin: 16px;
+
+  .cookie-message {
+    @include body;
+    @include margin-bottom(0.5);
+    display: block;
+  }
+
+  button {
+    margin-bottom: 0;
+  }
+}

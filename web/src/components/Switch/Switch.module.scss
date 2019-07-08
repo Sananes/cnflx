@@ -8,38 +8,37 @@ $width: 60px;
 $height: $width/2;
 
 .toggle {
-
-  .toggle-control {
-    transition: $transition;
-    width: $width;
-    height: $height;
-    display: block;
-    cursor: pointer;
-    border: none;
-    border-radius: $height;
-    background-color: darken($color-background-highlight, 5%);
-    position: relative;
-
-    &:hover {
-      background-color: darken($color-background-highlight, 10%);
-    }
-
-    &:after {
-      transition: $transition;
-      content: "";
-      width: $height/1.5;
-      height: $height/1.5;
-      display: block;
-      background-color: #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-    }
-  }
-
   input {
     display: none;
+
+    &+.toggle-control {
+      transition: $transition;
+      width: $width;
+      height: $height;
+      display: block;
+      cursor: pointer;
+      border: none;
+      border-radius: $height;
+      background-color: darken($color-background-highlight, 5%);
+      position: relative;
+
+      &:hover {
+        background-color: darken($color-background-highlight, 10%);
+      }
+
+      &:after {
+        transition: $transition;
+        content: "";
+        width: $height/1.5;
+        height: $height/1.5;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+    }
 
     &:checked+.toggle-control {
       border-color: $color-green;

@@ -1,5 +1,10 @@
-'use strict';
+"use strict";
 
-require('./src/assets/scss/init.scss');
+import React from "react";
+import { PricingProvider } from "./src/context/PricingContext";
 
-exports.onClientEntry = () => {};
+require("./src/assets/scss/init.scss");
+
+export const wrapRootElement = ({ element }) => (
+  <PricingProvider>{element}</PricingProvider>
+);

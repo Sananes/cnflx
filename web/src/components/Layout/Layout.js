@@ -1,9 +1,11 @@
 // @flow
-import React from "react";
+import React, { useContext } from "react";
+import { PricingContext } from "../../context/PricingContext";
 import Helmet from "react-helmet";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
+import CookieBanner from "react-cookie-banner";
 
 type Props = {
   children: ReactNode,
@@ -28,6 +30,13 @@ const Layout = ({ children, title, description, className }: Props) => {
           rel="stylesheet"
         />
       </Helmet>
+      <CookieBanner
+        message="Yes, we use cookies. If you don't like it change website, we won't miss you!"
+        onAccept={() => {}}
+        className={styles["cookie-banner"]}
+        disableStyle={true}
+        cookie="user-has-accepted-cookies"
+      />
       <Header />
       {children}
       <Footer />

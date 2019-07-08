@@ -1,9 +1,10 @@
 // @flow
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, graphql } from "gatsby";
+import Layout from "../../components/Layout";
+import { PricingContext } from "../../context/PricingContext";
 import Icon from "../../components/Icon";
 import Svg from "../../components/Svg";
-import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Page from "../../components/Page";
 import Switch from "../../components/Switch";
@@ -11,6 +12,7 @@ import styles from "./PricingPage.module.scss";
 import Partners from "../Homepage/Partners/Partners";
 import Faqs from "./Faqs/Faqs";
 import { useSiteMetadata } from "../../hooks";
+
 // SVGs
 import enterpriseSVG from "../../assets/svg/pricing/enterprise.svg";
 import enterpriseHoverSVG from "../../assets/svg/pricing/enterprise.svg";
@@ -43,14 +45,14 @@ export const query = graphql`
 
 const PricingTemplate = ({ data }) => {
   const { name } = useSiteMetadata();
-  const [showAnnual, setAnnual] = useState(false);
+  const [annual, setAnnual] = useContext(PricingContext);
 
-  function togglePrice() {
-    setAnnual(!showAnnual);
-  }
+  const togglePrice = () => {
+    setAnnual(!annual);
+  };
 
   const pricingList = data.sanityPricing._rawPackage;
-  const annualPrice = showAnnual;
+  const annualPrice = annual;
 
   return (
     <Layout
@@ -80,7 +82,7 @@ const PricingTemplate = ({ data }) => {
               Monthly
             </span>
           </span>
-          <Switch toggle={togglePrice} />
+          <Switch toggle={togglePrice} value={annualPrice} />
           <span
             className={`${styles["pricing__toggle-label"]} ${
               styles["pricing__toggle-label--year"]
@@ -146,7 +148,7 @@ const PricingTemplate = ({ data }) => {
                         €
                       </span>
                       <h4 className={styles["pricing__item-price-title"]}>
-                        {annualPrice
+                        {annualPrice === true
                           ? Math.round((price.price * 12 * 0.9) / 12)
                           : price.price}
                       </h4>

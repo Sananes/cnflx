@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Form, Field } from "react-final-form";
 import LayoutUser from "../../../components/LayoutUser";
-import Button from "../../../components/Button";
-import InputLabel from "../../../components/InputLabel";
 import Input from "../../../components/Input";
 import styles from "../User.module.scss";
 import { useSiteMetadata } from "../../../hooks";
@@ -19,23 +17,21 @@ const SignupIndex = () => {
 
   const onSubmit = async values => {
     const data = values;
-    const body = {
-      email: data.email,
-      password: data.password,
-      fullName: data.fullName,
-      organization: {
-        name: data.organization,
-        url: data.organization
-      }
-    };
-    fetch("https://api.cnflx.io/api/v1/auth/register", {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    });
+    // fetch("https://api.cnflx.io/api/v1/auth/register", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     email: data.email,
+    //     password: data.password,
+    //     fullName: data.fullName,
+    //     organization: {
+    //       name: data.organization,
+    //       url: data.organization
+    //     }
+    //   })
+    // });
   };
 
   const InputLabel = ({ input, meta, label, placeholder, type, ...rest }) => (
