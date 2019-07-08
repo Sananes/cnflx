@@ -1,6 +1,5 @@
 // @flow
 import React, { useContext } from "react";
-import { PricingContext } from "../../context/PricingContext";
 import Helmet from "react-helmet";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -31,10 +30,11 @@ const Layout = ({ children, title, description, className }: Props) => {
         />
       </Helmet>
       <CookieBanner
-        message="Yes, we use cookies. If you don't like it change website, we won't miss you!"
+        message={"We use cookies to ensure you get the best experience."}
         onAccept={() => {}}
         className={styles["cookie-banner"]}
         disableStyle={true}
+        buttonMessage="Accept"
         cookie="user-has-accepted-cookies"
       />
       <Header />

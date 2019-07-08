@@ -54,6 +54,18 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/pages/User/Signup/Signup.js")
   });
 
+  // Privacy Policy
+  createPage({
+    path: "/privacy",
+    component: path.resolve("./src/pages/Privacy/Privacy.js")
+  });
+
+  // Cookies Policy
+  createPage({
+    path: "/cookies-policy",
+    component: path.resolve("./src/pages/Cookies/Cookies.js")
+  });
+
   // Posts and pages from markdown
   const result = await graphql(`
     {

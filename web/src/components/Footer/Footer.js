@@ -93,7 +93,7 @@ const Footer = () => (
           <ul className={styles["footer__copyright-list"]}>
             <li className={styles["footer__copyright-list-item"]}>
               <Link
-                to="#"
+                to="/privacy"
                 className={styles["footer__copyright-list-item-link"]}
               >
                 Privacy
@@ -109,7 +109,7 @@ const Footer = () => (
             </li>
             <li className={styles["footer__copyright-list-item"]}>
               <Link
-                to="#"
+                to="/cookies-policy"
                 className={styles["footer__copyright-list-item-link"]}
               >
                 Cookies

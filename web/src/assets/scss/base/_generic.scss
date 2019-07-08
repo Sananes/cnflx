@@ -239,3 +239,9 @@ figcaption {
     margin-bottom: 0;
   }
 }
+
+.page-narrow-container {
+  @extend %layout-container;
+  text-align: left;
+  lost-center: 640px;
+}

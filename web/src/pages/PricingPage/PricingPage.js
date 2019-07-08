@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
-import { PricingContext } from "../../context/PricingContext";
+import { GlobalContext } from "../../context/GlobalContext";
 import Icon from "../../components/Icon";
 import Svg from "../../components/Svg";
 import Button from "../../components/Button";
@@ -45,7 +45,7 @@ export const query = graphql`
 
 const PricingTemplate = ({ data }) => {
   const { name } = useSiteMetadata();
-  const [annual, setAnnual] = useContext(PricingContext);
+  const [annual, setAnnual] = useContext(GlobalContext);
 
   const togglePrice = () => {
     setAnnual(!annual);
