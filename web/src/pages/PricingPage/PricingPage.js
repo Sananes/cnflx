@@ -174,7 +174,7 @@ const PricingTemplate = ({ data }) => {
                       <Button
                         text="Try it Free"
                         className={styles["pricing__item-button"]}
-                        to="/signup"
+                        to={`/signup?endusers=${price.endusers}`}
                       />
                     </div>
                   </div>
