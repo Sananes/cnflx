@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
-// import ScrollAnimation from "react-animate-on-scroll";
 import Signup from "../../components/Signup";
 import Testimonials from "./Testimonials/Testimonials";
 import Integrations from "./Integrations/Integrations";

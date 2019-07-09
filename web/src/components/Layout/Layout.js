@@ -4,7 +4,9 @@ import Helmet from "react-helmet";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
-import CookieBanner from "react-cookie-banner";
+{
+  /* import CookieBanner from "react-cookie-banner"; */
+}
 
 type Props = {
   children: ReactNode,
@@ -29,14 +31,14 @@ const Layout = ({ children, title, description, className }: Props) => {
           rel="stylesheet"
         />
       </Helmet>
-      <CookieBanner
+      {/* <CookieBanner
         message="We use cookies to ensure you get the best experience."
         onAccept={() => {}}
         className={styles["cookie-banner"]}
         disableStyle={true}
         buttonMessage="Accept"
         cookie="user-has-accepted-cookies"
-      />
+  /> */}
       <Header />
       {children}
       <Footer />
