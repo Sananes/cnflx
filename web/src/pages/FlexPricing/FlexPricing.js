@@ -136,7 +136,7 @@ class FlexPricingPage extends React.Component {
               )}
             </div>
             <div className={styles["flex-pricing__slider-button"]}>
-              <a href={"./endusers?=" + value}>Try it free</a>
+              <a href={"./signup?endusers=" + value}>Try it free</a>
               <span>14 day free trial. No credit card required.</span>
             </div>
           </div>

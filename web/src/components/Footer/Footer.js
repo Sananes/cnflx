@@ -75,7 +75,10 @@ const Footer = () => (
           </a>
         </li>
         <li className={styles["footer__list-item"]}>
-          <a href="#" className={styles["footer__list-item-link"]}>
+          <a
+            href="mailto:sales@cnflx.io"
+            className={styles["footer__list-item-link"]}
+          >
             Contact us
           </a>
         </li>

@@ -174,7 +174,7 @@ const PricingTemplate = ({ data }) => {
                       <Button
                         text="Try it Free"
                         className={styles["pricing__item-button"]}
-                        to="/"
+                        to="/signup"
                       />
                     </div>
                   </div>
@@ -193,9 +193,12 @@ const PricingTemplate = ({ data }) => {
               learn more.
             </p>
           </div>
-          <Link to="#" className={styles["custom-pricing__button"]}>
+          <a
+            href="mailto:sales@cnflx.io"
+            className={styles["custom-pricing__button"]}
+          >
             Contact us
-          </Link>
+          </a>
         </section>
 
         <Partners className={styles["pricing-partners"]} />

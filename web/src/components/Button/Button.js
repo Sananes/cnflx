@@ -7,10 +7,10 @@ type Props = {
   link?: string
 };
 
-const Button = ({ text, className, link }: Props) => {
+const Button = ({ text, className, link, to }: Props) => {
   return (
     <a
-      href={link}
+      href={link || to}
       className={className ? `${className} button` : styles["button"]}
     >
       {text}
