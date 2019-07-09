@@ -123,8 +123,8 @@ $cards: slack twitter jira intercom;
 
   .intro-wrapper {
     display: block;
-    @include margin-top(2.5);
-    @include margin-bottom(3);
+    @include margin-top(3);
+    @include margin-bottom(3.5);
 
     @include breakpoint-md {
       lost-center: 88%;
