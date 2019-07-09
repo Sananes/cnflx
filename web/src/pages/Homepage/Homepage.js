@@ -1,5 +1,5 @@
 // @flow
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
@@ -9,6 +9,7 @@ import Testimonials from "./Testimonials/Testimonials";
 import Integrations from "./Integrations/Integrations";
 import Partners from "./Partners/Partners";
 import { useSiteMetadata } from "../../hooks";
+import birdMascot from "../../assets/svg/bird-mascot.svg";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
 import organiseSVG from "../../assets/svg/organise-feedback.svg";
@@ -51,11 +52,27 @@ const IndexTemplate = ({ data }) => {
       <div className={styles["wrapper"]}>
         <section className={styles["hero"]}>
           <div className={styles["hero__inner"]}>
-            <h1 className={styles["hero__title"]}>
+            {/* <h1 className={styles["hero__title"]}>
               All-in-one feedback management
             </h1>
-            <p className={styles["hero__subtitle"]}>{subtitle}</p>
-            <Signup className={styles["hero__signup"]} />
+             <p className={styles["hero__subtitle"]}>{subtitle}</p> */}
+            <div className={styles["intro-wrapper"]}>
+              <h1 className={styles["hero__title"]}>All-in-one feedback</h1>
+              <div className={styles["hero__subtitle-wrapper"]}>
+                <p className={styles["hero__subtitle"]}>
+                  <span className={styles["prioritise"]}>Prioritise</span>,{" "}
+                  <span className={styles["manage"]}>manage</span> and
+                  <span className={styles["track"]}>track</span> your customer
+                  feedback with Conflux.
+                </p>
+                <img
+                  className={styles["hero__bird"]}
+                  src={birdMascot}
+                  alt="Conflux bird"
+                />
+                <Signup className={styles["hero__signup"]} />
+              </div>
+            </div>
             <div className={`${styles["hero__image-wrapper"]} ${animate}`}>
               <div className={styles["hero__pattern"]} />
               <img src={catSVG} alt="Cat" className={styles["hero-cat"]} />

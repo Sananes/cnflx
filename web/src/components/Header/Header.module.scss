@@ -20,16 +20,18 @@
   }
 
   &__logo {
+    display: inline-flex;
+    align-items: center;
     flex: 1;
-    margin-top: 3px;
 
     a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
     }
 
     svg {
       width: auto;
-      height: 20px;
+      height: 24px;
 
       @include breakpoint-md {
         width: auto;

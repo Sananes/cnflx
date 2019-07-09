@@ -9,7 +9,7 @@ type Props = {
   button: string
 };
 
-const Signup = ({ className, notice, button }: Props) => {
+const Signup = ({ className, notice, button, children }: Props) => {
   return (
     <div className={`${className} ${styles["signup"]}`}>
       <div className={styles["signup__wrapper"]}>
@@ -30,6 +30,7 @@ const Signup = ({ className, notice, button }: Props) => {
       ) : (
         ""
       )}
+      {children}
     </div>
   );
 };

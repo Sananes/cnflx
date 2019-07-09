@@ -1,18 +1,17 @@
 $base-size: $typographic-base-font-size;
 
 @mixin display {
-  font-size: $base-size * 2.13;
+  font-size: $base-size * 2.5;
   @include line-height(1.5);
   @include margin-top(2);
   @include margin-bottom(1);
   // letter-spacing: -1px;
   font-weight: 700;
 
-  @include breakpoint-sm {
-    font-size: $base-size * 4.533;
-    // @include line-height(3);
-    line-height: 1.1;
-    letter-spacing: -1px;
+  @include breakpoint-md {
+    font-size: $base-size * 5;
+    line-height: 1;
+    letter-spacing: -2px;
     @include margin-top(4);
     @include margin-bottom(1);
   }

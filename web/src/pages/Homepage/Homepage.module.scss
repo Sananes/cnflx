@@ -22,15 +22,119 @@ $cards: slack twitter jira intercom;
   background-repeat: no-repeat;
 }
 
+// .hero {
+//   &__inner {
+//     @extend %layout-container-center;
+//   }
+
+//   &__title,
+//   &__subtitle {
+//     lost-center: 760px;
+//     text-align: center;
+//   }
+
+//   &__signup {
+//     @include margin-bottom(4);
+
+//     @include breakpoint-md {
+//       @include margin-bottom(0);
+//     }
+//   }
+
+//   &__title {
+//     @include h1;
+//     @include margin-top(4);
+//     @include margin-bottom(1);
+
+//     @include breakpoint-md {
+//       @include margin-top(2.5);
+//     }
+//   }
+
+//   &__subtitle {
+//     @include body-l;
+//     @include margin-bottom(1.5);
+//     width: 85%;
+
+//     @include breakpoint-sm {
+//       width: auto;
+//     }
+//   }
+
+//   &__image-wrapper {
+//     position: relative;
+//     @include margin-top(2);
+//     @include margin-bottom(3);
+
+//     @include breakpoint-md {
+//       @include margin-bottom(0);
+//     }
+//   }
+
+//   &__pattern {
+//     display: none;
+//     position: absolute;
+//     opacity: 0.1;
+//     background: url('../../assets/svg/hero-pattern.svg') repeat;
+//     background-size: 0.8%;
+//     width: 100vw;
+//     height: 700px;
+//     left: 50%;
+//     right: 50%;
+//     margin-left: -40vw;
+//     margin-right: -50vw;
+//   }
+
+//   .hero-no-animate {
+
+//     .hero-app,
+//     .hero-card,
+//     .hero-cat {
+//       visibility: hidden;
+//     }
+//   }
+
+//   .hero-animate {
+
+//     .hero-app,
+//     .hero-card,
+//     .hero-cat {
+//       visibility: visible;
+//     }
+
+//     .hero-app {
+//       animation: heroSize 1s 0.5s $animation-fast both;
+//     }
+
+//     .hero-card {
+//       animation: slideInUp 1s $animation-medium both;
+//     }
+
+//     .hero-cat {
+//       animation: moveUp 2s 3s $animation-medium both;
+
+//     }
+//   }
+
 .hero {
   &__inner {
     @extend %layout-container-center;
   }
 
-  &__title,
-  &__subtitle {
-    lost-center: 760px;
-    text-align: center;
+  .intro-wrapper {
+    display: block;
+    @include margin-top(2.5);
+    @include margin-bottom(3);
+
+    @include breakpoint-md {
+      lost-center: 88%;
+    }
+  }
+
+  &__title {
+    @include breakpoint-md {
+      text-align: left;
+    }
   }
 
   &__signup {
@@ -38,26 +142,95 @@ $cards: slack twitter jira intercom;
 
     @include breakpoint-md {
       @include margin-bottom(0);
+      justify-content: flex-start;
+
+    }
+
+    >div {
+
+      @include breakpoint-md {
+        flex: 1;
+      }
     }
   }
 
+  &__subtitle-wrapper {
+    position: relative;
+
+    @include breakpoint-md {
+      @include margin-top(0.4);
+      lost-column: 1/2;
+      text-align: left;
+    }
+
+    p {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include breakpoint-md {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__bird {
+    display: none;
+
+    @include breakpoint-md {
+      position: absolute;
+      display: block;
+      top: 5px;
+      right: 0;
+    }
+  }
+
+  .prioritise,
+  .manage,
+  .track {
+    display: inline-block;
+    padding: 0px 2px;
+    line-height: 1.3;
+    margin-right: 2px;
+    border-radius: 4px;
+  }
+
+  .prioritise {
+    background-color: lighten($color-primary, 40%);
+    color: $color-primary;
+  }
+
+  .manage {
+    background-color: lighten($color-yellow, 35%);
+    color: darken($color-yellow, 15%);
+  }
+
+  .track {
+    background-color: lighten($color-purple, 30%);
+    color: $color-purple;
+    margin-left: 2px;
+  }
+
   &__title {
-    @include h1;
-    @include margin-top(4);
+    @include margin-top(0);
     @include margin-bottom(1);
 
     @include breakpoint-md {
-      @include margin-top(2.5);
+      @include display;
+      @include margin-top(-0.5);
+      lost-column: 1/2;
     }
   }
 
   &__subtitle {
     @include body-l;
     @include margin-bottom(1.5);
-    width: 85%;
 
-    @include breakpoint-sm {
-      width: auto;
+    @include breakpoint-md {
+      width: 60%;
+      @include margin-bottom(0.5);
     }
   }
 
@@ -112,6 +285,7 @@ $cards: slack twitter jira intercom;
 
     .hero-cat {
       animation: moveUp 2s 3s $animation-medium both;
+      display: none;
 
     }
   }
