@@ -73,8 +73,8 @@ $text-dimmed: #586779; // #6A7A8E
 $text-muted: #8d98a5; // #C3C9D1
 
 // Inputs
-$color-input-border: transparentize($color-base, 0.85);
-$color-input-background: transparent;
+$color-input-border: #E6E6EA;
+$color-input-background: $color-white;
 $input-height: 35px;
 $color-input-placeholder: $text-muted;
 

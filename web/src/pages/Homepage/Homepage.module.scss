@@ -453,21 +453,35 @@ $cards: slack twitter jira intercom;
   }
 }
 
-
-
 .signup {
+  @extend %layout-container-center,
+  %layout-container-divider;
+
   &__inner {
-    @extend %layout-container-center,
-    %layout-container-divider;
+
+    @include padding-top(3);
+    @include padding-bottom(2);
     text-align: center;
+    background: url('../../assets/svg/signup-background.svg') no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+  }
+
+  :local(a),
+  :local(input) {
+    @include margin-bottom(0);
   }
 
   &__wrapper {
     @include margin-bottom(0);
 
-    button {
-      margin-bottom: 0;
+    .signup__button {
+      @include margin-bottom(0);
     }
+  }
+
+  &__title {
+    @include margin-top(0);
   }
 
   &__subtitle {
@@ -479,6 +493,8 @@ $cards: slack twitter jira intercom;
       @include margin-top(-0.5);
     }
   }
+
+
 
   &__newsletter {
     lost-center: 600px;
