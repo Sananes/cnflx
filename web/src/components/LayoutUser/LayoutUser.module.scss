@@ -5,7 +5,7 @@ $promotion-width: calc(100% - #{$sidebar-width});
 
 .sidebar {
   position: relative;
-  display: flex;
+  display: table;
   align-items: stretch;
   flex-direction: column;
   justify-content: space-between;

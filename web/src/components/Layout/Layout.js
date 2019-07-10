@@ -44,7 +44,7 @@ const Layout = ({ children, title, description, className }: Props) => {
         expires={150}
       >
         We use cookies to ensure you get the best experience.{" "}
-        <Link to="/cookies-privacy">Learn more</Link>
+        <Link to="/cookies-policy">Learn more</Link>
       </CookieConsent>
     </div>
   );
