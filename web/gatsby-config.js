@@ -135,6 +135,13 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: "gatsby-plugin-intercom",
+      options: {
+        appId: "jkseu45h",
+        includeInDevelopment: false
+      }
+    },
     "gatsby-plugin-flow"
   ]
 };
