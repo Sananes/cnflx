@@ -38,14 +38,6 @@ const IndexTemplate = ({ data }) => {
     ? styles["hero-animate"]
     : styles["hero-no-animate"];
 
-  // const animationDuration = {
-  //   duration: 0.3,
-  //   animateIn: "slideInUp",
-  //   animateOut: ""
-  // };
-  // const { partnerList } = data.sanityHomepage._rawPartnersList;
-  // const { testimonialList } = data.sanityHomepage._rawTestimonialList;
-
   return (
     <Layout title={`${title} | ${name}`} description={subtitle}>
       <div className={styles["wrapper"]}>

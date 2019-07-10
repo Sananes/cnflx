@@ -218,7 +218,13 @@ figcaption {
   overflow-y: hidden;
 }
 
-.react-cookie-banner {
+.page-narrow-container {
+  @extend %layout-container;
+  text-align: left;
+  lost-center: 640px;
+}
+
+.cookieConsent {
   position: fixed !important;
   bottom: 0;
   max-width: 300px;
@@ -229,19 +235,13 @@ figcaption {
   z-index: 9999;
   margin: 16px;
 
-  .cookie-message {
+  .cookie-banner-content {
     @include body;
-    @include margin-bottom(0.5);
+    @include margin-bottom(1);
     display: block;
   }
 
   button {
     margin-bottom: 0;
   }
-}
-
-.page-narrow-container {
-  @extend %layout-container;
-  text-align: left;
-  lost-center: 640px;
 }

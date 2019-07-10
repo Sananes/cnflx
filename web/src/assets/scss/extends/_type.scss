@@ -6,3 +6,8 @@
   @include body-l;
   @include margin-bottom(3);
 }
+
+%section-title {
+  @include h3;
+  @include margin-bottom(0.5);
+}

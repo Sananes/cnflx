@@ -1,12 +1,11 @@
 // @flow
 import React from "react";
 import Helmet from "react-helmet";
+import { Link } from "gatsby";
+import CookieConsent, { Cookies } from "react-cookie-consent";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./Layout.module.scss";
-{
-  /* import CookieBanner from "react-cookie-banner"; */
-}
 
 type Props = {
   children: ReactNode,
@@ -31,17 +30,22 @@ const Layout = ({ children, title, description, className }: Props) => {
           rel="stylesheet"
         />
       </Helmet>
-      {/* <CookieBanner
-        message="We use cookies to ensure you get the best experience."
-        onAccept={() => {}}
-        className={styles["cookie-banner"]}
-        disableStyle={true}
-        buttonMessage="Accept"
-        cookie="user-has-accepted-cookies"
-  /> */}
+
       <Header />
       {children}
       <Footer />
+      <CookieConsent
+        location="bottom"
+        acceptOnScroll={true}
+        contentClasses="cookie-banner-content"
+        disableStyles={true}
+        buttonText="Accept"
+        cookieName="cookieBanner"
+        expires={150}
+      >
+        We use cookies to ensure you get the best experience.{" "}
+        <Link to="/cookies-privacy">Learn more</Link>
+      </CookieConsent>
     </div>
   );
 };

@@ -116,6 +116,15 @@ $cards: slack twitter jira intercom;
 //     }
 //   }
 
+.companies,
+.features,
+.testimonials,
+.integrations {
+  &__title {
+    @extend %section-title;
+  }
+}
+
 .hero {
   &__inner {
     @extend %layout-container-center;
@@ -240,6 +249,8 @@ $cards: slack twitter jira intercom;
     @include margin-bottom(3);
 
     @include breakpoint-md {
+      margin-left: -5%;
+      margin-right: -5%;
       @include margin-bottom(0);
     }
   }
@@ -370,7 +381,7 @@ $cards: slack twitter jira intercom;
   }
 
   &__title {
-    @include h3;
+    @extend %section-title;
     @include margin-top(1.5);
   }
 
