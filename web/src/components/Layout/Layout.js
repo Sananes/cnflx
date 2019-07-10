@@ -26,7 +26,7 @@ const Layout = ({ children, title, description, className }: Props) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <link
-          href="https://fonts.googleapis.com/css?family=Barlow:400,500,600&display=swap"
+          href="https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
