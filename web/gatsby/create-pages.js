@@ -54,6 +54,12 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/pages/User/Signup/Signup.js")
   });
 
+  // Forgot password
+  createPage({
+    path: "/forgot-password",
+    component: path.resolve("./src/pages/User/Forgot/Forgot.js")
+  });
+
   // Privacy Policy
   createPage({
     path: "/privacy",
