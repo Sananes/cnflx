@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby";
 import { Form, Field } from "react-final-form";
 import LayoutUser from "../../../components/LayoutUser";
 import Input from "../../../components/Input";
 import styles from "../User.module.scss";
 import { useSiteMetadata } from "../../../hooks";
+import { GlobalContext } from "../../../context/GlobalContext";
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -13,28 +14,43 @@ function validateEmail(email) {
 
 const SignupIndex = () => {
   const { name } = useSiteMetadata();
+  const [state, setState] = useContext(GlobalContext);
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+  console.log(state.email);
   const onSubmit = async values => {
     const data = values;
-    // fetch("https://api.cnflx.io/api/v1/auth/register", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     email: data.email,
-    //     password: data.password,
-    //     fullName: data.fullName,
-    //     organization: {
-    //       name: data.organization,
-    //       url: data.organization
-    //     }
-    //   })
-    // });
+    fetch("https://api.cnflx.io/api/v1/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password,
+        fullName: data.fullName,
+        organization: {
+          name: data.organization,
+          url: data.organization
+        }
+      })
+    })
+      .then(response => response.json())
+      .catch(error => console.error("Error:", error))
+      .then(response => {
+        console.log("Success:", JSON.stringify(response));
+        window.location = `${response.url}/login?token=${response.token}`;
+      });
   };
 
-  const InputLabel = ({ input, meta, label, placeholder, type, ...rest }) => (
+  const InputLabel = ({
+    input,
+    meta,
+    label,
+    placeholder,
+    value,
+    type,
+    ...rest
+  }) => (
     <div className={styles["fieldset"]}>
       <div className={styles["label"]}>
         <label htmlFor={input.name}>{label}</label>
@@ -42,6 +58,7 @@ const SignupIndex = () => {
       <Input
         {...input}
         meta={meta}
+        value={input.value}
         placeholder={placeholder}
         type={input.type}
       />
@@ -62,12 +79,15 @@ const SignupIndex = () => {
 
         <Form
           onSubmit={onSubmit}
+          initialValues={{
+            email: state.email
+          }}
           validate={values => {
             const errors = {};
             if (!values.email) {
               errors.email = "Required";
             } else if (!validateEmail(values.email)) {
-              errors.email = "This is not an email";
+              errors.email = "This is not a valid email";
             }
             if (!values.password) {
               errors.password = "Required";
@@ -98,6 +118,7 @@ const SignupIndex = () => {
                 name="email"
                 label="Email address"
                 type="email"
+                value={state.email}
                 placeholder="you@example.com"
                 component={InputLabel}
               />
@@ -129,7 +150,7 @@ const SignupIndex = () => {
               >
                 Submit
               </button>
-              <pre>{JSON.stringify(values, 0, 2)}</pre>
+              {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
             </form>
           )}
         />

@@ -6,7 +6,6 @@ $base-size: $typographic-base-font-size;
   @include margin-top(2);
   @include margin-bottom(1);
   // letter-spacing: -1px;
-  font-weight: $font-weight-bold;
 
   @include breakpoint-md {
     font-size: $base-size * 5;
@@ -23,7 +22,6 @@ $base-size: $typographic-base-font-size;
   @include margin-top(2);
   @include margin-bottom(1);
   letter-spacing: -1px;
-  font-weight: $font-weight-bolder;
 
   @include breakpoint-md() {
     font-size: $base-size * 4.533;
@@ -41,7 +39,6 @@ $base-size: $typographic-base-font-size;
   letter-spacing: -1px;
   @include margin-top(2);
   @include margin-bottom(0.5);
-  font-weight: $font-weight-bolder;
 
   @include breakpoint-md {
     font-size: $base-size * 3.333;
@@ -55,7 +52,6 @@ $base-size: $typographic-base-font-size;
   @include margin-top(2);
   @include margin-bottom(0.5);
   letter-spacing: 0px;
-  font-weight: $font-weight-bolder;
 
   @include breakpoint-md {
     font-size: $base-size * 2.133;
@@ -71,7 +67,6 @@ $base-size: $typographic-base-font-size;
   @include margin-top(1.5);
   @include margin-bottom(.5);
   letter-spacing: 0px;
-  font-weight: $font-weight-bold;
 
   &+p {
     @include margin-top(.25);
@@ -85,7 +80,6 @@ $base-size: $typographic-base-font-size;
   @include margin-top(1.5);
   @include margin-bottom(.3);
   letter-spacing: 0px;
-  font-weight: $font-weight-bold;
 
   &+p {
     @include margin-top(.25);
@@ -98,7 +92,6 @@ $base-size: $typographic-base-font-size;
   @include line-height(1);
   @include margin-top(2.5);
   @include margin-bottom(.5);
-  font-weight: $font-weight-bold;
 }
 
 @mixin body-l {
@@ -140,7 +133,6 @@ $base-size: $typographic-base-font-size;
 
 @mixin overline {
   font-size: $base-size * 0.73;
-  font-weight: $font-weight-bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }

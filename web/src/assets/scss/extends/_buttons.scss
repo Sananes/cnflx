@@ -36,6 +36,11 @@ $button-large: 12px 12px;
   &:focus {
     color: inherit;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: no-allowed;
+  }
 }
 
 %button,

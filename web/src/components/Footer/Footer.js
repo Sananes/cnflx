@@ -76,7 +76,7 @@ const Footer = () => (
         </li>
         <li className={styles["footer__list-item"]}>
           <a
-            href="mailto:sales@cnflx.io"
+            href="mailto:contact@cnflx.io"
             className={styles["footer__list-item-link"]}
           >
             Contact us

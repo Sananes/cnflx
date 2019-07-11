@@ -45,14 +45,14 @@ export const query = graphql`
 
 const PricingTemplate = ({ data }) => {
   const { name } = useSiteMetadata();
-  const [annual, setAnnual] = useContext(GlobalContext);
+  const [state, setState] = useContext(GlobalContext);
 
   const togglePrice = () => {
-    setAnnual(!annual);
+    setState(state => ({ ...state, annual: !state.annual }));
   };
 
   const pricingList = data.sanityPricing._rawPackage;
-  const annualPrice = annual;
+  const annualPrice = state.annual;
 
   return (
     <Layout

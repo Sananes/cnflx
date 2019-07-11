@@ -7,6 +7,7 @@ const Input = ({
   name,
   validate,
   required,
+  value,
   meta,
   type,
   id,
@@ -17,6 +18,7 @@ const Input = ({
       type={type}
       id={name}
       name={name}
+      value={value}
       placeholder={placeholder}
       className={
         meta.touched && meta.error

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-export const GlobalContext = React.createContext({
-  annual: false
-});
+export const GlobalContext = React.createContext([{}, () => {}]);
 
 export const GlobalProvider = props => {
-  const [annual, setAnnual] = useState(false);
+  const [state, setState] = useState({
+    annual: false,
+    email: ""
+  });
 
   return (
-    <GlobalContext.Provider value={[annual, setAnnual]}>
+    <GlobalContext.Provider value={[state, setState]}>
       {props.children}
     </GlobalContext.Provider>
   );
