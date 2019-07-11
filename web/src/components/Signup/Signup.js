@@ -1,5 +1,6 @@
 // @flow
 import React, { useContext } from "react";
+import { navigate } from "gatsby";
 import { GlobalContext } from "../../context/GlobalContext";
 import Button from "../Button/Button";
 import styles from "./Signup.module.scss";
@@ -13,9 +14,16 @@ type Props = {
 const Signup = ({ className, notice, button, children }: Props) => {
   const [state, setState] = useContext(GlobalContext);
 
-  const handleSubmit = () => {};
+  const handleSubmit = e => {
+    e.preventDefault();
+    navigate("/signup");
+  };
+
   return (
-    <div className={`${className} ${styles["signup"]}`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`${className} ${styles["signup"]}`}
+    >
       <div className={styles["signup__wrapper"]}>
         <input
           onChange={e => setState({ email: e.target.value })}
@@ -23,14 +31,10 @@ const Signup = ({ className, notice, button, children }: Props) => {
           className={styles["signup__input"]}
           placeholder="Enter work email"
         />
-        {/* <span className={styles["signup_prefix"]}>.cnflx.io</span> */}
       </div>
-      <Button
-        to="/signup"
-        onClick={() => handleSubmit}
-        text={button || "Try it Free"}
-        className={styles["signup__button"]}
-      />
+      <button onClick={() => handleSubmit} className={styles["signup__button"]}>
+        Try it Free
+      </button>
       {notice ? (
         <div className={styles["signup__notice"]}>
           <p>{notice}</p>
@@ -39,7 +43,7 @@ const Signup = ({ className, notice, button, children }: Props) => {
         ""
       )}
       {children}
-    </div>
+    </form>
   );
 };
 

@@ -42,15 +42,12 @@ const InputLabel = ({
 const SigninIndex = () => {
   const { name } = useSiteMetadata();
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const [step, setStep] = useState(false);
   const [state] = useContext(GlobalContext);
 
-  const showForm = async values => {
-    console.log("clicked");
-    if (values.workspace) {
-      window.location = `https://${values.workspace}.cnflx.io/login`;
-    } else {
-      return null;
-    }
+  const showHideForm = e => {
+    e.preventDefault();
+    setStep({ step: true });
   };
 
   const onSubmit = async values => {
@@ -63,13 +60,18 @@ const SigninIndex = () => {
       body: JSON.stringify({
         email: data.email,
         password: data.password,
-        fullName: data.fullName,
-        organization: {
-          name: data.organization,
-          url: data.organization
-        }
+        url: data.workspace
       })
-    });
+    })
+      .then(response => response.json())
+      .catch(error => console.error("Error:", error))
+      .then(response => {
+        if (response.url === undefined) {
+          return null;
+        } else {
+          window.location = `${response.url}/login?token=${response.token}`;
+        }
+      });
   };
 
   return (
@@ -87,11 +89,21 @@ const SigninIndex = () => {
             if (!values.workspace) {
               errors.workspace = "Required";
             }
+            if (!values.email) {
+              errors.email = "Required";
+            } else if (!validateEmail(values.email)) {
+              errors.email = "This is not a valid email address";
+            }
+            if (!values.password) {
+              errors.password = "Required";
+            }
             return errors;
           }}
           render={({ handleSubmit, reset, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit}>
-              <div>
+            <form onSubmit={onSubmit}>
+              <div
+                className={!step ? styles["show-form"] : styles["hide-form"]}
+              >
                 <Field
                   name="workspace"
                   label="Workspace URL"
@@ -100,33 +112,36 @@ const SigninIndex = () => {
                   component={InputLabel}
                 />
                 <button
-                  type="button"
-                  onClick={() => showForm(values)}
+                  type="submit"
+                  onClick={showHideForm}
                   className={styles["button"]}
                   disabled={pristine || submitting}
                 >
                   Continue
                 </button>
               </div>
-              <div style={{ display: "none" }}>
+              <div className={step ? styles["show-form"] : styles["hide-form"]}>
                 <p>{values.workspace}.cnflx.io</p>
                 <Field
                   name="email"
                   label="Email address"
-                  type="text"
-                  value={state.email}
+                  type="email"
                   placeholder="you@example.com"
                   component={InputLabel}
                 />
                 <Field
                   name="password"
                   label="Password"
-                  type="text"
+                  type="password"
                   placeholder="Enter 5 characters or more"
                   component={InputLabel}
                 />
                 <button
                   type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    onSubmit(values);
+                  }}
                   className={styles["button"]}
                   disabled={pristine || submitting}
                 >
@@ -136,15 +151,15 @@ const SigninIndex = () => {
             </form>
           )}
         />
-        <div className={styles["notice"]}>
+        {/*        <div className={styles["notice"]}>
           <p>
             Don’t know your workspace URL?{" "}
             <Link to="/signup" className={styles["link"]}>
               Find your workspace
             </Link>
           </p>
-        </div>
-        <div className={styles["notice"]}>
+          </div> */}
+        <div className={styles["notice--only"]}>
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>
           </p>

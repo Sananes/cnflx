@@ -87,7 +87,7 @@ const SignupIndex = () => {
             if (!values.email) {
               errors.email = "Required";
             } else if (!validateEmail(values.email)) {
-              errors.email = "This is not a valid email";
+              errors.email = "This is not a valid email address";
             }
             if (!values.password) {
               errors.password = "Required";
@@ -118,7 +118,6 @@ const SignupIndex = () => {
                 name="email"
                 label="Email address"
                 type="email"
-                value={state.email}
                 placeholder="you@example.com"
                 component={InputLabel}
               />

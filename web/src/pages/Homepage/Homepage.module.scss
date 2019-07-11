@@ -478,7 +478,7 @@ $cards: slack twitter jira intercom;
     border-radius: 8px;
   }
 
-  :local(a),
+  :local(button),
   :local(input) {
     @include margin-bottom(0);
   }
