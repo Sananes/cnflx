@@ -18,7 +18,7 @@ const Header = props => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <Headroom disableInlineStyles={true}>
         <div className={`header ${styles["header"]}`}>
           <div className={`header-inner ${styles["header__inner"]}`}>
@@ -33,7 +33,7 @@ const Header = props => {
       </Headroom>
 
       <MobileMenu menu={menu} showMenu={showMenu} />
-    </React.Fragment>
+    </>
   );
 };
 

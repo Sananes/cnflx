@@ -16,7 +16,11 @@ type Props = {
 
 const Layout = ({ children, title, description, className }: Props) => {
   return (
-    <div className={className ? className : styles.layout}>
+    <div
+      className={
+        className ? `${styles["layout"]} ${className}` : styles["layout"]
+      }
+    >
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -30,22 +34,23 @@ const Layout = ({ children, title, description, className }: Props) => {
           rel="stylesheet"
         />
       </Helmet>
-
-      <Header />
-      {children}
-      <Footer />
-      <CookieConsent
-        location="bottom"
-        acceptOnScroll={true}
-        contentClasses="cookie-banner-content"
-        disableStyles={true}
-        buttonText="Accept"
-        cookieName="cookieBanner"
-        expires={150}
-      >
-        We use cookies to ensure you get the best experience.{" "}
-        <Link to="/cookies-policy">Learn more</Link>
-      </CookieConsent>
+      <div className={`${styles["inner"]} layout-inner`}>
+        <Header />
+        {children}
+        <Footer />
+        <CookieConsent
+          location="bottom"
+          acceptOnScroll={true}
+          contentClasses="cookie-banner-content"
+          disableStyles={true}
+          buttonText="Accept"
+          cookieName="cookieBanner"
+          expires={150}
+        >
+          We use cookies to ensure you get the best experience.{" "}
+          <Link to="/cookies-policy">Learn more</Link>
+        </CookieConsent>
+      </div>
     </div>
   );
 };

@@ -14,12 +14,30 @@ $cards: slack twitter jira intercom;
   }
 }
 
-.wrapper {
+.home :global(.layout-inner) {
   background-image: url('../../assets/svg/pattern-bg-top.svg');
-  background-size: 200% 1503px;
-  background-position: center -100px;
   background-origin: content-box;
   background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: center 5%;
+
+  @include breakpoint-sm {
+    background-size: 150%;
+    background-position: center -100px;
+  }
+
+  @include breakpoint-md {
+    background-size: 100% 112.5rem;
+    background-position: center -100px;
+  }
+}
+
+.wrapper {
+  // background-image: url('../../assets/svg/pattern-bg-top.svg');
+  // background-size: 300% 1800px;
+  // background-position: center -200px;
+  // background-origin: content-box;
+  // background-repeat: no-repeat;
 }
 
 // .hero {

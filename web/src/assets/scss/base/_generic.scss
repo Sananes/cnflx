@@ -178,7 +178,6 @@ figcaption {
   left: 0;
   right: 0;
   z-index: 1;
-  background: $color-white;
   border-bottom: 1px solid transparent;
   z-index: 9999;
 }
@@ -210,6 +209,7 @@ figcaption {
 
 .headroom--pinned {
   position: fixed;
+  background: $color-background;
   transform: translateY(0%);
 
   .header-inner {

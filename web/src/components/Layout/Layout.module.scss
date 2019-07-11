@@ -1,5 +1,16 @@
 @import '../../assets/scss/helpers';
 
+
+.layout {
+    background: $color-background-highlight;
+
+    .inner {
+        background: $color-background;
+        lost-center: 1800px;
+    }
+
+}
+
 .layout .wrapper {
     lost-center: $layout-width;
 }

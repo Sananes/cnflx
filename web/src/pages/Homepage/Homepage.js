@@ -23,7 +23,7 @@ export const query = graphql`
   {
     heroImage: file(relativePath: { eq: "hero-app.png" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -39,7 +39,11 @@ const IndexTemplate = ({ data }) => {
     : styles["hero-no-animate"];
 
   return (
-    <Layout title={`${title} | ${name}`} description={subtitle}>
+    <Layout
+      title={`${title} | ${name}`}
+      description={subtitle}
+      className={styles["home"]}
+    >
       <div className={styles["wrapper"]}>
         <section className={styles["hero"]}>
           <div className={styles["hero__inner"]}>
