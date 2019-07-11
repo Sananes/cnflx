@@ -15,13 +15,6 @@ function validateEmail(email) {
 const SigninIndex = () => {
   const { name } = useSiteMetadata();
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-  const [step, setStep] = useState(false);
-  const [state] = useContext(GlobalContext);
-
-  const showHideForm = e => {
-    e.preventDefault();
-    setStep({ step: true });
-  };
 
   const onSubmit = async values => {
     const data = values;
@@ -50,10 +43,7 @@ const SigninIndex = () => {
   return (
     <LayoutUser title={`Signin | ${name}`} className={styles["signin"]}>
       <div className={styles["form-container"]}>
-        <h2 className={styles["title"]}>
-          Welcome back! <br />
-          <span>Sign in to your workflow</span>
-        </h2>
+        <h2 className={styles["title"]}>Reset Password</h2>
 
         <Form
           onSubmit={onSubmit}
@@ -67,60 +57,28 @@ const SigninIndex = () => {
             } else if (!validateEmail(values.email)) {
               errors.email = "This is not a valid email address";
             }
-            if (!values.password) {
-              errors.password = "Required";
-            }
             return errors;
           }}
           render={({ handleSubmit, reset, submitting, pristine, values }) => (
             <form onSubmit={onSubmit}>
-              <div
-                className={!step ? styles["show-form"] : styles["hide-form"]}
+              <Field
+                name="email"
+                label="Email address"
+                type="email"
+                placeholder="you@example.com"
+                component={InputLabel}
+              />
+              <button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  onSubmit(values);
+                }}
+                className={styles["button"]}
+                disabled={pristine || submitting}
               >
-                <Field
-                  name="workspace"
-                  label="Workspace URL"
-                  type="text"
-                  placeholder="your-workspace-url"
-                  component={InputLabel}
-                />
-                <button
-                  type="submit"
-                  onClick={showHideForm}
-                  className={styles["button"]}
-                  disabled={pristine || submitting}
-                >
-                  Continue
-                </button>
-              </div>
-              <div className={step ? styles["show-form"] : styles["hide-form"]}>
-                <p>{values.workspace}.cnflx.io</p>
-                <Field
-                  name="email"
-                  label="Email address"
-                  type="email"
-                  placeholder="you@example.com"
-                  component={InputLabel}
-                />
-                <Field
-                  name="password"
-                  label="Password"
-                  type="password"
-                  placeholder="Enter 5 characters or more"
-                  component={InputLabel}
-                />
-                <button
-                  type="submit"
-                  onClick={e => {
-                    e.preventDefault();
-                    onSubmit(values);
-                  }}
-                  className={styles["button"]}
-                  disabled={pristine || submitting}
-                >
-                  Continue
-                </button>
-              </div>
+                Get Reset Link
+              </button>
             </form>
           )}
         />
@@ -134,7 +92,7 @@ const SigninIndex = () => {
           </div> */}
         <div className={styles["notice--only"]}>
           <p>
-            Don't have an account? <Link to="/signup">Sign up</Link>
+            Remembered your password? <Link to="/signin">Sign in</Link>
           </p>
         </div>
       </div>

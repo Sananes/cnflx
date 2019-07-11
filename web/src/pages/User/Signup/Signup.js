@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "gatsby";
 import { Form, Field } from "react-final-form";
 import LayoutUser from "../../../components/LayoutUser";
-import Input from "../../../components/Input";
+import InputLabel from "../../../components/InputLabel";
 import styles from "../User.module.scss";
 import { useSiteMetadata } from "../../../hooks";
 import { GlobalContext } from "../../../context/GlobalContext";
@@ -41,30 +41,6 @@ const SignupIndex = () => {
         window.location = `${response.url}/login?token=${response.token}`;
       });
   };
-
-  const InputLabel = ({
-    input,
-    meta,
-    label,
-    placeholder,
-    value,
-    type,
-    ...rest
-  }) => (
-    <div className={styles["fieldset"]}>
-      <div className={styles["label"]}>
-        <label htmlFor={input.name}>{label}</label>
-      </div>
-      <Input
-        {...input}
-        meta={meta}
-        value={input.value}
-        placeholder={placeholder}
-        type={input.type}
-      />
-      {meta.touched ? <p className={styles["required"]}>{meta.error}</p> : ""}
-    </div>
-  );
 
   return (
     <LayoutUser
@@ -149,7 +125,6 @@ const SignupIndex = () => {
               >
                 Submit
               </button>
-              {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
             </form>
           )}
         />

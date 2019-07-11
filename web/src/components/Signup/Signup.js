@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import { navigate } from "gatsby";
 import { GlobalContext } from "../../context/GlobalContext";
-import Button from "../Button/Button";
 import styles from "./Signup.module.scss";
 
 type Props = {
