@@ -17,6 +17,7 @@ const SigninIndex = () => {
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const [step, setStep] = useState(false);
   const [state] = useContext(GlobalContext);
+  const [error, setError] = useState("");
 
   const showHideForm = e => {
     e.preventDefault();
@@ -25,6 +26,8 @@ const SigninIndex = () => {
 
   const onSubmit = async values => {
     const data = values;
+    const response = response;
+    setError("");
     fetch("https://api.cnflx.io/api/v1/auth/login", {
       method: "POST",
       headers: {
@@ -40,7 +43,7 @@ const SigninIndex = () => {
       .catch(error => console.error("Error:", error))
       .then(response => {
         if (response.url === undefined) {
-          return null;
+          setError("Username or password is incorrect");
         } else {
           window.location = `${response.url}/login?token=${response.token}`;
         }
@@ -120,6 +123,7 @@ const SigninIndex = () => {
                 >
                   Continue
                 </button>
+                <div className={styles["error"]}>{error}</div>
               </div>
             </form>
           )}

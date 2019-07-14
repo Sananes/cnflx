@@ -39,7 +39,7 @@ $promotion-width: calc(100% - #{$sidebar-width});
   }
 }
 
-.title + .subtitle {
+.title+.subtitle {
   @include margin-bottom(2);
 }
 
@@ -109,7 +109,7 @@ $promotion-width: calc(100% - #{$sidebar-width});
     text-decoration: underline;
   }
 
-  & + .notice {
+  &+.notice {
     border-bottom: none;
   }
 }
@@ -144,6 +144,7 @@ $promotion-width: calc(100% - #{$sidebar-width});
   }
 }
 
-.required {
+.required,
+.error {
   color: red;
 }

@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import Icon from "../../components/Icon";
 import Svg from "../../components/Svg";
 import styles from "./LayoutUser.module.scss";
+import { navigate } from "@reach/router";
 
 type Props = {
   children: ReactNode,
@@ -14,6 +15,14 @@ type Props = {
 };
 
 const LayoutUser = ({ children, title, description, className }: Props) => {
+  const goBack = e => {
+    e.preventDefault();
+    if (!window.history.back()) {
+      navigate("/");
+    } else {
+      window.history.back();
+    }
+  };
   return (
     <div className={className ? className : styles["user"]}>
       <Helmet>
@@ -28,9 +37,9 @@ const LayoutUser = ({ children, title, description, className }: Props) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Link to="/" className={styles["back"]}>
+      <a href="#" onClick={goBack} className={styles["back"]}>
         <Icon name="close" />
-      </Link>
+      </a>
       <div className={styles["sidebar"]}>
         <Link to="/" className={styles["logo"]}>
           <Svg name="logo" />
