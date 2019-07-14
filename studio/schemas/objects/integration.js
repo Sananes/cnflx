@@ -33,6 +33,11 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: "link",
+      title: "Link",
+      type: "url"
     }
   ],
   preview: {

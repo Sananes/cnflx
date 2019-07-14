@@ -24,6 +24,7 @@ export const query = graphql`
       slug {
         current
       }
+      link
     }
   }
 `;
@@ -54,7 +55,12 @@ const IntegrationTemplate = ({ data }: Props) => {
           <p className={styles["integration__description"]}>
             {data.sanityIntegration.description}
           </p>
-          <button className={styles["integration__button"]}>Connect</button>
+          <a
+            href={data.sanityIntegration.link}
+            className={styles["integration__button"]}
+          >
+            Connect
+          </a>
         </div>
       </Page>
     </Layout>
