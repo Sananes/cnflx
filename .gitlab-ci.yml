@@ -1,0 +1,50 @@
+# Default
+
+image: node:7
+stages:
+  - build
+  - deploy
+
+Build static site and deploy to S3:
+  stage: build
+  tags:
+    - kubernetes
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - app/dist/
+  script:
+    - npm i && node_modules/.bin/gatsby build
+
+.Build Dockerfile:
+  stage: build
+  tags:
+    - kubernetes
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG .
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+    - docker push $CI_REGISTRY_IMAGE:latest
+  when: manual
+
+Deploy production:
+  tags:
+    - kubernetes
+  stage: deploy
+  image: registry.gitlab.com/conflux/dockerfiles/aws-cli
+  script:
+    - aws s3 sync --delete app/dist/ s3://conflux-site --acl public-read --cache-control max-age=300
+  only:
+    - master
+
+Deploy staging:
+  tags:
+    - kubernetes
+  stage: deploy
+  image: registry.gitlab.com/conflux/dockerfiles/aws-cli
+  script:
+    - aws s3 sync --delete app/dist/ s3://conflux-site-staging --acl public-read --cache-control max-age=300
+  only:
+    - staging

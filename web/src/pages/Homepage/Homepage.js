@@ -7,8 +7,6 @@ import Signup from "../../components/Signup";
 import Testimonials from "./Testimonials/Testimonials";
 import Integrations from "./Integrations/Integrations";
 import Partners from "./Partners/Partners";
-import SignupCTA from "./Signup/Signup";
-import { useSiteMetadata } from "../../hooks";
 import birdMascot from "../../assets/svg/bird-mascot.svg";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
 import communicateSVG from "../../assets/svg/communicate.svg";
@@ -18,6 +16,7 @@ import slackCard from "../../assets/svg/slack-card.svg";
 import twitterCard from "../../assets/svg/twitter-card.svg";
 import jiraCard from "../../assets/svg/jira-card.svg";
 import intercomCard from "../../assets/svg/intercom-card.svg";
+import { useSiteMetadata } from "../../hooks";
 import styles from "./Homepage.module.scss";
 
 export const query = graphql`
