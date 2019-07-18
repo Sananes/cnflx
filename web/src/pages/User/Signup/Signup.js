@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "gatsby";
 import { Form, Field } from "react-final-form";
 import LayoutUser from "../../../components/LayoutUser";
@@ -16,6 +16,8 @@ const SignupIndex = () => {
   const { name } = useSiteMetadata();
   const [state, setState] = useContext(GlobalContext);
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const [error, setError] = useState("");
+
   console.log(state.email);
   const onSubmit = async values => {
     const data = values;
@@ -37,8 +39,13 @@ const SignupIndex = () => {
       .then(response => response.json())
       .catch(error => console.error("Error:", error))
       .then(response => {
-        console.log("Success:", JSON.stringify(response));
-        window.location = `${response.url}/login?token=${response.token}`;
+        if (response.url === undefined) {
+          setError(
+            "There was an issue when creating your account. Make sure you have provided all details."
+          );
+        } else {
+          window.location = `${response.url}/login?token=${response.token}`;
+        }
       });
   };
 
@@ -123,7 +130,7 @@ const SignupIndex = () => {
                 type="submit"
                 disabled={pristine || submitting}
               >
-                Submit
+                Create account
               </button>
             </form>
           )}

@@ -7,6 +7,7 @@ import Signup from "../../components/Signup";
 import Testimonials from "./Testimonials/Testimonials";
 import Integrations from "./Integrations/Integrations";
 import Partners from "./Partners/Partners";
+import SignupCTA from "./Signup/Signup";
 import { useSiteMetadata } from "../../hooks";
 import birdMascot from "../../assets/svg/bird-mascot.svg";
 import collectSVG from "../../assets/svg/collect-feedback.svg";
@@ -180,16 +181,6 @@ const IndexTemplate = ({ data }) => {
         <Integrations />
 
         <Testimonials />
-
-        <section className={styles["signup"]}>
-          <div className={styles["signup__inner"]}>
-            <h3 className={styles["signup__title"]}>Start managing feedback</h3>
-            <p className={styles["signup__subtitle"]}>
-              Free 14 day trial · No credit card&nbsp;required
-            </p>
-            <Signup className={styles["signup__wrapper"]} />
-          </div>
-        </section>
       </div>
     </Layout>
   );
