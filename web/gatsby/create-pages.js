@@ -48,7 +48,31 @@ const createPages = async ({ graphql, actions }) => {
     component: path.resolve("./src/pages/User/Signin/Signin.js")
   });
 
-  // Signin
+  // Setup Intercom
+  createPage({
+    path: "/setup-intercom",
+    component: path.resolve("./src/pages/User/Setup/Setup.js")
+  });
+
+  // Setup Slack
+  createPage({
+    path: "/connect-slack",
+    component: path.resolve("./src/pages/User/Setup/Setup.js")
+  });
+
+  // Request user data
+  createPage({
+    path: "/request-user-data",
+    component: path.resolve("./src/pages/User/Request/Request.js")
+  });
+
+  // Oauth
+  createPage({
+    path: "/oauth",
+    component: path.resolve("./src/pages/User/Oauth/Oauth.js")
+  });
+
+  // Signup
   createPage({
     path: "/signup",
     component: path.resolve("./src/pages/User/Signup/Signup.js")
@@ -62,7 +86,7 @@ const createPages = async ({ graphql, actions }) => {
 
   // Privacy Policy
   createPage({
-    path: "/privacy",
+    path: "/privacy-policy",
     component: path.resolve("./src/pages/Privacy/Privacy.js")
   });
 
@@ -70,6 +94,12 @@ const createPages = async ({ graphql, actions }) => {
   createPage({
     path: "/cookies-policy",
     component: path.resolve("./src/pages/Cookies/Cookies.js")
+  });
+
+  // Terms
+  createPage({
+    path: "/terms",
+    component: path.resolve("./src/pages/Terms/Terms.js")
   });
 
   // Posts and pages from markdown

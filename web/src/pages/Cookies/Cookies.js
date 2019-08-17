@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import Layout from "../../components/Layout";
 import Page from "../../components/Page";
 import { useSiteMetadata } from "../../hooks";
