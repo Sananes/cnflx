@@ -75,7 +75,7 @@ const SigninIndex = () => {
             }
             return errors;
           }}
-          render={({ handleSubmit, reset, submitting, pristine, values }) => (
+          render={({ submitting, pristine, values }) => (
             <form onSubmit={onSubmit}>
               <div
                 className={!step ? styles["show-form"] : styles["hide-form"]}

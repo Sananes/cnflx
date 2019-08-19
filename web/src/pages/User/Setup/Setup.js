@@ -5,12 +5,6 @@ import InputLabel from "../../../components/InputLabel";
 import { Form, Field } from "react-final-form";
 import styles from "../User.module.scss";
 import { useSiteMetadata } from "../../../hooks";
-import { GlobalContext } from "../../../context/GlobalContext";
-
-function validateEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
 
 const SetupIntercom = () => {
   const { name } = useSiteMetadata();
