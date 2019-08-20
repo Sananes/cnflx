@@ -1,5 +1,5 @@
 import React from "react";
-import Signin from "../SigninComponent";
+import Signin from "../SigninComponent/SigninComponent";
 import InputLabel from "../../../components/InputLabel";
 import styles from "../User.module.scss";
 import { Form, Field } from "react-final-form";

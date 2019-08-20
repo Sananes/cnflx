@@ -10,9 +10,8 @@ const TermsPage = ({ data }: Props) => {
   const { name } = useSiteMetadata();
 
   return (
-    <Layout title={`Terms &amp; Conditions | ${name}`}>
-      <Page title="Terms &amp; Conditions" center={true}>
-        <h1>Terms and Conditions</h1>
+    <Layout title={`Terms & Conditions | ${name}`}>
+      <Page title="Terms &amp; Conditions" center={false}>
         <small>Effective Date: June 2, 2016</small>
         <p>Thanks for using Conflux’s products and services (“Services”).</p>
         <p>
@@ -26,14 +25,14 @@ const TermsPage = ({ data }: Props) => {
           and you represent that you have the authority to do so. In such case,
           “you” and “your” will refer to that organization.
         </p>
-        <h2>1. Fees and Payments</h2>
-        1.1. Fees for Services. You agree to pay to Conflux any fees for each
+        <h3>1. Fees and Payments</h3>
+        <ul><li>1.1. Fees for Services. You agree to pay to Conflux any fees for each
         Service you purchase or use (including any overage fees), in accordance
         with the pricing and payment terms presented to you for that Service.
         Where applicable, you will be billed using the billing method you select
         through your account management page. Fees paid by you are
         non-refundable, except as provided in these Terms or when required by
-        law. 1.2. Subscriptions. Some of our Services are billed on a
+        law.</li> <li>1.2. Subscriptions. Some of our Services are billed on a
         subscription basis (we call these “Subscriptions”). This means that you
         will be billed in advance on a recurring, periodic basis (each period is
         called a “billing cycle”). Billing cycles are typically monthly or
@@ -45,7 +44,7 @@ const TermsPage = ({ data }: Props) => {
         Subscription will continue until the end of that billing cycle before
         terminating. You may cancel auto-renewal on your Subscription
         immediately after the Subscription starts if you do not want it to
-        renew. 1.3. Taxes. Unless otherwise stated, you are responsible for any
+        renew. </li> <li>1.3. Taxes. Unless otherwise stated, you are responsible for any
         taxes (other than Conflux’s income tax) or duties associated with the
         sale of the Services, including any related penalties or interest
         (collectively, “Taxes”). You will pay Conflux for the Services without
@@ -60,19 +59,19 @@ const TermsPage = ({ data }: Props) => {
         V.O.F.. If you are required by law to withhold any Taxes from your
         payments to Conflux, you must provide Conflux with an official tax
         receipt or other appropriate documentation to support such payments.
-        1.4. Price Changes. Conflux may change the fees charged for the Services
+        </li><li>1.4. Price Changes. Conflux may change the fees charged for the Services
         at any time, provided that, for Services billed on a subscription basis,
         the change will become effective only at the end of the then-current
         billing cycle of your Subscription. Conflux will provide you with
         reasonable prior written notice of any change in fees to give you an
         opportunity to cancel your Subscription before the change becomes
-        effective. 1.5. Overage Fees. Unless otherwise stated, any overage fees
+        effective. </li><li>1.5. Overage Fees. Unless otherwise stated, any overage fees
         incurred by you will be billed in arrears. Overage fees which remain
         unpaid for 30 days after being billed are considered overdue. Failure to
         pay overage fees when due may result in the applicable Service being
         limited, suspended, or terminated (subject to applicable legal
         requirements), which may result in a loss of your data associated with
-        that Service. 2. Privacy 2.1. Privacy. In the course of using the
+        that Service.</li></ul> <h3>2. Privacy</h3> <ul><li>2.1.Privacy. In the course of using the
         Services, you may submit content to Conflux (including your personal
         data and the personal data of others) or third parties may submit
         content to you through the Services (your “Content”). We know that by
@@ -80,7 +79,7 @@ const TermsPage = ({ data }: Props) => {
         Conflux’s Privacy Policy detail how we treat your Content and personal
         data and we agree to adhere to that privacy policy. You in turn agree
         that Conflux may use and share your Content in accordance with our
-        privacy policy. 2.2. Confidentiality. Conflux will treat your Content as
+        privacy policy. </li> <li>2.2. Confidentiality. Conflux will treat your Content as
         confidential information and only use and disclose it in accordance with
         these Terms (including our privacy policy). However, your Content is not
         regarded as confidential information if such Content: (a) is or becomes
@@ -91,19 +90,19 @@ const TermsPage = ({ data }: Props) => {
         without reference to your Content. Conflux may disclose your Content
         when required by law or legal process, but only after Conflux, if
         permitted by law, uses commercially reasonable efforts to notify you to
-        give you the opportunity to challenge the requirement to disclose. 2.3.
+        give you the opportunity to challenge the requirement to disclose.</li> <li>2.3.
         Security. Conflux will store and process your Content in a manner
         consistent with industry security standards. Conflux has implemented
         appropriate technical, organizational, and administrative systems,
         policies, and procedures designed to help ensure the security,
         integrity, and confidentiality of your Content and to mitigate the risk
-        of unauthorized access to or use of your Content. 3. Your Content 3.1.
+        of unauthorized access to or use of your Content.</li></ul> <h3>3. Your Content</h3> <ul><li>3.1.
         You Retain Ownership of Your Content. You retain ownership of all of
         your intellectual property rights in your Content. Conflux does not
         claim ownership over any of your Content. These Terms do not grant us
         any licenses or rights to your Content except for the limited rights
         needed for us to provide the Services, and as otherwise described in
-        these Terms. 3.2. Limited License to Your Content. You grant Conflux a
+        these Terms.</li> <li>3.2. Limited License to Your Content. You grant Conflux a
         worldwide, royalty free license to use, reproduce, distribute, modify,
         adapt, create derivative works, make publicly available, and otherwise
         exploit your Content, but only for the limited purposes of providing the
@@ -115,17 +114,17 @@ const TermsPage = ({ data }: Props) => {
         extends to any trusted third parties we work with to the extent
         necessary to provide the Services to you. If you provide Conflux with
         feedback about the Services, we may use your feedback without any
-        obligation to you. 3.3. Customer Lists. Conflux may identify you (by
+        obligation to you.</li> <li>3.3. Customer Lists. Conflux may identify you (by
         name and logo) as a Conflux customer on Conflux’s website and on other
         promotional materials. Any goodwill arising from the use of your name
-        and logo will inure to your benefit. 3.4. Other IP Claims. Conflux
+        and logo will inure to your benefit.</li> <li>3.4. Other IP Claims. Conflux
         respects the intellectual property rights of others, and we expect our
         users to do the same. If you believe a Conflux user is infringing upon
         your intellectual property rights, you may report it to our customer
-        support team. 4. Conflux IP 4.1. Conflux IP. Neither these Terms nor
+        support team.</li> </ul> <h3>4. Conflux IP</h3> <ul><li>4.1. Conflux IP. Neither these Terms nor
         your use of the Services grants you ownership in the Services or the
-        content you access through the Services (other than your Content). 5.
-        User Content 5.1. User Content. The Services display content provided by
+        content you access through the Services (other than your Content).</li></ul> <h3>5.
+        User Content</h3> <ul><li>5.1. User Content. The Services display content provided by
         others that is not owned by Conflux. Such content is the sole
         responsibility of the entity that makes it available. Correspondingly,
         you are responsible for your own Content and you must ensure that you
@@ -134,20 +133,20 @@ const TermsPage = ({ data }: Props) => {
         you take with respect to your Content, including sharing it publicly.
         Please do not use content from the Services unless you have first
         obtained the permission of its owner, or are otherwise authorized by law
-        to do so. 5.2. Content Review. You acknowledge that, in order to ensure
+        to do so.</li> <li>5.2. Content Review. You acknowledge that, in order to ensure
         compliance with legal obligations, Conflux may be required to review
         certain content submitted to the Services to determine whether it is
         illegal or whether it violates these Terms (such as when unlawful
         content is reported to us). We may also modify, prevent access to,
         delete, or refuse to display content that we believe violates the law or
         these Terms. However, Conflux otherwise has no obligation to monitor or
-        review any content submitted to the Services. 5.3. Third Party
+        review any content submitted to the Services.</li> <li>5.3. Third Party
         Resources. Conflux may publish links in its Services to internet
         websites maintained by third parties. Conflux does not represent that it
         has reviewed such third party websites and is not responsible for them
         or any content appearing on them. Trademarks displayed in conjunction
-        with the Services are the property of their respective owners. 6.
-        Account Management 6.1. Keep Your Password Secure. If you have been
+        with the Services are the property of their respective owners.</li></ul> <h3>6.
+        Account Management</h3> <ul><li>6.1. Keep Your Password Secure. If you have been
         issued an account by Conflux in connection with your use of the
         Services, you are responsible for safeguarding your password and any
         other credentials used to access that account. You, and not Conflux, are
@@ -156,25 +155,25 @@ const TermsPage = ({ data }: Props) => {
         in accordance with your instructions), whether or not you authorized
         that activity. If you become aware of any unauthorized access to your
         account, you should notify Conflux immediately. Accounts may not be
-        shared and may only be used by one individual per account. 6.2. Keep
+        shared and may only be used by one individual per account.</li> <li>6.2. Keep
         Your Details Accurate. Conflux occasionally sends notices to the email
         address registered with your account. You must keep your email address
         and, where applicable, your contact details and payment details
         associated with your account current and accurate. Accounts are
         controlled by the entity whose email address is registered with the
-        account. 6.3. Remember to Backup. You are responsible for maintaining,
+        account.</li> <li>6.3. Remember to Backup. You are responsible for maintaining,
         protecting, and making backups of your Content. To the extent permitted
         by applicable law, Conflux will not be liable for any failure to store,
-        or for loss or corruption of, your Content. 6.4. Account Inactivity.
+        or for loss or corruption of, your Content.</li> <li>6.4. Account Inactivity.
         Conflux may terminate your account and delete any content contained in
         it if there is no account activity (such as a log in event or payment)
         for over 12 months. However, we will attempt to warn you by email before
         terminating your account to provide you with an opportunity to log in to
-        your account so that it remains active. 6.5. Customer Success. Conflux
+        your account so that it remains active.</li> <li>6.5. Customer Success. Conflux
         may assign you a customer success manager (“CSM”). The CSM may review
         your use of the Services and your Content to help you to more
         effectively use the Services, including by providing reporting and usage
-        insight. 7. User Requirements 7.1. Legal Status. If you are an
+        insight.</li></ul> <h3>7. User Requirements</h3> <ul> 7.1. Legal Status. If you are an
         individual, you may only use the Service if you have the power to form a
         contract with Conflux. None of the Services are intended for use by
         individuals less than 13 years old. If you are under 13 years old or do
@@ -485,6 +484,7 @@ const TermsPage = ({ data }: Props) => {
         avert and reduce damages.” Luxembourg LU1. Survival. Sections of these
         Terms which are expressly stated to survive its termination will not
         survive indefinitely, but survive for a period of 30 years.
+        </ul>
       </Page>
     </Layout>
   );

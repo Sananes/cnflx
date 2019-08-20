@@ -113,7 +113,7 @@ const Footer = () => (
               </li>
               <li className={styles["footer__copyright-list-item"]}>
                 <Link
-                  to="#"
+                  to="/terms"
                   className={styles["footer__copyright-list-item-link"]}
                 >
                   Terms
